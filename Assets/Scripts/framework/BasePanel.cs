@@ -27,6 +27,7 @@ public class BasePanel : MonoBehaviour {
 	}
 	//关闭时
 	public virtual void OnClose(){
+		
 	}
 		
 }
