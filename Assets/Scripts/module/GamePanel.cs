@@ -11,6 +11,10 @@ public class GamePanel : BasePanel
     private List<GameObject> leftWall = new List<GameObject>();
     private List<GameObject> rightWall = new List<GameObject>();
     
+    
+    private GameObject Jimmy;
+    
+    
     //初始化
     public override void OnInit()
     {
@@ -21,6 +25,11 @@ public class GamePanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
+        string JimmyPath = "Jimmy/Jimmy";
+        Jimmy = Instantiate(Resources.Load<GameObject>(JimmyPath),
+            GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+        Jimmy.transform.localPosition = new Vector3(300, 300, 0);
+
         float end = 800;
         while (end > -800)
         {
