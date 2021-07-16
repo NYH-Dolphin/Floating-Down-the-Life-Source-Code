@@ -32,9 +32,6 @@ public class BalloonBehaviour : MonoBehaviour
         {
             DestroyThisBalloon();
         }
-
-        
-
     }
 
 
@@ -43,9 +40,13 @@ public class BalloonBehaviour : MonoBehaviour
         // Watch out!! a collision with overlap objects (e.g., two objects at the same location 
         // will result in two OnTriggerEntger2D() calls!!
         
-        Destroy(transform.gameObject);
-        Debug.Log("Calling Destroy: " + name);
-        sJimmy.loseBalloon(gameObject);
+        if (sJimmy.LoseBalloon(gameObject))
+        {
+            Destroy(transform.gameObject);
+            Debug.Log("Calling Destroy: " + name);
+        }
+
+        
         
     }
 }
