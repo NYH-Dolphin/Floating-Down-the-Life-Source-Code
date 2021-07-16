@@ -5,21 +5,50 @@ using UnityEngine;
 public class JimmyBehaviour : MonoBehaviour
 {
 
-    private GameObject balloons;
+    private ArrayList balloons = new ArrayList();
     private float speed = 500; // 这里做匀速直线运动
     public Animator animator;  // Animator 组件
+    private int balloonHolds = 1;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject balloon = Instantiate(Resources.Load<GameObject>("Balloons/cyan_balloon"), gameObject.transform, true);
+        balloon.transform.localPosition = new Vector3(0,5,0);
+        Debug.Log("J:start");
+        Debug.Log("J"+gameObject.transform);
+        balloons.Add(balloon);
         
+        BalloonBehaviour.setJimmyBehaviour(this);
     }
 
     // Update is called once per frame
     void Update()
     {
         Float();
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Jimmy: OnTriggerEnter2D");
+        if (!collision.gameObject.name.Contains("balloon"))
+        {
+            DestroyBalloon();
+        }
+
+        
+    }
+
+    private void DestroyBalloon()
+    {
+        if (balloons.Count != 0)
+        {
+            GameObject balloon = (GameObject)balloons[0];
+            balloons.RemoveAt(0);
+            Destroy(balloon);
+        }
+        CheckTerminate();
     }
 
     void Float()
@@ -43,6 +72,19 @@ public class JimmyBehaviour : MonoBehaviour
             animator.SetBool("floatLeft",false);
         }
         transform.position = p;
+    }
+
+    public void loseBalloon(GameObject balloon)
+    {
+        balloonHolds--;
+        balloons.Remove(balloon);
+        Debug.Log("loosing"+balloonHolds);
+        CheckTerminate();
+    }
+
+    public void CheckTerminate()
+    {
+        
     }
 
 

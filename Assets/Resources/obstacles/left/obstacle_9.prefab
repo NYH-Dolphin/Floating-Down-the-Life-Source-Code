@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1277104199644231744}
   - component: {fileID: 4167461830596861618}
   - component: {fileID: -4003255059062809912}
+  - component: {fileID: 992697645759329581}
   m_Layer: 5
   m_Name: obstacle_9
   m_TagString: Untagged
@@ -88,3 +89,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e89b523a7db944293954ccbee6c8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &992697645759329581
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844676317520587118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -47.788696, y: 81.55603}
+      - {x: -135.2612, y: 85.55951}
+      - {x: -134.0223, y: -13.242062}
+      - {x: -24.473083, y: -34.080566}
+      - {x: 65.52899, y: -92.80292}
+      - {x: 106.61041, y: -81.433716}
+      - {x: 64.88379, y: -60.32318}
+      - {x: 72.45627, y: -12.736389}
+      - {x: 42.06143, y: -7.432007}
+      - {x: 141.1145, y: 18.79956}
+      - {x: 102.49927, y: 78.82483}
+      - {x: 28.952532, y: 52.636723}
+      - {x: -5.601158, y: 87.07178}
