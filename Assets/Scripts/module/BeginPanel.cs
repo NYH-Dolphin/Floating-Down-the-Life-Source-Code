@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 public class BeginPanel : BasePanel
 {
 	public Button start;
+	public Button rules;
 
 	//初始化
 	public override void OnInit()
@@ -18,10 +16,10 @@ public class BeginPanel : BasePanel
 	public override void OnShow(params object[] args)
 	{
 		//寻找组件
-		Debug.Log("start");
 		start = skin.transform.Find("start").GetComponent<Button>();
+		rules = skin.transform.Find("rules").GetComponent<Button>();
 		start.onClick.AddListener(OnBeginClick);
-		Debug.Log(start);
+		rules.onClick.AddListener(OnRulesClick);
 	}
 
 	//关闭
@@ -33,8 +31,13 @@ public class BeginPanel : BasePanel
 	//当按下开始按钮
 	public void OnBeginClick()
 	{
-		Debug.Log("click");
 		PanelManager.Open<GamePanel>();
+		Close();
+	}
+	
+	public void OnRulesClick()
+	{
+		PanelManager.Open<RulesPanel>();
 		Close();
 	}
 }

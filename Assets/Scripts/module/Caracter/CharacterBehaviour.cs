@@ -4,52 +4,49 @@ using UnityEngine;
 
 public class CharacterBehaviour : MonoBehaviour
 {
-    public bool firstMeet = true;
     public Fungus.Flowchart flowchart;
-    private int meetTime = 0;
+    private GameObject Jimmy;
 
     // Start is called before the first frame update
     void Start()
     {
+        Jimmy = transform.parent.parent.Find("Jimmy(Clone)").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        float distance = CalculateDistance();
+        InBounds(distance);
+        if (InConversation())
+            WallBehavior.Stop();
+        else
+            WallBehavior.Move();
     }
 
 
     // 计算角色与 Jimmy 之间的距离
-    public float CalculateDistance(Vector2 p1, Vector2 p2)
+    private float CalculateDistance()
     {
-        float i = Mathf.Sqrt((p1.x - p2.x) * (p1.x - p2.x)
-                             + (p1.y - p2.y) * (p1.y - p2.y));
-
-        return i;
+        Vector2 p1 = Jimmy.transform.position;
+        Vector2 p2 = transform.position;
+        return Mathf.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
     }
 
     // 在范围内 - 可以触发与 Jimmy 之间的会话
-    public bool InBounds(float distance)
+    private void InBounds(float distance)
     {
         if (distance <= 200)
         {
             Debug.Log("Trigger Conversation");
             flowchart.SetIntegerVariable("inBound", 1);
-            return true;
         }
-        flowchart.SetIntegerVariable("inBound", 0);
-        return false;
-    }
-
-
-    // 与角色开启谈话
-    public void StartConversation()
-    {
-        flowchart.SetBooleanVariable("conversation", true);
+        else
+            flowchart.SetIntegerVariable("inBound", 0);
     }
 
     // 正在与角色处于对话状态中
-    public bool InConversation()
+    private bool InConversation()
     {
         return flowchart.GetBooleanVariable("conversation");
     }

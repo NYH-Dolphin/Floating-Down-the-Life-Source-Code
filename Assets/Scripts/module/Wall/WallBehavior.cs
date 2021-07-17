@@ -9,8 +9,8 @@ public class WallBehavior : MonoBehaviour
     private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9"};
     private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_4", "obstacle_5"};
     private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8"};
-    private string[] _windowStillsName = {"window1", "window2", "window3"};
-    private string[] _characterName = {"character1", "character2", "character3", "character4"};
+    private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
+    private readonly string[] _characterName = {"character1", "character2", "character3", "character4"};
 
 
     private static bool stop = false; // 如果有 conversation 停止
@@ -125,7 +125,6 @@ public class WallBehavior : MonoBehaviour
         {
             return true;
         }
-
         return false;
     }
 
@@ -144,10 +143,5 @@ public class WallBehavior : MonoBehaviour
     {
         stop = false;
     }
-
-
-    public GameObject getCharacter()
-    {
-        return character;
-    }
+    
 }
