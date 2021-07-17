@@ -67,8 +67,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5385321253360151699}
-  selectedCommands:
-  - {fileID: 8736300767586817056}
+  selectedCommands: []
   variables:
   - {fileID: 4849689706199698369}
   - {fileID: 6271823673370119109}
@@ -211,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
+  scope: 2
   key: conversation
   value: 0
 --- !u!114 &8961583358220989371

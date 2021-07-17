@@ -59,7 +59,7 @@ public class JimmyBehaviour : MonoBehaviour
         {
             jimmyRenderer.enabled = false;
         }
-        else if(invalidTimeCount%30==15)
+        else if(invalidTimeCount % 30 == 15)
         {
             jimmyRenderer.enabled = true;
         }
