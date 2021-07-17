@@ -9,8 +9,13 @@ public class WallBehavior : MonoBehaviour
     private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9"};
     private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_4", "obstacle_5"};
     private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8"};
+    private string[] _windowStillsName = {"window1", "window2", "window3"};
+    private string[] _characterName = {"character1", "character2", "character3", "character4"};
 
-    private string[] WindowStillsName = {"window1", "window2", "window3"};
+
+    private static bool stop = false; // 如果有 conversation 停止
+    private GameObject window;
+    public GameObject character;
 
     // Start is called before the first frame update
     void Start()
@@ -57,14 +62,24 @@ public class WallBehavior : MonoBehaviour
             {
                 if (GetComponent<RectTransform>().rect.height >= 300)
                 {
-                    // 40% 的概率生成一个 window
+                    // 40% 的概率生成一个 window 和 character
                     if (RandomGenerate(40))
                     {
-                        string windowName = WindowStillsName[Random.Range(0, WindowStillsName.Length)];
-                        string windowPath = "window/left/" + windowName;
-                        GameObject windowL = Instantiate(Resources.Load<GameObject>(windowPath),
+                        // 角色
+                        string characterName = _characterName[Random.Range(0, _characterName.Length)];
+                        string characterPath = "character/left/" + characterName;
+                        character = Instantiate(Resources.Load<GameObject>(characterPath),
                             transform, true);
-                        windowL.transform.localPosition = new Vector3(375, 0, 0);
+                        character.transform.localPosition = new Vector3(200, 0, 0);
+
+                        // 窗台
+                        string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
+                        string windowPath = "window/left/" + windowName;
+                        window = Instantiate(Resources.Load<GameObject>(windowPath),
+                            transform, true);
+                        window.transform.localPosition = new Vector3(375, 0, 0);
+                        window.gameObject.layer = 2;
+
                     }
                 }
             }
@@ -72,15 +87,16 @@ public class WallBehavior : MonoBehaviour
             {
                 if (GetComponent<RectTransform>().rect.height >= 300)
                 {
+
                     // 40% 的概率生成一个 window
                     if (RandomGenerate(40))
                     {
-                        string windowName = WindowStillsName[Random.Range(0, WindowStillsName.Length)];
+                        string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
                         string windowPath = "window/right/" + windowName;
-                        GameObject windowR = Instantiate(Resources.Load<GameObject>(windowPath),
+                        window = Instantiate(Resources.Load<GameObject>(windowPath),
                             transform, true);
 
-                        windowR.transform.localPosition = new Vector3(-375, 0, 0);
+                        window.transform.localPosition = new Vector3(-375, 0, 0);
                     }
                 }
             }
@@ -90,14 +106,17 @@ public class WallBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 p = transform.localPosition;
-        p += (speed * Time.smoothDeltaTime) * new Vector3(0, 1, 0);
-        transform.localPosition = p;
+        
+        // 继续运动
+        if (!stop)
+        {
+            Vector3 p = transform.localPosition;
+            p += (speed * Time.smoothDeltaTime) * new Vector3(0, 1, 0);
+            transform.localPosition = p;
+        }
     }
 
-    /**
-     * 指定概率的生成
-     */
+    // 指定概率返回 true
     private bool RandomGenerate(int percentage)
     {
         // 随机生成 [1,100]之间的数
@@ -108,5 +127,27 @@ public class WallBehavior : MonoBehaviour
         }
 
         return false;
+    }
+
+
+    // 被 GamePanel 调用，停止运动
+    // conversation mode
+    public static void Stop()
+    {
+        stop = true;
+    }
+
+
+    // 被 GamePanel 调用，继续运动
+    // conversation mode
+    public static void Move()
+    {
+        stop = false;
+    }
+
+
+    public GameObject getCharacter()
+    {
+        return character;
     }
 }
