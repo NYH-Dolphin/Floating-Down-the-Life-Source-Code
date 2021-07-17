@@ -11,7 +11,7 @@ public class JimmyBehaviour : MonoBehaviour
     public Animator animator;  // Animator 组件
    
     private Boolean isCollide = false;
-    private const int INVALIDTIMETICK = 300;
+    private const int InvalidTimeTick = 300;
     private int invalidTimeCount = 0;
     private Renderer jimmyRenderer = null;
     
@@ -64,7 +64,7 @@ public class JimmyBehaviour : MonoBehaviour
             jimmyRenderer.enabled = true;
         }
 
-        if (++invalidTimeCount == INVALIDTIMETICK)
+        if (++invalidTimeCount == InvalidTimeTick)
         {
             jimmyRenderer.enabled = true;
             isCollide = false;

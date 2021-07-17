@@ -885,7 +885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff37df2e37325794a83943a37ea599bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstMeet: 1
   flowchart: {fileID: 8621577801560906775}
 --- !u!114 &2761394661580080652
 MonoBehaviour:
@@ -912,7 +911,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.2498493, y: -3.1441536}
