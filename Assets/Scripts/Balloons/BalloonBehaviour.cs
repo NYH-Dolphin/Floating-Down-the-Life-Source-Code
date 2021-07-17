@@ -28,7 +28,7 @@ public class BalloonBehaviour : MonoBehaviour
     {
         Debug.Log("balloon: OnTriggerEnter2D");
         // collision.gameObject.transform.position = Vector3.zero;
-        if (!(collision.gameObject.name.Contains("balloon")||collision.gameObject.name.Contains("Jimmy")))
+        if (collision.gameObject.name.Contains("obstacle"))
         {
             DestroyThisBalloon();
         }

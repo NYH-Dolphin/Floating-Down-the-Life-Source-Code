@@ -9,7 +9,6 @@ public class GameMain : MonoBehaviour {
 		//打开登陆面板
 		Debug.Log("begin");
 		PanelManager.Open<BeginPanel>();
-		
 	}
 
 

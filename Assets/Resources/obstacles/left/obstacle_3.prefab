@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8399389736236812870}
   - component: {fileID: 7535821968656181960}
   - component: {fileID: 4975839028352154254}
-  - component: {fileID: 8263998625902482595}
+  - component: {fileID: 1973596894677864899}
   m_Layer: 5
   m_Name: obstacle_3
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3260826833432779633, guid: ff63937a2ddf84d46ba50fb4556f2731, type: 3}
+  m_Sprite: {fileID: 3260826833432779633, guid: ff739d3f922a91748b778480b71d3f2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6019629279688244113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e89b523a7db944293954ccbee6c8ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 129de7779481991478b06d6a438de8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &8263998625902482595
+--- !u!60 &1973596894677864899
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,11 +114,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 46.09076, y: 57.230408}
-      - {x: -0.5701904, y: 122.455505}
-      - {x: -85.34266, y: -106.32093}
-      - {x: -81.55809, y: -118.84319}
-      - {x: -27.637177, y: 32.885803}
-      - {x: -4.2507935, y: -1.7116089}
-      - {x: 47.91548, y: -35.591972}
-      - {x: 83.061806, y: 43.075005}
+    - - {x: 79.681305, y: 41.66455}
+      - {x: 51.576233, y: 50.048218}
+      - {x: 0.21875, y: 118.934814}
+      - {x: -84.92765, y: -91.88617}
+      - {x: -82.94234, y: -120.37366}
+      - {x: -27.01863, y: 33.53577}
+      - {x: -0.43151855, y: -1.909729}
+      - {x: 52.21998, y: -36.08063}

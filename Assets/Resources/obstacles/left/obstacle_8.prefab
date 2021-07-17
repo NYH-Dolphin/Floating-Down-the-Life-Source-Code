@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5020326885495895362}
   - component: {fileID: 3335796448844615773}
   - component: {fileID: -5662323583094280833}
-  - component: {fileID: 3563124705743957580}
+  - component: {fileID: 8291969465393546213}
   m_Layer: 5
   m_Name: obstacle_8
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5029005544204359076, guid: 6ac671d2f4b6c3e4db66b65daa2949aa, type: 3}
+  m_Sprite: {fileID: 5029005544204359076, guid: e37df38649d235c49a339eab9d58b7bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 735785017974819521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e89b523a7db944293954ccbee6c8ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 129de7779481991478b06d6a438de8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &3563124705743957580
+--- !u!60 &8291969465393546213
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,13 +114,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -125.71103, y: 172.05005}
-      - {x: -70.34806, y: 170.6471}
-      - {x: -70.59491, y: 106.69513}
-      - {x: -21.510468, y: 111.43463}
-      - {x: -23.545685, y: 33.8479}
-      - {x: -48.553223, y: 35.83783}
-      - {x: -49.481094, y: -138.81445}
-      - {x: 123.61096, y: -135.73871}
-      - {x: 124.917404, y: -171.99084}
-      - {x: -121.737206, y: -172.8808}
+    - - {x: -123.0867, y: 149.22021}
+      - {x: -125.835144, y: 172.7923}
+      - {x: -72.075226, y: 172.10132}
+      - {x: -65.14668, y: 98.76495}
+      - {x: -21.552002, y: 122.22943}
+      - {x: -26.2305, y: 28.554443}
+      - {x: -48.89456, y: 45.62097}
+      - {x: -46.93048, y: -135.4057}
+      - {x: 125.85867, y: -134.47919}
+      - {x: 127.10605, y: -128.52887}
+      - {x: 127.517105, y: -162.75336}
+      - {x: 122.14191, y: -172.8352}
+      - {x: -89.2543, y: -167.91705}
+      - {x: -93.151726, y: 149.1228}

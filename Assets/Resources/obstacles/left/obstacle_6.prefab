@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2462202590011106199}
   - component: {fileID: 5270444450416644088}
   - component: {fileID: -6110646300138837254}
-  - component: {fileID: 6590118315419441329}
+  - component: {fileID: 8488694957934363625}
   m_Layer: 5
   m_Name: obstacle_6
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4801690436521347520, guid: a9ae22c9f4d8b524493f107dafb59396, type: 3}
+  m_Sprite: {fileID: -4801690436521347520, guid: 89768d5275d3c6341934f27c3ef3d774, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2317221693505071287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e89b523a7db944293954ccbee6c8ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 129de7779481991478b06d6a438de8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &6590118315419441329
+--- !u!61 &8488694957934363625
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4403839, y: -0.11010742}
+  m_Offset: {x: 0.44366455, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -113,5 +113,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 93.04428, y: 60.674683}
+  m_Size: {x: 93.30957, y: 60}
   m_EdgeRadius: 0

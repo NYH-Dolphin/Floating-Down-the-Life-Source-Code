@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1277104199644231744}
   - component: {fileID: 4167461830596861618}
   - component: {fileID: -4003255059062809912}
-  - component: {fileID: 992697645759329581}
+  - component: {fileID: 4790774501852216446}
   m_Layer: 5
   m_Name: obstacle_9
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4865511639664439497, guid: cfb097491eda0a440b912e4dff46f8b0, type: 3}
+  m_Sprite: {fileID: -4865511639664439497, guid: 7805515e99fd68e4282240e26aa5055f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2844676317520587118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e89b523a7db944293954ccbee6c8ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 129de7779481991478b06d6a438de8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &992697645759329581
+--- !u!60 &4790774501852216446
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,16 +114,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -47.788696, y: 81.55603}
-      - {x: -135.2612, y: 85.55951}
-      - {x: -134.0223, y: -13.242062}
-      - {x: -24.473083, y: -34.080566}
-      - {x: 65.52899, y: -92.80292}
-      - {x: 106.61041, y: -81.433716}
-      - {x: 64.88379, y: -60.32318}
-      - {x: 72.45627, y: -12.736389}
-      - {x: 42.06143, y: -7.432007}
-      - {x: 141.1145, y: 18.79956}
-      - {x: 102.49927, y: 78.82483}
-      - {x: 28.952532, y: 52.636723}
-      - {x: -5.601158, y: 87.07178}
+    - - {x: 75.00476, y: 73.88092}
+      - {x: 24.588104, y: 50.38379}
+      - {x: -3.3077698, y: 90.309875}
+      - {x: -134.0889, y: 87.96502}
+      - {x: -132.87372, y: -15.378113}
+      - {x: -17.953598, y: -36.367615}
+      - {x: 19.044922, y: -55.70105}
+      - {x: 64.26247, y: -90.1189}
+      - {x: 98.26471, y: -88.40344}
+      - {x: 95.451904, y: -69.77301}
+      - {x: 62.348633, y: -57.21759}
+      - {x: 70.65802, y: -8.912842}
+      - {x: 134.30151, y: 13.917114}
+      - {x: 134.91583, y: 59.84899}
