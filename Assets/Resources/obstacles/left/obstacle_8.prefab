@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3335796448844615773}
   - component: {fileID: -5662323583094280833}
   - component: {fileID: 8291969465393546213}
+  - component: {fileID: 6130373297846535299}
   m_Layer: 5
   m_Name: obstacle_8
   m_TagString: Untagged
@@ -128,3 +129,29 @@ PolygonCollider2D:
       - {x: 122.14191, y: -172.8352}
       - {x: -89.2543, y: -167.91705}
       - {x: -93.151726, y: 149.1228}
+--- !u!61 &6130373297846535299
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735785017974819521}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

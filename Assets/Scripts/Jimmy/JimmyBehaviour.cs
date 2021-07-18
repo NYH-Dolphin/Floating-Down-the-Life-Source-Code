@@ -65,8 +65,11 @@ public class JimmyBehaviour : MonoBehaviour
     void Update()
     {
         Float();
-        if (isCollide) 
-            Shake();
+        if (isCollide)
+        {
+            if(balloons.Count>2)
+                Shake();
+        }
         if (transform.localPosition.y < -700)
             PanelManager.Open<OverPanel>();
     }
@@ -154,10 +157,14 @@ public class JimmyBehaviour : MonoBehaviour
     // 检查游戏是否终止
     private void CheckTerminate()
     {
-        if (balloons.Count == 0)
+        if (balloons.Count == 2)
         {
             WallBehavior.Stop();
             HeightRecord.Pause();
+            // Time.timeScale = 0;
+            // GetComponent<SpriteRenderer>().sortingOrder = -1;
+            // foreach (GameObject balloon in GetComponent<JimmyBehaviour>().balloons)
+            //     balloon.GetComponent<SpriteRenderer>().sortingOrder = -1;
             transform.GetComponent<Rigidbody2D>().gravityScale = 30;
         }
     }
@@ -254,7 +261,7 @@ public class JimmyBehaviour : MonoBehaviour
     // Jimmy 丢失一个气球
     private void LostBalloon()
     {
-        if (balloons.Count != 0)
+        if (balloons.Count != 2)
         {
             GameObject balloon = (GameObject) balloons[0];
             balloons.RemoveAt(0);
