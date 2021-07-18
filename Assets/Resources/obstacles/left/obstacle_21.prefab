@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 479991649533293470}
   - component: {fileID: 8367527971522579685}
   - component: {fileID: 3059248490709757336}
-  - component: {fileID: 4978239631933126867}
+  - component: {fileID: 6881966701903022719}
   m_Layer: 0
   m_Name: obstacle_21
   m_TagString: Untagged
@@ -76,8 +76,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &4978239631933126867
-BoxCollider2D:
+--- !u!60 &6881966701903022719
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -99,6 +99,34 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 42.78766, y: -64.78882}
+      - {x: 49.116608, y: -64.96387}
+      - {x: 52.772003, y: -57.13562}
+      - {x: 46.662933, y: -47.859253}
+      - {x: 51.061615, y: -20.22937}
+      - {x: 57.784668, y: -21.631775}
+      - {x: 52.742157, y: -4.9036865}
+      - {x: 57.696045, y: 8.69281}
+      - {x: 66.65607, y: 7.8721924}
+      - {x: 56.436707, y: 40.048584}
+      - {x: 39.35077, y: 50.903748}
+      - {x: 29.071869, y: 54.49475}
+      - {x: 30.878265, y: 79.33978}
+      - {x: 47.09143, y: 78.9613}
+      - {x: 48.228516, y: 87.931946}
+      - {x: -65.30655, y: 101.23285}
+      - {x: -63.965515, y: 91.5614}
+      - {x: 26.38852, y: 78.967834}
+      - {x: 25.58841, y: 56.97284}
+      - {x: 14.257751, y: 56.018494}
+      - {x: -1.5249329, y: 47.257202}
+      - {x: -12.0269165, y: 25.469604}
+      - {x: -12.232697, y: 10.816711}
+      - {x: -11.986603, y: -84.28436}
+      - {x: 3.5364304, y: -96.492065}
+      - {x: 36.5941, y: -93.12267}
+      - {x: 36.69725, y: -94.68231}
+      - {x: 38.599304, y: -87.82587}
+      - {x: 35.956917, y: -91.09522}

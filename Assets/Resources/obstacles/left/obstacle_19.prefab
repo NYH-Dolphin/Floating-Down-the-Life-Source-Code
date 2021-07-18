@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 699828084489818595}
   - component: {fileID: 6598035661200682699}
   - component: {fileID: 7132361721526156295}
-  - component: {fileID: 256475020279287438}
+  - component: {fileID: 2937826046262742138}
   m_Layer: 0
   m_Name: obstacle_19
   m_TagString: Untagged
@@ -76,8 +76,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &256475020279287438
-BoxCollider2D:
+--- !u!60 &2937826046262742138
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -99,6 +99,42 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 15.280273, y: -54.40741}
+      - {x: 24.335327, y: -55.966125}
+      - {x: 47.89926, y: -56.77533}
+      - {x: 44.09732, y: -66.054504}
+      - {x: 46.331482, y: -74.32764}
+      - {x: 56.436157, y: -70.869385}
+      - {x: 62.47705, y: -59.67279}
+      - {x: 60.467773, y: -54.3443}
+      - {x: 72.74017, y: -43.50482}
+      - {x: 72.93912, y: -29.994568}
+      - {x: 31.350098, y: -9.437744}
+      - {x: 30.661865, y: 9.23407}
+      - {x: 31.942139, y: 16.099976}
+      - {x: 41.6698, y: 39.47406}
+      - {x: 28.20639, y: 38.313293}
+      - {x: 28.059418, y: 44.090332}
+      - {x: 16.13144, y: 60.253845}
+      - {x: -0.5223999, y: 65.16583}
+      - {x: 4.273163, y: 70.68591}
+      - {x: -3.5499878, y: 74.406006}
+      - {x: -8.429077, y: 65.77338}
+      - {x: -56.94452, y: 53.372437}
+      - {x: -60.461823, y: 69.98297}
+      - {x: -67.10373, y: 66.63165}
+      - {x: -63.5813, y: 50.393494}
+      - {x: -75.400055, y: 42.89319}
+      - {x: -77.244385, y: -8.949646}
+      - {x: -47.576233, y: -20.738037}
+      - {x: -34.473846, y: -30.028503}
+      - {x: -37.176605, y: -74.31555}
+      - {x: -23.02018, y: -75.77137}
+      - {x: -21.495346, y: -73.40472}
+      - {x: -21.424133, y: -70.99921}
+      - {x: -20.842682, y: -60.292297}
+      - {x: -22.818573, y: -39.536987}
+      - {x: -19.739027, y: -43.204952}
+      - {x: 4.435645, y: -52.540653}

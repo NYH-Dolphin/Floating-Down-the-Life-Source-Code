@@ -34,7 +34,7 @@ public class GamePanel : BasePanel
         string LabelPath = "UI/Label";
         heightUI = Instantiate(Resources.Load<GameObject>(LabelPath),
             GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
-        heightUI.transform.localPosition = new Vector3(-275, 700, 0);
+        heightUI.transform.localPosition = new Vector3(-300, 730, 0);
 
         float end = 800;
         while (end > -800)

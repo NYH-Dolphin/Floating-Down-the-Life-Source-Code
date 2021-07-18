@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8590664206639729690}
   - component: {fileID: 4164053983904610770}
   - component: {fileID: 9114687274170220609}
-  - component: {fileID: 1313233564743693039}
+  - component: {fileID: 7511351518134390391}
   m_Layer: 0
   m_Name: obstacle_20
   m_TagString: Untagged
@@ -76,8 +76,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &1313233564743693039
-BoxCollider2D:
+--- !u!60 &7511351518134390391
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -99,6 +99,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 68.22763, y: -12.057922}
+      - {x: 74.86359, y: -9.914673}
+      - {x: 74.512665, y: 6.2318726}
+      - {x: 34.631798, y: 13.36694}
+      - {x: -5.587097, y: 22.969788}
+      - {x: -9.038635, y: 33.397522}
+      - {x: -57.355957, y: 46.94928}
+      - {x: -72.097015, y: 44.877625}
+      - {x: -75.27304, y: 34.637756}
+      - {x: -75.062836, y: -42.487854}
+      - {x: -69.37665, y: -49.28479}
+      - {x: -53.16342, y: -49.571777}
+      - {x: -9.728318, y: -36.39184}
+      - {x: -6.270447, y: -26.803833}
+      - {x: 2.8729415, y: -24.31329}
+      - {x: 38.166084, y: -16.666264}
