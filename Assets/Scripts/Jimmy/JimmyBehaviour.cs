@@ -14,14 +14,14 @@ public class JimmyBehaviour : MonoBehaviour
     public Animator animator;                   // Animator 组件
    
     private Boolean isCollide = false;          // 判断是否碰撞
-    private const int INVALIDTIMETICK = 1000;   // 无敌时间
+    private const int InvalidTimeTick = 300;   // 无敌时间
     private int invalidTimeCount = 0;           // 无敌时间记数
     private Renderer jimmyRenderer = null;      // Jimmy 的图片
     
     
     
     // 气球的名字和可以使用的气球
-    private static string[] balloonsName =
+    private static readonly string[] BalloonsName =
     {
         "blue_balloon", "cyan_balloon",
         "grassgreen_balloon", "green_balloon", "orange_balloon", "pink_balloon",
@@ -67,6 +67,8 @@ public class JimmyBehaviour : MonoBehaviour
         Float();
         if (isCollide) 
             Shake();
+        if (transform.localPosition.y < -700)
+            PanelManager.Open<OverPanel>();
     }
 
     // 无敌时间 + 闪烁
@@ -92,7 +94,7 @@ public class JimmyBehaviour : MonoBehaviour
             }
         }
 
-        if (++invalidTimeCount == INVALIDTIMETICK)
+        if (++invalidTimeCount == InvalidTimeTick)
         {
             jimmyRenderer.enabled = true;
             isCollide = false;
@@ -148,26 +150,15 @@ public class JimmyBehaviour : MonoBehaviour
 
         transform.position = p;
     }
-    
-    // public bool LoseBalloon(GameObject balloon)
-    // {
-    //     if (isCollide)
-    //         return false;
-    //
-    //     isCollide = true;
-    //     balloons.Remove(balloon);
-    //     CheckTerminate();
-    //     return true;
-    // }
 
     // 检查游戏是否终止
-    public void CheckTerminate()
+    private void CheckTerminate()
     {
-        Debug.Log("terminate:" + balloons.Count);
         if (balloons.Count == 0)
         {
-            Application.Quit();
-            Debug.Log("Terminated");
+            WallBehavior.Stop();
+            HeightRecord.Pause();
+            transform.GetComponent<Rigidbody2D>().gravityScale = 30;
         }
     }
     
@@ -180,7 +171,7 @@ public class JimmyBehaviour : MonoBehaviour
     private void InitialBalloonsAttribute()
     {
         
-        foreach (string balloonName in balloonsName)
+        foreach (string balloonName in BalloonsName)
         {
             balloonPool.Add(balloonName);
         }
