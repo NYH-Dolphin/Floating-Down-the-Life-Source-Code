@@ -10,6 +10,7 @@ public class GamePanel : BasePanel
     private List<GameObject> rightWall = new List<GameObject>();
     
     private GameObject Jimmy;
+    private GameObject heightUI; // 显示下降高度的UI组件
     private Button stop;
 
     //初始化
@@ -29,6 +30,11 @@ public class GamePanel : BasePanel
         Jimmy = Instantiate(Resources.Load<GameObject>(JimmyPath),
             GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
         Jimmy.transform.localPosition = new Vector3(0, 600, 0);
+        
+        string LabelPath = "UI/Label";
+        heightUI = Instantiate(Resources.Load<GameObject>(LabelPath),
+            GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+        heightUI.transform.localPosition = new Vector3(-275, 700, 0);
 
         float end = 800;
         while (end > -800)

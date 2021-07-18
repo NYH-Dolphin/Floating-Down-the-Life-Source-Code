@@ -5,23 +5,31 @@ using UnityEngine;
 public class CharacterBehaviour : MonoBehaviour
 {
     public Fungus.Flowchart flowchart;
-    private GameObject Jimmy;
+    protected GameObject Jimmy;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         Jimmy = transform.parent.parent.Find("Jimmy(Clone)").gameObject;
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         float distance = CalculateDistance();
         InBounds(distance);
         if (InConversation())
+        {
             WallBehavior.Stop();
+            HeightRecord.Pause();
+        }
         else
+        {
             WallBehavior.Move();
+            HeightRecord.Continue();
+        }
+
+        
     }
 
 
