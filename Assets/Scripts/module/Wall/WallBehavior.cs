@@ -12,7 +12,8 @@ public class WallBehavior : MonoBehaviour
         "obstacle_5","obstacle_11","obstacle_15","obstacle_17","obstacle_21"};
     private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8","obstacle_13","obstacle_14","obstacle_16"};
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    private readonly string[] _characterName = {"character1", "character2", "character3", "character4",};
+    private readonly string[] _characterName = {"character1", "character2", "character3", "character4","character5",
+        "character6","character7"};
 
 
     private static bool stop = false; // 如果有 conversation 停止

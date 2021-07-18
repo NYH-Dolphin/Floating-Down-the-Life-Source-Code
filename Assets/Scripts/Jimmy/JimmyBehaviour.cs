@@ -193,7 +193,7 @@ public class JimmyBehaviour : MonoBehaviour
         balloonsPosition.Add("grassgreen_balloon", new Vector3(0.8f,1f, 0f)); 
         balloonsPosition.Add("green_balloon", new Vector3(2f,3.2f, 0f)); 
         balloonsPosition.Add("skyblue_balloon", new Vector3(1.27f,2.57f, 0f));
-        
+
     }
 
     
@@ -207,6 +207,11 @@ public class JimmyBehaviour : MonoBehaviour
             GameObject balloon =
                 Instantiate(Resources.Load<GameObject>(_balloonPath), gameObject.transform, true);
             balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
+            if(status==floatingStatus.RIGHT)
+            {
+                balloon.transform.RotateAround(transform.position, transform.up, 180f);
+            }
+            
             balloons.Add(balloon);
         }
     }
