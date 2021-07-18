@@ -67,7 +67,7 @@ public class JimmyBehaviour : MonoBehaviour
         Float();
         if (isCollide)
         {
-            if(balloons.Count>2)
+            if(balloons.Count>0)
                 Shake();
         }
         if (transform.localPosition.y < -700)
@@ -157,7 +157,7 @@ public class JimmyBehaviour : MonoBehaviour
     // 检查游戏是否终止
     private void CheckTerminate()
     {
-        if (balloons.Count == 2)
+        if (balloons.Count == 0)
         {
             WallBehavior.Stop();
             HeightRecord.Pause();
@@ -267,7 +267,7 @@ public class JimmyBehaviour : MonoBehaviour
     // Jimmy 丢失一个气球
     private void LostBalloon()
     {
-        if (balloons.Count != 2)
+        if (balloons.Count > 0)
         {
             GameObject balloon = (GameObject) balloons[0];
             balloons.RemoveAt(0);
