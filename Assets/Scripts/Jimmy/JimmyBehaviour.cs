@@ -193,7 +193,7 @@ public class JimmyBehaviour : MonoBehaviour
         balloonsPosition.Add("blue_balloon", new Vector3(1.33f,3f, 0f)); 
         balloonsPosition.Add("purple_balloon", new Vector3(1.29f,2.96f, 0f)); 
         balloonsPosition.Add("grassgreen_balloon", new Vector3(0.8f,1f, 0f)); 
-        balloonsPosition.Add("green_balloon", new Vector3(1.38f,3.81f, 0f)); 
+        balloonsPosition.Add("green_balloon", new Vector3(2f,3.2f, 0f)); 
         balloonsPosition.Add("skyblue_balloon", new Vector3(1.27f,2.57f, 0f));
         
     }
