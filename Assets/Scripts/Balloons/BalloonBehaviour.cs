@@ -1,28 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class BalloonBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    static private JimmyBehaviour Jimmy = null;
+    private static JimmyBehaviour Jimmy = null;
 
-    static public void setJimmyBehaviour(JimmyBehaviour j)
+    public static void setJimmyBehaviour(JimmyBehaviour j)
     {
         Jimmy = j;
     }
 
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 
     // private void OnTriggerEnter2D(Collider2D collision)

@@ -9,7 +9,7 @@ public class JimmyBehaviour : MonoBehaviour
 {
     
     
-    private ArrayList balloons = new ArrayList();
+    public ArrayList balloons = new ArrayList();
     private float speed = 500;                  // Jimmy 做匀速直线运动的速度
     public Animator animator;                   // Animator 组件
    
@@ -148,12 +148,6 @@ public class JimmyBehaviour : MonoBehaviour
 
         transform.position = p;
     }
-
-    
-    
-
-
-    
     
     // public bool LoseBalloon(GameObject balloon)
     // {
@@ -176,7 +170,6 @@ public class JimmyBehaviour : MonoBehaviour
             Debug.Log("Terminated");
         }
     }
-    
     
     /// <summary>
     /// Jimmy 与气球交互的代码
