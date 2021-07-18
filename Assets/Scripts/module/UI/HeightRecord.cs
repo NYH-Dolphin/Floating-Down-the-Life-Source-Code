@@ -21,8 +21,6 @@ public class HeightRecord : MonoBehaviour
             height += Time.deltaTime;
             heightRecord.GetComponent<TMP_Text>().text = (int) height + " m";
         }
-
-
     }
 
 
@@ -36,6 +34,12 @@ public class HeightRecord : MonoBehaviour
     public static void Continue()
     {
         pause = false;
+    }
+
+    
+    public int GetHeight()
+    {
+        return (int)height;
     }
 
 

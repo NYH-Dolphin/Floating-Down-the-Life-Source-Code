@@ -34,7 +34,7 @@ public class CharacterBehaviour : MonoBehaviour
 
 
     // 计算角色与 Jimmy 之间的距离
-    private float CalculateDistance()
+    protected float CalculateDistance()
     {
         Vector2 p1 = Jimmy.transform.position;
         Vector2 p2 = transform.position;
@@ -42,7 +42,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     // 在范围内 - 可以触发与 Jimmy 之间的会话
-    private void InBounds(float distance)
+    protected void InBounds(float distance)
     {
         if (distance <= 200)
         {
@@ -54,7 +54,7 @@ public class CharacterBehaviour : MonoBehaviour
     }
 
     // 正在与角色处于对话状态中
-    private bool InConversation()
+    protected bool InConversation()
     {
         return flowchart.GetBooleanVariable("conversation");
     }

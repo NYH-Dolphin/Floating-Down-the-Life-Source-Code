@@ -6,26 +6,42 @@ public class WallBehavior : MonoBehaviour
 {
     private float speed = 100f;
 
-    private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9"};
-    private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_4", "obstacle_5"};
-    private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8"};
+    private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9",
+        "obstacle_10","obstacle_12","obstacle_18","obstacle_19","obstacle_20"};
+    private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_4", 
+        "obstacle_5","obstacle_11","obstacle_15","obstacle_17","obstacle_21"};
+    private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8","obstacle_13","obstacle_14","obstacle_16"};
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    private readonly string[] _characterName = {"character1", "character2", "character3", "character4"};
+    private readonly string[] _characterName = {"character1", "character2", "character3", "character4",};
 
 
     private static bool stop = false; // 如果有 conversation 停止
     private GameObject window;
     public GameObject character;
 
+    private GameObject LebelUI; // 找到高度记录时间
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public void generate()
     {
-        if (RandomGenerate(40))
+        // 生成障碍物的概率随时间而增加
+        LebelUI = transform.parent.Find("Label(Clone)").gameObject;
+        int obstaclePossibility = LebelUI.GetComponent<HeightRecord>().GetHeight();
+        obstaclePossibility /= 4;
+        if (obstaclePossibility <= 10)
+        {
+            obstaclePossibility = 10;
+        }else if (obstaclePossibility >= 50)
+        {
+            obstaclePossibility = 50;
+        }
+        Debug.Log(obstaclePossibility);
+
+        if (RandomGenerate(obstaclePossibility))
         {
             Vector3 p = transform.position;
             if (p.x < 0)
@@ -68,7 +84,7 @@ public class WallBehavior : MonoBehaviour
                 if (GetComponent<RectTransform>().rect.height >= 300)
                 {
                     // 40% 的概率生成一个 window 和 character
-                    if (RandomGenerate(40))
+                    if (RandomGenerate(20))
                     {
                         // 角色
                         string characterName = _characterName[Random.Range(0, _characterName.Length)];
