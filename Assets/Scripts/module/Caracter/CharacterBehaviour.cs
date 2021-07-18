@@ -7,6 +7,8 @@ public class CharacterBehaviour : MonoBehaviour
     public Fungus.Flowchart flowchart;
     protected GameObject Jimmy;
 
+    public static bool real_stop = false;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -23,13 +25,11 @@ public class CharacterBehaviour : MonoBehaviour
             WallBehavior.Stop();
             HeightRecord.Pause();
         }
-        else
+        else if (!real_stop)
         {
             WallBehavior.Move();
             HeightRecord.Continue();
         }
-
-        
     }
 
 

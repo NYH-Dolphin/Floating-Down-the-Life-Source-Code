@@ -161,7 +161,8 @@ public class JimmyBehaviour : MonoBehaviour
         {
             WallBehavior.Stop();
             HeightRecord.Pause();
-            // Time.timeScale = 0;
+            CharacterBehaviour.real_stop = true;
+            // Time.timeScale. = 0;
             // GetComponent<SpriteRenderer>().sortingOrder = -1;
             // foreach (GameObject balloon in GetComponent<JimmyBehaviour>().balloons)
             //     balloon.GetComponent<SpriteRenderer>().sortingOrder = -1;

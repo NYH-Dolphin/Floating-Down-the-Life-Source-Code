@@ -34,6 +34,7 @@ public class OverPanel : BasePanel
     {
         WallBehavior.Move();
         HeightRecord.Continue();
+        CharacterBehaviour.real_stop = false;
         PanelManager.panels["GamePanel"].Close();
         PanelManager.Open<BeginPanel>();
         Close();
