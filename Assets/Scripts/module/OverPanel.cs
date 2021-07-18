@@ -1,28 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StopPanel : BasePanel
+public class OverPanel : BasePanel
 {
-
-    private Button continueButton;
+    
     private Button homeButton;
     private Button retryButton;
     
     //初始化
     public override void OnInit()
     {
-        skinPath = "StopPanel";
+        skinPath = "OverPanel";
         layer = PanelManager.Layer.Panel;
     }
 
     //显示
     public override void OnShow(params object[] args)
     {
-        continueButton = skin.transform.Find("continue").GetComponent<Button>();
         homeButton = skin.transform.Find("home").GetComponent<Button>();
         retryButton = skin.transform.Find("retry").GetComponent<Button>();
         
-        continueButton.onClick.AddListener(OnContinueClick);
         homeButton.onClick.AddListener(OnHomeClick);
         retryButton.onClick.AddListener(OnRetryClick);
     }
@@ -33,18 +30,11 @@ public class StopPanel : BasePanel
 		
     }
 
-    private void OnContinueClick()
-    {
-        GamePanel gamePanel = (GamePanel) PanelManager.panels["GamePanel"];
-        gamePanel.OnStopClick();
-        Close();
-    }
-    
     private void OnHomeClick()
     {
-        GamePanel gamePanel = (GamePanel) PanelManager.panels["GamePanel"];
-        gamePanel.OnStopClick();
-        gamePanel.Close();
+        WallBehavior.Move();
+        HeightRecord.Continue();
+        PanelManager.panels["GamePanel"].Close();
         PanelManager.Open<BeginPanel>();
         Close();
     }

@@ -109,7 +109,6 @@ public class GamePanel : BasePanel
     {
         leftWall = new List<GameObject>();
         rightWall = new List<GameObject>();
-        OnStopClick();
     }
     
     // 墙壁、障碍物、窗台和角色的随机生成

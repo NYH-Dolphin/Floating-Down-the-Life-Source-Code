@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallBehavior : MonoBehaviour
 {
-    private float speed = 100f;
+    private float speed = 200f;
 
     private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9",
         "obstacle_10","obstacle_12","obstacle_18","obstacle_19","obstacle_20"};
