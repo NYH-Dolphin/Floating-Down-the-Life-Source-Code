@@ -6,7 +6,7 @@ public class OverPanel : BasePanel
     
     private Button homeButton;
     private Button retryButton;
-    
+
     //初始化
     public override void OnInit()
     {
@@ -42,9 +42,12 @@ public class OverPanel : BasePanel
     
     private void OnRetryClick()
     {
-        // PanelManager.panels["GamePanel"].Close();
-        // PanelManager.Open<GamePanel>();
-        // Close();
+        WallBehavior.Move();
+        HeightRecord.Continue();
+        CharacterBehaviour.real_stop = false;
+        PanelManager.panels["GamePanel"].Close();
+        PanelManager.Open<StartPanel>();
+        Close();
     }
     
 }

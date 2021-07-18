@@ -51,9 +51,11 @@ public class StopPanel : BasePanel
     
     private void OnRetryClick()
     {
-        // PanelManager.panels["GamePanel"].Close();
-        // PanelManager.Open<GamePanel>();
-        // Close();
+        GamePanel gamePanel = (GamePanel) PanelManager.panels["GamePanel"];
+        gamePanel.OnStopClick();
+        gamePanel.Close();
+        PanelManager.Open<StartPanel>();
+        Close();
     }
     
 }

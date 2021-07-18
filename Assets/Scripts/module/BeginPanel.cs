@@ -31,7 +31,7 @@ public class BeginPanel : BasePanel
 	//当按下开始按钮
 	public void OnBeginClick()
 	{
-		PanelManager.Open<GamePanel>();
+		PanelManager.Open<StartPanel>();
 		Close();
 	}
 	
