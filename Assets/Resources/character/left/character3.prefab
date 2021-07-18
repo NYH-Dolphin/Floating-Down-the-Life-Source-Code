@@ -83,7 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff37df2e37325794a83943a37ea599bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstMeet: 1
   flowchart: {fileID: 1172227724877780888}
 --- !u!222 &2026594612048843009
 CanvasRenderer:
@@ -231,7 +230,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 71.81821
+    width: 111.81821
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -621,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
+  scope: 2
   key: conversation
   value: 0
 --- !u!114 &4376952761866533863

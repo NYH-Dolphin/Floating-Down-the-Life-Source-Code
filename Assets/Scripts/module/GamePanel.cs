@@ -9,6 +9,7 @@ public class GamePanel : BasePanel
     private List<GameObject> rightWall = new List<GameObject>();
     
     private GameObject Jimmy;
+    private GameObject heightUI; // 显示下降高度的UI组件
 
     //初始化
     public override void OnInit()
@@ -25,6 +26,14 @@ public class GamePanel : BasePanel
             GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
         Jimmy.transform.localPosition = new Vector3(0, 300, 0);
 
+        // 下落高度的设置
+        string LabelPath = "UI/Label";
+        heightUI = Instantiate(Resources.Load<GameObject>(LabelPath),
+            GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+        heightUI.transform.localPosition = new Vector3(-150, 800, 0);
+        // heightUI.transform.Find("LabelText").GetComponent<TMP_Text>().text = height + " m";
+
+        
         float end = 800;
         while (end > -800)
         {

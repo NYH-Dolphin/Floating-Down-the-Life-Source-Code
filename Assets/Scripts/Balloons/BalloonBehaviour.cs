@@ -24,15 +24,15 @@ public class BalloonBehaviour : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("balloon: OnTriggerEnter2D");
-        // collision.gameObject.transform.position = Vector3.zero;
-        if (collision.gameObject.name.Contains("obstacle"))
-        {
-            DestroyThisBalloon();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     Debug.Log("balloon: OnTriggerEnter2D");
+    //     // collision.gameObject.transform.position = Vector3.zero;
+    //     if (collision.gameObject.name.Contains("obstacle"))
+    //     {
+    //         DestroyThisBalloon();
+    //     }
+    // }
 
 
     private void DestroyThisBalloon()
@@ -45,8 +45,5 @@ public class BalloonBehaviour : MonoBehaviour
             Destroy(transform.gameObject);
             Debug.Log("Calling Destroy: " + name);
         }
-
-        
-        
     }
 }

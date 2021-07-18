@@ -19,9 +19,17 @@ public class CharacterBehaviour : MonoBehaviour
         float distance = CalculateDistance();
         InBounds(distance);
         if (InConversation())
+        {
             WallBehavior.Stop();
+            HeightRecord.Pause();
+        }
         else
+        {
             WallBehavior.Move();
+            HeightRecord.Continue();
+        }
+
+        
     }
 
 

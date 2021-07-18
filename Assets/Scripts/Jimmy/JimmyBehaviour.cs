@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class JimmyBehaviour : MonoBehaviour
 {
-    
     private ArrayList balloons = new ArrayList();
     private float speed = 500; // 这里做匀速直线运动
     public Animator animator;  // Animator 组件
    
     private Boolean isCollide = false;
-    private const int INVALIDTIMETICK = 300;
+    private const int INVALIDTIMETICK = 2000;
     private int invalidTimeCount = 0;
     private Renderer jimmyRenderer = null;
-    
+
     private enum floatingStatus
     {
         RIGHT,
@@ -28,18 +27,21 @@ public class JimmyBehaviour : MonoBehaviour
     void Start()
     {
         jimmyRenderer = gameObject.GetComponent<Renderer>();
-        GameObject balloon = Instantiate(Resources.Load<GameObject>("Balloons/cyan_balloon"), gameObject.transform, true);
-        balloon.transform.localPosition = new Vector3(1,3,0);
+        GameObject balloon =
+            Instantiate(Resources.Load<GameObject>("Balloons/cyan_balloon"), gameObject.transform, true);
+        balloon.transform.localPosition = new Vector3(1, 3, 0);
         balloons.Add(balloon);
-        
-        GameObject balloon2 = Instantiate(Resources.Load<GameObject>("Balloons/grassgreen_balloon"), gameObject.transform, true);
-        balloon2.transform.localPosition = new Vector3(0.8f,1,0);
+
+        GameObject balloon2 = Instantiate(Resources.Load<GameObject>("Balloons/grassgreen_balloon"),
+            gameObject.transform, true);
+        balloon2.transform.localPosition = new Vector3(0.8f, 1, 0);
         balloons.Add(balloon2);
-        
-        GameObject balloon3 = Instantiate(Resources.Load<GameObject>("Balloons/purple_balloon"), gameObject.transform, true);
-        balloon3.transform.localPosition = new Vector3(1.3f,3.1f,0);
+
+        GameObject balloon3 = Instantiate(Resources.Load<GameObject>("Balloons/purple_balloon"), gameObject.transform,
+            true);
+        balloon3.transform.localPosition = new Vector3(1.3f, 3.1f, 0);
         balloons.Add(balloon3);
-        
+
         BalloonBehaviour.setJimmyBehaviour(this);
     }
 
@@ -47,21 +49,31 @@ public class JimmyBehaviour : MonoBehaviour
     void Update()
     {
         Float();
-        if (isCollide)
-        {
+        if (isCollide) 
             Shake();
-        }
     }
 
+    // 无敌闪烁
     private void Shake()
     {
-        if (invalidTimeCount % 30 == 0)
+        int mod = invalidTimeCount % 100;
+        if (mod >= 0 && mod <= 50)
         {
             jimmyRenderer.enabled = false;
+            for (int i = 0; i < balloons.Count; i++)
+            {
+                GameObject balloon = (GameObject) balloons[i];
+                balloon.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
-        else if(invalidTimeCount%30==15)
+        else
         {
             jimmyRenderer.enabled = true;
+            for (int i = 0; i < balloons.Count; i++)
+            {
+                GameObject balloon = (GameObject) balloons[i];
+                balloon.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
 
         if (++invalidTimeCount == INVALIDTIMETICK)
@@ -80,35 +92,33 @@ public class JimmyBehaviour : MonoBehaviour
             isCollide = true;
             DestroyBalloon();
         }
-
-        
     }
 
     private void DestroyBalloon()
     {
         if (balloons.Count != 0)
         {
-            GameObject balloon = (GameObject)balloons[0];
+            GameObject balloon = (GameObject) balloons[0];
             balloons.RemoveAt(0);
             Destroy(balloon);
         }
+
         CheckTerminate();
     }
-    
-    
+
 
     void Float()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         Vector2 p = transform.position;
         // 按动 A 键 - 向左移动
-        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Debug.Log("LEFT");
             // 位置移动
             p.x += moveX * speed * Time.deltaTime;
             // Animation Controller 的参数状态更新
-            animator.SetBool("floatLeft",true);
+            animator.SetBool("floatLeft", true);
 
             if (status != floatingStatus.LEFT)
             {
@@ -117,11 +127,12 @@ public class JimmyBehaviour : MonoBehaviour
             }
 
             // 按动 D 键 - 向右移动
-        }else if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             Debug.Log("RIGHT");
             p.x += moveX * speed * Time.deltaTime;
-            animator.SetBool("floatLeft",false);
+            animator.SetBool("floatLeft", false);
 
             if (status != floatingStatus.RIGHT)
             {
@@ -129,6 +140,7 @@ public class JimmyBehaviour : MonoBehaviour
                 NotifyBalloons();
             }
         }
+
         transform.position = p;
     }
 
@@ -136,34 +148,30 @@ public class JimmyBehaviour : MonoBehaviour
     {
         foreach (GameObject balloon in balloons)
         {
-            balloon.transform.RotateAround(transform.position,transform.up, 180f);
-
+            balloon.transform.RotateAround(transform.position, transform.up, 180f);
         }
     }
 
-    public Boolean LoseBalloon(GameObject balloon)
+    public bool LoseBalloon(GameObject balloon)
     {
         if (isCollide)
-        {
             return false;
-        }
 
         isCollide = true;
         balloons.Remove(balloon);
-   
         CheckTerminate();
         return true;
     }
 
+    // 检查游戏是否终止
     public void CheckTerminate()
     {
-        Debug.Log("terminate:"+balloons.Count);
+        Debug.Log("terminate:" + balloons.Count);
         if (balloons.Count == 0)
         {
             Application.Quit();
             Debug.Log("Terminated");
         }
-
     }
 
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8285047156466560508}
   - component: {fileID: 8621577801560906775}
   - component: {fileID: 8648627425600911715}
-  - component: {fileID: 148207096272082706}
   - component: {fileID: 7084245635522499854}
   - component: {fileID: 7519416276732299933}
   - component: {fileID: 8972828987574048919}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 2787388248592869349}
   - component: {fileID: 7523029825613124191}
   - component: {fileID: 8822538747202480539}
+  - component: {fileID: 1954440726510939582}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -67,7 +67,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 8648627425600911715}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 7084245635522499854}
   variables:
   - {fileID: 7519416276732299933}
   - {fileID: 2787388248592869349}
@@ -97,7 +98,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 68.369865
     y: 74.1096
-    width: 69.1781
+    width: 109.1781
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -109,37 +110,10 @@ MonoBehaviour:
   - {fileID: 8972828987574048919}
   - {fileID: 9047119644647894939}
   - {fileID: 8822538747202480539}
-  - {fileID: 148207096272082706}
+  - {fileID: 1954440726510939582}
   - {fileID: 7084245635522499854}
   - {fileID: 7523029825613124191}
   suppressAllAutoSelections: 0
---- !u!114 &148207096272082706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529881134581297279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 1
-  indentLevel: 1
-  storyText: Can you hear me?
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &7084245635522499854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
+  scope: 2
   key: conversation
   value: 0
 --- !u!114 &7523029825613124191
@@ -794,6 +768,33 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &1954440726510939582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529881134581297279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 1
+  storyText: Can you hear me?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &4561069915713398964
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff37df2e37325794a83943a37ea599bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstMeet: 1
   flowchart: {fileID: 8621577801560906775}
 --- !u!114 &2761394661580080652
 MonoBehaviour:
