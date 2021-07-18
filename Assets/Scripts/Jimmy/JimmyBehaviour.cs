@@ -6,7 +6,7 @@ using UnityEngine;
 public class JimmyBehaviour : MonoBehaviour
 {
     
-    private ArrayList balloons = new ArrayList();
+    public ArrayList balloons = new ArrayList();
     private float speed = 500; // 这里做匀速直线运动
     public Animator animator;  // Animator 组件
    

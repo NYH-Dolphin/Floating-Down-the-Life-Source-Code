@@ -20,6 +20,11 @@ public class WallBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void generate()
+    {
         if (RandomGenerate(40))
         {
             Vector3 p = transform.position;
