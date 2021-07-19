@@ -72,6 +72,10 @@ public class JimmyBehaviour : MonoBehaviour
         }
         if (transform.localPosition.y < -700)
             PanelManager.Open<OverPanel>();
+        if (Input.GetKey(KeyCode.S))
+            WallBehavior.SetSpeed(400f);
+        else
+            WallBehavior.SetSpeed(350f - balloons.Count * 30 < 200 ? 200 : 350f - balloons.Count * 30);
     }
 
     // 无敌时间 + 闪烁

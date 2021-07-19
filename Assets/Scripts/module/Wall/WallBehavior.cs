@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WallBehavior : MonoBehaviour
 {
-    private float speed = 200f;
+    private static float speed = 200f;
 
     private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9",
         "obstacle_10","obstacle_12","obstacle_18","obstacle_19","obstacle_20"};
@@ -25,6 +26,7 @@ public class WallBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     public void generate()
@@ -128,7 +130,6 @@ public class WallBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         // 继续运动
         if (!stop)
         {
@@ -164,6 +165,16 @@ public class WallBehavior : MonoBehaviour
     public static void Move()
     {
         stop = false;
+    }
+
+    public static void SetSpeed(float speed)
+    {
+        WallBehavior.speed = speed;
+    }
+
+    public static float GetSpeed()
+    {
+        return WallBehavior.speed;
     }
     
 }

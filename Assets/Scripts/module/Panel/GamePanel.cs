@@ -116,7 +116,7 @@ public class GamePanel : BasePanel
     {
         // 左墙壁随机生成
         GameObject lastLeft = leftWall.Last();
-        if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -805)
+        if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -815)
         {
             string path = "";
             float random = Random.Range(0f, 1f);
@@ -137,7 +137,7 @@ public class GamePanel : BasePanel
 
         // 右墙壁随机生成
         GameObject lastRight = rightWall.Last();
-        if (lastRight.transform.localPosition.y - lastRight.GetComponent<RectTransform>().rect.height / 2 >= -805)
+        if (lastRight.transform.localPosition.y - lastRight.GetComponent<RectTransform>().rect.height / 2 >= -815)
         {
             string path = "";
             float random = Random.Range(0f, 1f);
@@ -158,7 +158,7 @@ public class GamePanel : BasePanel
 
         // 左墙壁销毁
         GameObject firstLeft = leftWall.First();
-        if (firstLeft.transform.localPosition.y - firstLeft.GetComponent<RectTransform>().rect.height / 2 >= 805)
+        if (firstLeft.transform.localPosition.y - firstLeft.GetComponent<RectTransform>().rect.height / 2 >= 815)
         {
             leftWall.Remove(firstLeft);
             Destroy(firstLeft);
@@ -166,7 +166,7 @@ public class GamePanel : BasePanel
 
         // 右角色销毁
         GameObject firstRight = rightWall.First();
-        if (firstRight.transform.localPosition.y - firstRight.GetComponent<RectTransform>().rect.height / 2 >= 805)
+        if (firstRight.transform.localPosition.y - firstRight.GetComponent<RectTransform>().rect.height / 2 >= 815)
         {
             rightWall.Remove(firstRight);
             Destroy(firstRight);

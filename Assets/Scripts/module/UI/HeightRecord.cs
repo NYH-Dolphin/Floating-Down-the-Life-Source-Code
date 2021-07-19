@@ -18,7 +18,7 @@ public class HeightRecord : MonoBehaviour
     {
         if (!pause)
         {
-            height += Time.deltaTime;
+            height += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
             heightRecord.GetComponent<TMP_Text>().text = (int) height + " m";
         }
     }
