@@ -18,9 +18,9 @@ public class StopPanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
-        continueButton = skin.transform.Find("continue").GetComponent<Button>();
-        homeButton = skin.transform.Find("home").GetComponent<Button>();
-        retryButton = skin.transform.Find("retry").GetComponent<Button>();
+        continueButton = skin.transform.Find("background/continue").GetComponent<Button>();
+        homeButton = skin.transform.Find("background/home").GetComponent<Button>();
+        retryButton = skin.transform.Find("background/retry").GetComponent<Button>();
         
         continueButton.onClick.AddListener(OnContinueClick);
         homeButton.onClick.AddListener(OnHomeClick);

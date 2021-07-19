@@ -17,8 +17,8 @@ public class OverPanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
-        homeButton = skin.transform.Find("home").GetComponent<Button>();
-        retryButton = skin.transform.Find("retry").GetComponent<Button>();
+        homeButton = skin.transform.Find("background/home").GetComponent<Button>();
+        retryButton = skin.transform.Find("background/retry").GetComponent<Button>();
         
         homeButton.onClick.AddListener(OnHomeClick);
         retryButton.onClick.AddListener(OnRetryClick);

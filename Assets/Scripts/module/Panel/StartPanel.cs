@@ -13,6 +13,7 @@ public class StartPanel : BasePanel
     private GameObject black;
     private float a = 0f;
     private Button skip;
+    private Boolean skipClicked = false;
 
     //初始化
     public override void OnInit()
@@ -34,8 +35,7 @@ public class StartPanel : BasePanel
 
     private void OnSkipClick()
     {
-        PanelManager.Open<GamePanel>();
-        Close();
+        skipClicked = true;
     }
 
     //关闭
@@ -54,7 +54,7 @@ public class StartPanel : BasePanel
             Jimmy.transform.position += new Vector3(1, 1, 0) * (speed * Time.smoothDeltaTime);
         }
         animator.SetFloat("posX", Jimmy.transform.position.x);
-        if (Jimmy.transform.position.y < -500)
+        if (Jimmy.transform.position.y < -500 || skipClicked)
         {
             a += Time.smoothDeltaTime;
             black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
