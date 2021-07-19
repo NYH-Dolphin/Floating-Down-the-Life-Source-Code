@@ -8,6 +8,8 @@ public class Collection
     private int ID;
     private String Name;
     private String Description;
+    
+    private static int maxCount;
 
     public Collection(int id)
     {

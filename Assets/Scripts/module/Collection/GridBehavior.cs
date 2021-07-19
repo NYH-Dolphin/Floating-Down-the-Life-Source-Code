@@ -15,4 +15,9 @@ public class GridBehavior : MonoBehaviour
     {
         
     }
+
+    public void Init(int id)
+    {
+        
+    }
 }

@@ -7,6 +7,7 @@ public class StopPanel : BasePanel
     private Button continueButton;
     private Button homeButton;
     private Button retryButton;
+    private Button collectionButton;
     
     //初始化
     public override void OnInit()
@@ -21,10 +22,12 @@ public class StopPanel : BasePanel
         continueButton = skin.transform.Find("background/continue").GetComponent<Button>();
         homeButton = skin.transform.Find("background/home").GetComponent<Button>();
         retryButton = skin.transform.Find("background/retry").GetComponent<Button>();
+        collectionButton = skin.transform.Find("background/collection").GetComponent<Button>();
         
         continueButton.onClick.AddListener(OnContinueClick);
         homeButton.onClick.AddListener(OnHomeClick);
         retryButton.onClick.AddListener(OnRetryClick);
+        collectionButton.onClick.AddListener(OnCollectionClick);
     }
 
     //关闭
@@ -55,6 +58,12 @@ public class StopPanel : BasePanel
         gamePanel.OnStopClick();
         gamePanel.Close();
         PanelManager.Open<StartPanel>();
+        Close();
+    }
+    
+    private void OnCollectionClick()
+    {
+        PanelManager.Open<CollectionPanel>();
         Close();
     }
     
