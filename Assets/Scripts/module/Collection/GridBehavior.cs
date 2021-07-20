@@ -33,14 +33,14 @@ public class GridBehavior : MonoBehaviour
     {
         if (id >= MAXCOLLCNT)
         {
-            gameObject.transform.FindChild("lock").gameObject.SetActive(false);
+            gameObject.transform.Find("lock").gameObject.SetActive(false);
             return;
         }
 
         this.ID = id;
         this.Locked = isLocked;
         String CollectionName = "coll" + (this.ID+1);
-        LockIcon = gameObject.transform.FindChild("lock").gameObject;
+        LockIcon = gameObject.transform.Find("lock").gameObject;
         CollectionIcon = gameObject.transform.Find(CollectionName).gameObject;
         ChangeIconVisibility(); 
         
