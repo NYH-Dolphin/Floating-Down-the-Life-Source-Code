@@ -149,7 +149,7 @@ public class GamePanel : BasePanel
             Destroy(firstLeft);
         }
 
-        // 右角色销毁
+        // 右墙壁销毁
         GameObject firstRight = rightWall.First();
         if (firstRight.transform.localPosition.y - firstRight.GetComponent<RectTransform>().rect.height / 2 >= 815)
         {
