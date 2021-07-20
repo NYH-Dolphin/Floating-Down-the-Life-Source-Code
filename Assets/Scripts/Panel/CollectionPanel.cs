@@ -11,11 +11,33 @@ public class CollectionPanel : BasePanel
     private Button close;
 
     private List<GameObject> girds = new List<GameObject>();
+    
+    public static int COLLECTIONCNT;
+    public static Collection[] AllCollections;
+    private static int[] Unlocked;
+
+    private static GridBehavior[] observerList;
+    
+    
     //初始化
     public override void OnInit()
     {
         skinPath = "CollectionPanel";
         layer = PanelManager.Layer.Panel;
+        
+        COLLECTIONCNT = 12 * Page;
+        AllCollections = new Collection[COLLECTIONCNT];
+        Unlocked = new int[COLLECTIONCNT];
+        observerList = new GridBehavior[COLLECTIONCNT];
+
+        for (int i = 0; i < COLLECTIONCNT; i++)
+        {
+            AllCollections[i] = new Collection(i);
+        }
+        
+        Unlocked[2] = 1;
+        Unlocked[0] = 1;
+        Unlocked[3] = 4;
     }
 
     //显示

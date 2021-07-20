@@ -10,7 +10,7 @@ public class JimmyBehaviour : MonoBehaviour
     
     
     public ArrayList balloons = new ArrayList();
-    private float speed = 500;                  // Jimmy 做匀速直线运动的速度
+    // private float speed = 700;                  // Jimmy 做匀速直线运动的速度
     public Animator animator;                   // Animator 组件
    
     private Boolean isCollide = false;          // 判断是否碰撞
@@ -65,6 +65,9 @@ public class JimmyBehaviour : MonoBehaviour
     void Update()
     {
         Float();
+        ControlSpeed();
+        
+        
         if (isCollide)
         {
             if(balloons.Count>0)
@@ -72,12 +75,41 @@ public class JimmyBehaviour : MonoBehaviour
         }
         if (transform.localPosition.y < -700)
             PanelManager.Open<OverPanel>();
+    }
+
+
+    private const float DASHSPEED = 500f;
+    private const float MINSPEED = 200f;
+    private const float MAXSPEED = 400f;
+    // 全局控制墙壁的生成速度 —— 相对是 Jimmy 的移动速度
+    private void ControlSpeed()
+    {
+        float changeSpeed = 500 - balloons.Count * 120f;
+        // 冲刺加速
         if (Input.GetKey(KeyCode.S))
-            WallBehavior.SetSpeed(400f);
-        else if (balloons.Count < 3)
-            WallBehavior.SetSpeed(300f);
+        {
+            float currentSpeed = WallBehavior.GetSpeed();
+            currentSpeed += Time.deltaTime * 100;
+            currentSpeed = currentSpeed >= DASHSPEED ? DASHSPEED : currentSpeed;
+            WallBehavior.SetSpeed(currentSpeed);
+        }
+        // 根据气球个数设定
         else
-            WallBehavior.SetSpeed(200f);
+        {
+            changeSpeed = changeSpeed >= MAXSPEED ? MAXSPEED : changeSpeed;
+            changeSpeed = changeSpeed <= MINSPEED ? MINSPEED : changeSpeed;
+            float currentSpeed = WallBehavior.GetSpeed();
+            if (currentSpeed < changeSpeed)
+            {
+                currentSpeed += Time.deltaTime * 40;
+                WallBehavior.SetSpeed(currentSpeed);
+            }
+            else
+            {
+                currentSpeed -= Time.deltaTime * 40;
+                WallBehavior.SetSpeed(currentSpeed);
+            }
+        }
     }
 
     // 无敌时间 + 闪烁
@@ -123,16 +155,25 @@ public class JimmyBehaviour : MonoBehaviour
     }
 
     // Jimmy 的移动
+
+    private const float MAXFLOATSPEED = 500f;
+    private const float MINFLOATSPEED = 100f;
+    private float floatSpeed = 100f;
+    
     void Float()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         Vector2 p = transform.position;
-        // 按动 A 键 - 向左移动
+        // 向左移动
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("LEFT");
+            
+            // Debug.Log("LEFT");
+            floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
+            floatSpeed += Time.deltaTime * 700;
+            floatSpeed = floatSpeed >= MAXFLOATSPEED ? MAXFLOATSPEED : floatSpeed;
             // 位置移动
-            p.x += moveX * speed * Time.deltaTime;
+            p.x += moveX * floatSpeed * Time.deltaTime;
             // Animation Controller 的参数状态更新
             animator.SetBool("floatLeft", true);
 
@@ -141,13 +182,16 @@ public class JimmyBehaviour : MonoBehaviour
                 status = floatingStatus.LEFT;
                 NotifyBalloons();
             }
-
-            // 按动 D 键 - 向右移动
         }
+        // 向右移动
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("RIGHT");
-            p.x += moveX * speed * Time.deltaTime;
+            
+            // Debug.Log("RIGHT");
+            floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
+            floatSpeed += Time.deltaTime * 700;
+            floatSpeed = floatSpeed >= MAXFLOATSPEED ? MAXFLOATSPEED : floatSpeed;
+            p.x += moveX * floatSpeed * Time.deltaTime;
             animator.SetBool("floatLeft", false);
 
             if (status != floatingStatus.RIGHT)
@@ -156,7 +200,21 @@ public class JimmyBehaviour : MonoBehaviour
                 NotifyBalloons();
             }
         }
-
+        // 缓慢停止
+        else
+        {
+            floatSpeed -= Time.deltaTime * 700;
+            floatSpeed = floatSpeed <= 0 ? 0 : floatSpeed;
+            if (status == floatingStatus.LEFT)
+            {
+                p.x += -0.7f * floatSpeed * Time.deltaTime;
+            }
+            else
+            {
+                p.x += 0.7f * floatSpeed * Time.deltaTime;
+            }
+        }
+        // Debug.Log(floatSpeed);
         transform.position = p;
     }
 
@@ -235,7 +293,6 @@ public class JimmyBehaviour : MonoBehaviour
         balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
         balloons.Add(balloon);
     }
-    
     
     
     // Jimmy 随机从气球池使用一个气球
