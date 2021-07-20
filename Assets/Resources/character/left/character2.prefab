@@ -74,8 +74,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 8648627425600911715}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 7519416276732299933}
@@ -1856,7 +1855,6 @@ GameObject:
   - component: {fileID: 1111472918232250515}
   - component: {fileID: 3082223172324427905}
   - component: {fileID: 8220191135864792376}
-  - component: {fileID: -6333953658405513612}
   - component: {fileID: 2761394661580080652}
   - component: {fileID: 6913530130921986470}
   - component: {fileID: 6199129315600072877}
@@ -1925,19 +1923,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-6333953658405513612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561069915713398964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff37df2e37325794a83943a37ea599bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flowchart: {fileID: 8621577801560906775}
 --- !u!114 &2761394661580080652
 MonoBehaviour:
   m_ObjectHideFlags: 0

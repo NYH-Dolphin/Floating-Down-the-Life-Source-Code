@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -47,35 +48,19 @@ public class GamePanel : BasePanel
                 path = "walls/WallM";
             else
                 path = "walls/WallL";
-            GameObject wall = Instantiate(Resources.Load<GameObject>(path),
+            GameObject wallL = Instantiate(Resources.Load<GameObject>(path),
                 GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
-            float height = wall.GetComponent<RectTransform>().rect.height;
-            wall.transform.localPosition = new Vector3(450, end - height / 2, 0);
-            end -= height;
-            leftWall.Add(wall);
-            wall.transform.SetAsFirstSibling();
-        }
-
-        end = 800;
-        while (end > -800)
-        {
-            string path = "";
-            float random = Random.Range(0f, 1f);
-            if (random < 0.4)
-                path = "walls/WallS";
-            else if (random < 0.8)
-                path = "walls/WallM";
-            else
-                path = "walls/WallL";
-            GameObject wall = Instantiate(Resources.Load<GameObject>(path),
+            GameObject wallR = Instantiate(Resources.Load<GameObject>(path),
                 GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
-            float height = wall.GetComponent<RectTransform>().rect.height;
-            wall.transform.localPosition = new Vector3(-450, end - height / 2, 0);
+            float height = wallL.GetComponent<RectTransform>().rect.height;
+            wallL.transform.localPosition = new Vector3(400, end - height / 2, 0);
+            wallR.transform.localPosition = new Vector3(-400,end - height / 2, 0);
+            leftWall.Add(wallL);
+            rightWall.Add(wallR);
+            wallL.transform.SetAsFirstSibling();
+            wallR.transform.SetAsFirstSibling();
             end -= height;
-            rightWall.Add(wall);
-            wall.transform.SetAsFirstSibling();
         }
-        
     }
 
     public void OnStopClick()
@@ -126,34 +111,34 @@ public class GamePanel : BasePanel
                 path = "walls/WallM";
             else
                 path = "walls/WallL";
-            GameObject wall = Instantiate(Resources.Load<GameObject>(path),
+            GameObject wallL = Instantiate(Resources.Load<GameObject>(path),
                 GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
-            float height = wall.GetComponent<RectTransform>().rect.height;
-            wall.transform.localPosition = new Vector3(450, -800 - height / 2, 0);
-            leftWall.Add(wall);
-            wall.GetComponent<WallBehavior>().generate();
-            wall.transform.SetAsFirstSibling();
-        }
-
-        // 右墙壁随机生成
-        GameObject lastRight = rightWall.Last();
-        if (lastRight.transform.localPosition.y - lastRight.GetComponent<RectTransform>().rect.height / 2 >= -815)
-        {
-            string path = "";
-            float random = Random.Range(0f, 1f);
-            if (random < 0.4)
-                path = "walls/WallS";
-            else if (random < 0.8)
-                path = "walls/WallM";
+            GameObject wallR = Instantiate(Resources.Load<GameObject>(path),
+                GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+            float height = wallL.GetComponent<RectTransform>().rect.height;
+            wallL.transform.localPosition = new Vector3(400, -800 - height / 2, 0);
+            wallR.transform.localPosition = new Vector3(-400, -800 - height / 2, 0);
+            leftWall.Add(wallL);
+            rightWall.Add(wallR);
+            wallL.transform.SetAsFirstSibling();
+            wallR.transform.SetAsFirstSibling();
+            Boolean hasObstacle;
+            if (Random.Range(0f, 1f) < 0.5)
+                hasObstacle = wallL.GetComponent<WallBehavior>().GenerateObstacle();
             else
-                path = "walls/WallL";
-            GameObject wall = Instantiate(Resources.Load<GameObject>(path),
-                GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
-            float height = wall.GetComponent<RectTransform>().rect.height;
-            wall.transform.localPosition = new Vector3(-450, -800 - height / 2, 0);
-            rightWall.Add(wall);
-            wall.GetComponent<WallBehavior>().generate();
-            wall.transform.SetAsFirstSibling();
+                hasObstacle = wallR.GetComponent<WallBehavior>().GenerateObstacle();
+            if (hasObstacle)
+            {
+                wallL.GetComponent<WallBehavior>().GenerateCharacter(50);
+                wallR.GetComponent<WallBehavior>().GenerateCharacter(50);
+            }
+            else
+            {
+                if (Random.Range(0f, 1f) < 0.5)
+                    wallL.GetComponent<WallBehavior>().GenerateCharacter(80);
+                else
+                    wallR.GetComponent<WallBehavior>().GenerateCharacter(80);
+            }
         }
 
         // 左墙壁销毁
