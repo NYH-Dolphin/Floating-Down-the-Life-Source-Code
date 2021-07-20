@@ -8,15 +8,12 @@ public class GridBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private int ID;
+    private int ID = -1;
     private Boolean Locked = true;
 
     private GameObject LockIcon;
     private GameObject CollectionIcon;
 
-    private static int MAXCOLLCNT = 4;
-
-   
     void Start()
     {
         gameObject.GetComponent<Button>().onClick.AddListener(ShowCollectionDetails);
@@ -29,9 +26,9 @@ public class GridBehavior : MonoBehaviour
         
     }
 
-    public void Init(int id,Boolean isLocked)
+    public void Init(int id, Boolean isLocked)
     {
-        if (id >= MAXCOLLCNT)
+        if (id >= Collection.GetCollectionCount())
         {
             gameObject.transform.Find("lock").gameObject.SetActive(false);
             return;
@@ -39,12 +36,10 @@ public class GridBehavior : MonoBehaviour
 
         this.ID = id;
         this.Locked = isLocked;
-        String CollectionName = "coll" + (this.ID+1);
+        String CollectionName = "coll" + this.ID;
         LockIcon = gameObject.transform.Find("lock").gameObject;
         CollectionIcon = gameObject.transform.Find(CollectionName).gameObject;
-        ChangeIconVisibility(); 
-        
-        
+        ChangeIconVisibility();
     }
 
     public void SetIconVisibility(Boolean locked)
@@ -61,11 +56,12 @@ public class GridBehavior : MonoBehaviour
 
     private void ShowCollectionDetails()
     {
-        if (this.Locked)
+        if (!Locked)
         {
-            
+            GameObject detail = Instantiate(Resources.Load<GameObject>("collection/CollectionDetail"),
+                GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
+            detail.transform.localPosition = new Vector3(0, 100, 0);
+            detail.transform.GetComponent<CollectionBehaviour>().SetCollection(this.ID);
         }
-
-        Debug.Log(this.ID);
     }
 }

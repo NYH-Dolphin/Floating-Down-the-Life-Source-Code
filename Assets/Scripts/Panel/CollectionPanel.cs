@@ -1,13 +1,19 @@
 using System.Collections.Generic;
-using System.IO.IsolatedStorage;
+using Fungus;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CollectionPanel : BasePanel
 {
-    private int Page = 1;
+    private int Page = 0;
+
+    private Button left;
+    private Button right;
+    private Button close;
+
+    private List<GameObject> girds = new List<GameObject>();
     
-    public static int COLLECTIONCNT;
+    private int MaxPage;
     public static Collection[] AllCollections;
     private static int[] Unlocked;
 
@@ -19,11 +25,19 @@ public class CollectionPanel : BasePanel
     {
         skinPath = "CollectionPanel";
         layer = PanelManager.Layer.Panel;
+
+        MaxPage = Collection.GetCollectionCount() / 12;
+        if (Collection.GetCollectionCount() % 12 != 0)
+            MaxPage++;
+        AllCollections = new Collection[MaxPage * 12];
+        Unlocked = new int[MaxPage * 12];
+        observerList = new GridBehavior[MaxPage * 12];
+
+        for (int i = 0; i < MaxPage * 12; i++)
+        {
+            AllCollections[i] = new Collection(i);
+        }
         
-        COLLECTIONCNT = 12 * Page;
-        AllCollections = new Collection[COLLECTIONCNT];
-        Unlocked = new int[COLLECTIONCNT];
-        observerList = new GridBehavior[COLLECTIONCNT];
         Unlocked[2] = 1;
         Unlocked[0] = 1;
         Unlocked[3] = 4;
@@ -32,6 +46,13 @@ public class CollectionPanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
+        left = skin.transform.Find("left").GetComponent<Button>();
+        right = skin.transform.Find("right").GetComponent<Button>();
+        close = skin.transform.Find("close").GetComponent<Button>();
+        
+        left.onClick.AddListener(OnLeftClick);
+        right.onClick.AddListener(OnRightClick);
+        close.onClick.AddListener(OnCloseClick);
         showPage();
     }
 
@@ -43,27 +64,45 @@ public class CollectionPanel : BasePanel
 
     private void showPage()
     {
-        int itemID = 0;
-        for (int i = 0; i < Page; i++)
+        foreach (var gird in girds)
+            Destroy(gird);
+        int count = 0;
+        for (int i = 475; i >= -200; i -= 225)
         {
-            for (int j = 0; j < 4; j++)
+            for (int j = -200; j <= 200; j += 200)
             {
-                for (int k = 0; k < 3; k++)
-                {
-                    GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
-                        GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
-                    grid.transform.localPosition = new Vector3(-200+k*200,475-j*225, 0);
-                    
-                    grid.GetComponent<GridBehavior>().Init(itemID,Unlocked[itemID]==0);
-                    observerList[itemID] = grid.GetComponent<GridBehavior>();
-                    
-                    itemID++;
-
-                }
-                
+                GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
+                    GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
+                grid.transform.localPosition = new Vector3(j, i, 0);
+                grid.GetComponent<GridBehavior>().Init(Page * 12 + count, Unlocked[Page*12+count]==0);
+                observerList[Page * 12 + count] = grid.GetComponent<GridBehavior>();
+                girds.Add(grid);
+                count++;
             }
-            
         }
+    }
+    
+    private void OnLeftClick()
+    {
+        if (Page > 0)
+        {
+            Page--;
+            showPage();
+        }
+    }
+	
+    private void OnRightClick()
+    {
+        if (Page < MaxPage - 1)
+        {
+            Page++;
+            showPage();
+        }
+    }
+
+    private void OnCloseClick()
+    {
+        Close();
     }
 
     public static void UnlockCollection(int id)
@@ -71,8 +110,4 @@ public class CollectionPanel : BasePanel
         Unlocked[id]++;
         observerList[id].SetIconVisibility(Unlocked[id]==0);
     }
-
-    
-
-
 }
