@@ -15,6 +15,8 @@ public class StartPanel : BasePanel
     private Button skip;
     private Boolean skipClicked = false;
 
+    private Flowchart flowchart;
+
     //初始化
     public override void OnInit()
     {
@@ -31,6 +33,7 @@ public class StartPanel : BasePanel
         animator = Jimmy.GetComponent<Animator>();
         black = skin.transform.Find("black").gameObject;
         black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
+        flowchart = skin.transform.Find("Flowchart").GetComponent<Flowchart>();
     }
 
     private void OnSkipClick()
@@ -41,28 +44,33 @@ public class StartPanel : BasePanel
     //关闭
     public override void OnClose()
     {
-		
     }
 
     private void Update()
     {
-        if (Jimmy.transform.position.x < 70)
-            Jimmy.transform.position += new Vector3(1, 0, 0) * (speed * Time.smoothDeltaTime);
-        else if (Jimmy.transform.position.x < 300)
+        bool move = flowchart.GetBooleanVariable("move");
+        if (move)
         {
-            Jimmy.GetComponent<Rigidbody2D>().gravityScale = 30;
-            Jimmy.transform.position += new Vector3(1, 1, 0) * (speed * Time.smoothDeltaTime);
+            if (Jimmy.transform.position.x < 70)
+                Jimmy.transform.position += new Vector3(1, 0, 0) * (speed * Time.smoothDeltaTime);
+            else if (Jimmy.transform.position.x < 300)
+            {
+                Jimmy.GetComponent<Rigidbody2D>().gravityScale = 30;
+                Jimmy.transform.position += new Vector3(1, 1, 0) * (speed * Time.smoothDeltaTime);
+            }
+
+            animator.SetFloat("posX", Jimmy.transform.position.x);
+            if (Jimmy.transform.position.y < -500 || skipClicked)
+            {
+                a += Time.smoothDeltaTime;
+                black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
+            }
+
+            if (a > 0.9)
+                StartCoroutine(Disappear());
         }
-        animator.SetFloat("posX", Jimmy.transform.position.x);
-        if (Jimmy.transform.position.y < -500 || skipClicked)
-        {
-            a += Time.smoothDeltaTime;
-            black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
-        }
-        if (a > 0.9)
-            StartCoroutine(Disappear());
     }
-    
+
     IEnumerator Disappear()
     {
         yield return new WaitForSeconds(1f);
