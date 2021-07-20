@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4003036916341935445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4003036916341935451}
+  - component: {fileID: 4003036916341935444}
+  m_Layer: 0
+  m_Name: Jimmy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4003036916341935451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003036916341935445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4003036916341935444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003036916341935445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Jimmy
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 46223b9b39627e04db499d4481e7b0f1, type: 3}
+  - {fileID: 21300000, guid: 62eda702cda343c4597303e006599baf, type: 3}
+  - {fileID: 21300000, guid: f74cf428d668dc64daaa278dd1f5bef3, type: 3}
+  - {fileID: 21300000, guid: 11e70737b6d686540b29187a7d23cb36, type: 3}
+  - {fileID: 21300000, guid: f7a508a7af8e7844789113933cd67375, type: 3}
+  - {fileID: 21300000, guid: 5a429a37cd7218d4aae32f8d353133db, type: 3}
+  - {fileID: 21300000, guid: 388d24bf034a65449b4f4429a5b30ef3, type: 3}
+  - {fileID: 21300000, guid: 31a0a99000049db49ad6a5ef5cdcac24, type: 3}
+  - {fileID: 21300000, guid: 908ea76d2c6f12e4aa7d6ed6843069c1, type: 3}
+  - {fileID: 21300000, guid: 51e3bcda366089f48a5872e8cdcda0e6, type: 3}
+  - {fileID: 21300000, guid: 90776c99d8eb989438e6234f18722287, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
