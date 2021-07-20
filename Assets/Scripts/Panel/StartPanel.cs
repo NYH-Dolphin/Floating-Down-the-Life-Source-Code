@@ -82,7 +82,7 @@ public class StartPanel : BasePanel
         if (skipClicked)
         {
             a += Time.smoothDeltaTime;
-            // Destroy(flowchart.gameObject);
+            Destroy(flowchart.gameObject);
             // Destroy(Jim.gameObject);
             // Destroy(Jimmy.gameObject);
             black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);

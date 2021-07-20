@@ -13,8 +13,9 @@ public class WallBehavior : MonoBehaviour
         "obstacle_5","obstacle_11","obstacle_15","obstacle_17","obstacle_21"};
     private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8","obstacle_13","obstacle_14","obstacle_16"};
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    private readonly string[] _characterName = {"character1", "character4","character5",
+    private readonly string[] _leftCharacterName = {"character1", "character4","character5",
         "character6","character7"};
+    private readonly string[] _rightCharacterName = {"character3"};
 
 
     private static bool stop = false; // 如果有 conversation 停止
@@ -86,11 +87,11 @@ public class WallBehavior : MonoBehaviour
             {
                 if (GetComponent<RectTransform>().rect.height >= 300)
                 {
-                    // 40% 的概率生成一个 window 和 character
+                    // 20% 的概率生成一个 window 和 character
                     if (RandomGenerate(20))
                     {
                         // 角色
-                        string characterName = _characterName[Random.Range(0, _characterName.Length)];
+                        string characterName = _leftCharacterName[Random.Range(0, _leftCharacterName.Length)];
                         string characterPath = "character/left/" + characterName;
                         character = Instantiate(Resources.Load<GameObject>(characterPath),
                             transform, true);
@@ -111,10 +112,17 @@ public class WallBehavior : MonoBehaviour
             {
                 if (GetComponent<RectTransform>().rect.height >= 300)
                 {
-
-                    // 40% 的概率生成一个 window
-                    if (RandomGenerate(40))
+                    // 20% 的概率生成一个 window
+                    if (RandomGenerate(20))
                     {
+                        // 角色
+                        string characterName = _rightCharacterName[Random.Range(0, _rightCharacterName.Length)];
+                        string characterPath = "character/right/" + characterName;
+                        character = Instantiate(Resources.Load<GameObject>(characterPath),
+                            transform, true);
+                        character.transform.localPosition = new Vector3(-200, 0, 0);
+                        
+                        // 窗台
                         string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
                         string windowPath = "window/right/" + windowName;
                         window = Instantiate(Resources.Load<GameObject>(windowPath),
