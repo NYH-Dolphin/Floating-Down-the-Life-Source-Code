@@ -64,7 +64,6 @@ public class StopPanel : BasePanel
     private void OnCollectionClick()
     {
         PanelManager.Open<CollectionPanel>();
-        Close();
     }
     
 }

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 public class CollectionPanel : BasePanel
 {
     private int Page = 1;
+
+    private Button left;
+    private Button right;
+    private Button close;
+
+    private List<GameObject> girds = new List<GameObject>();
     //初始化
     public override void OnInit()
     {
@@ -15,6 +21,13 @@ public class CollectionPanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
+        left = skin.transform.Find("left").GetComponent<Button>();
+        right = skin.transform.Find("right").GetComponent<Button>();
+        close = skin.transform.Find("close").GetComponent<Button>();
+        
+        left.onClick.AddListener(OnLeftClick);
+        right.onClick.AddListener(OnRightClick);
+        close.onClick.AddListener(OnCloseClick);
         showPage();
     }
 
@@ -26,6 +39,8 @@ public class CollectionPanel : BasePanel
 
     private void showPage()
     {
+        foreach (var gird in girds)
+            Destroy(gird);
         int count = 0;
         for (int i = 475; i >= -200; i -= 225)
         {
@@ -35,18 +50,31 @@ public class CollectionPanel : BasePanel
                     GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
                 grid.transform.localPosition = new Vector3(j, i, 0);
                 grid.GetComponent<GridBehavior>().Init(Page * 12 + count);
+                girds.Add(grid);
             }
         }
     }
-	
-    //当按下开始按钮
-    public void OnBeginClick()
+    
+    private void OnLeftClick()
     {
-        
+        if (Page > 0)
+        {
+            Page--;
+            showPage();
+        }
     }
 	
-    public void OnRulesClick()
+    private void OnRightClick()
     {
+        if (Page < 2)
+        {
+            Page++;
+            showPage();
+        }
+    }
 
+    private void OnCloseClick()
+    {
+        Close();
     }
 }
