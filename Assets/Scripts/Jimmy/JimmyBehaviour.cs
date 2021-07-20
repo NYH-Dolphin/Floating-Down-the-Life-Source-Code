@@ -74,8 +74,10 @@ public class JimmyBehaviour : MonoBehaviour
             PanelManager.Open<OverPanel>();
         if (Input.GetKey(KeyCode.S))
             WallBehavior.SetSpeed(400f);
+        else if (balloons.Count < 3)
+            WallBehavior.SetSpeed(300f);
         else
-            WallBehavior.SetSpeed(350f - balloons.Count * 30 < 200 ? 200 : 350f - balloons.Count * 30);
+            WallBehavior.SetSpeed(200f);
     }
 
     // 无敌时间 + 闪烁

@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WallBehavior : MonoBehaviour
 {
@@ -17,12 +19,14 @@ public class WallBehavior : MonoBehaviour
         "character6","character7"};
     private readonly string[] _rightCharacterName = {"character3"};
 
+    private GameObject obstacle = null;
+    private int obstaclePossibility = 40;
 
     private static bool stop = false; // 如果有 conversation 停止
     private GameObject window;
     public GameObject character;
 
-    private GameObject LebelUI; // 找到高度记录时间
+    private GameObject LabelUI; // 找到高度记录时间
 
     // Start is called before the first frame update
     void Start()
@@ -30,24 +34,17 @@ public class WallBehavior : MonoBehaviour
         
     }
 
-    public void generate()
+    public Boolean GenerateObstacle()
     {
         // 生成障碍物的概率随时间而增加
-        LebelUI = transform.parent.Find("Label(Clone)").gameObject;
-        int obstaclePossibility = LebelUI.GetComponent<HeightRecord>().GetHeight();
-        obstaclePossibility /= 4;
-        if (obstaclePossibility <= 10)
-        {
-            obstaclePossibility = 10;
-        }else if (obstaclePossibility >= 50)
-        {
-            obstaclePossibility = 50;
-        }
-        Debug.Log(obstaclePossibility);
+        LabelUI = transform.parent.Find("Label(Clone)").gameObject;
+        obstaclePossibility = 40 + LabelUI.GetComponent<HeightRecord>().GetHeight() / 4;
+        if (obstaclePossibility > 100)
+            obstaclePossibility = 100;
 
         if (RandomGenerate(obstaclePossibility))
         {
-            Vector3 p = transform.position;
+            Vector3 p = transform.localPosition;
             if (p.x < 0)
             {
                 string obsName = "";
@@ -56,12 +53,10 @@ public class WallBehavior : MonoBehaviour
                 else if (GetComponent<RectTransform>().rect.height < 500)
                     obsName = _midObstacles[Random.Range(0, _midObstacles.Length)];
                 else
-                {
                     obsName = _largeObstacles[Random.Range(0, _largeObstacles.Length)];
-                }
 
                 string path = "obstacles/left/" + obsName;
-                GameObject obstacle = Instantiate(Resources.Load<GameObject>(path), transform, true);
+                obstacle = Instantiate(Resources.Load<GameObject>(path), transform, true);
                 float halfWidth = obstacle.GetComponent<RectTransform>().rect.width / 2;
                 obstacle.transform.localPosition = new Vector3(125 + halfWidth, 0, 0);
             }
@@ -75,62 +70,58 @@ public class WallBehavior : MonoBehaviour
                 else
                     obsName = _largeObstacles[Random.Range(0, _largeObstacles.Length)];
                 string path = "obstacles/right/" + obsName;
-                GameObject obstacle = Instantiate(Resources.Load<GameObject>(path), transform, true);
+                obstacle = Instantiate(Resources.Load<GameObject>(path), transform, true);
                 float halfWidth = obstacle.GetComponent<RectTransform>().rect.width / 2;
                 obstacle.transform.localPosition = new Vector3(-125 - halfWidth, 0, 0);
             }
+
+            return true;
         }
-        else
+
+        return false;
+    }
+
+    public void GenerateCharacter(int random)
+    {
+        if (obstacle != null)
+            return;
+        Vector3 p = transform.localPosition;
+        float height = GetComponent<RectTransform>().rect.height;
+        if (height > 300 && RandomGenerate(random))
         {
-            Vector3 p = transform.position;
             if (p.x < 0)
             {
-                if (GetComponent<RectTransform>().rect.height >= 300)
-                {
-                    // 20% 的概率生成一个 window 和 character
-                    if (RandomGenerate(20))
-                    {
-                        // 角色
-                        string characterName = _leftCharacterName[Random.Range(0, _leftCharacterName.Length)];
-                        string characterPath = "character/left/" + characterName;
-                        character = Instantiate(Resources.Load<GameObject>(characterPath),
-                            transform, true);
-                        character.transform.localPosition = new Vector3(200, 0, 0);
+                // 角色
+                string characterName = _leftCharacterName[Random.Range(0, _leftCharacterName.Length)];
+                string characterPath = "character/left/" + characterName;
+                character = Instantiate(Resources.Load<GameObject>(characterPath),
+                    transform, true);
+                character.transform.localPosition = new Vector3(200, 0, 0);
 
-                        // 窗台
-                        string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
-                        string windowPath = "window/left/" + windowName;
-                        window = Instantiate(Resources.Load<GameObject>(windowPath),
-                            transform, true);
-                        window.transform.localPosition = new Vector3(375, 0, 0);
-                        window.gameObject.layer = 2;
-
-                    }
-                }
+                // 窗台
+                string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
+                string windowPath = "window/left/" + windowName;
+                window = Instantiate(Resources.Load<GameObject>(windowPath),
+                    transform, true);
+                window.transform.localPosition = new Vector3(375, 0, 0);
+                window.gameObject.layer = 2;
             }
             else
             {
-                if (GetComponent<RectTransform>().rect.height >= 300)
-                {
-                    // 20% 的概率生成一个 window
-                    if (RandomGenerate(20))
-                    {
-                        // 角色
-                        string characterName = _rightCharacterName[Random.Range(0, _rightCharacterName.Length)];
-                        string characterPath = "character/right/" + characterName;
-                        character = Instantiate(Resources.Load<GameObject>(characterPath),
-                            transform, true);
-                        character.transform.localPosition = new Vector3(-200, 0, 0);
+                // 角色
+                string characterName = _rightCharacterName[Random.Range(0, _rightCharacterName.Length)];
+                string characterPath = "character/right/" + characterName;
+                character = Instantiate(Resources.Load<GameObject>(characterPath),
+                    transform, true);
+                character.transform.localPosition = new Vector3(-200, 0, 0);
                         
-                        // 窗台
-                        string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
-                        string windowPath = "window/right/" + windowName;
-                        window = Instantiate(Resources.Load<GameObject>(windowPath),
-                            transform, true);
-
-                        window.transform.localPosition = new Vector3(-375, 0, 0);
-                    }
-                }
+                // 窗台
+                string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
+                string windowPath = "window/right/" + windowName;
+                window = Instantiate(Resources.Load<GameObject>(windowPath),
+                    transform, true);
+                window.transform.localPosition = new Vector3(-375, 0, 0);
+                window.gameObject.layer = 2;
             }
         }
     }
