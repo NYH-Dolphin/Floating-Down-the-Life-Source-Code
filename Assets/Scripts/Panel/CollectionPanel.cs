@@ -24,6 +24,12 @@ public class CollectionPanel : BasePanel
         AllCollections = new Collection[COLLECTIONCNT];
         Unlocked = new int[COLLECTIONCNT];
         observerList = new GridBehavior[COLLECTIONCNT];
+
+        for (int i = 0; i < COLLECTIONCNT; i++)
+        {
+            AllCollections[i] = new Collection(i);
+        }
+        
         Unlocked[2] = 1;
         Unlocked[0] = 1;
         Unlocked[3] = 4;
@@ -52,7 +58,7 @@ public class CollectionPanel : BasePanel
                 {
                     GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
                         GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
-                    grid.transform.localPosition = new Vector3(-200+k*200,475-j*225, 0);
+                    grid.transform.localPosition = new Vector3(-200+k*200,380-j*225, 0);
                     
                     grid.GetComponent<GridBehavior>().Init(itemID,Unlocked[itemID]==0);
                     observerList[itemID] = grid.GetComponent<GridBehavior>();

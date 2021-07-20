@@ -8,13 +8,13 @@ public class GridBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private int ID;
+    private int ID = -1;
     private Boolean Locked = true;
 
     private GameObject LockIcon;
     private GameObject CollectionIcon;
 
-    private static int MAXCOLLCNT = 4;
+    private static int MAXCOLLCNT = 5;
 
    
     void Start()
@@ -39,7 +39,7 @@ public class GridBehavior : MonoBehaviour
 
         this.ID = id;
         this.Locked = isLocked;
-        String CollectionName = "coll" + (this.ID+1);
+        String CollectionName = "coll" + this.ID;
         LockIcon = gameObject.transform.FindChild("lock").gameObject;
         CollectionIcon = gameObject.transform.Find(CollectionName).gameObject;
         ChangeIconVisibility(); 
@@ -61,11 +61,15 @@ public class GridBehavior : MonoBehaviour
 
     private void ShowCollectionDetails()
     {
-        if (this.Locked)
+        if (!Locked)
         {
-            
+            GameObject detail = Instantiate(Resources.Load<GameObject>("collection/CollectionDetail"),
+                GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
+            detail.transform.localPosition = new Vector3(0, 100, 0);
+
+            // Debug.Log(this.ID);
+            detail.transform.GetComponent<CollectionBehaviour>().SetCollection(this.ID);
         }
 
-        Debug.Log(this.ID);
     }
 }
