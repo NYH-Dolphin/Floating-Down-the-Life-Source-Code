@@ -19,8 +19,6 @@ public class StartPanel : BasePanel
     private Boolean skipClicked = false;
 
     private Flowchart flowchart;
-    private Character Jimmy;
-    private Character Jim;
 
     //初始化
     public override void OnInit()
@@ -39,8 +37,6 @@ public class StartPanel : BasePanel
         black = skin.transform.Find("black").gameObject;
         black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         flowchart = skin.transform.Find("Flowchart").GetComponent<Flowchart>();
-        Jim = skin.transform.Find("Jim").GetComponent<Character>();
-        Jimmy = skin.transform.Find("Jimmy").GetComponent<Character>();
     }
 
     private void OnSkipClick()
