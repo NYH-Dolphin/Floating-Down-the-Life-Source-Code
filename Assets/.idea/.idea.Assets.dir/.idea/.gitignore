@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Assets.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\z50020261\unity_demo\720\Floating-Down-the-Life\Assets\.idea\.idea.Assets.dir\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
