@@ -7,19 +7,16 @@ public class CollectionBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private Text collectionName = null;
-    private Text collectionDescription = null;
+    public Text collectionName;
+    public Text collectionDescription;
+    public Button closeButton;
+    public Image[] collections;
     
-    private int ID = -1;
+    private int ID = 0;
     private Collection obj = null;
     void Start()
     {
-        Button closeButton = transform.Find("Close").GetComponent<Button>();
         closeButton.onClick.AddListener(CloseCollection);
-
-        collectionDescription = transform.Find("Description").GetComponent<Text>();
-        collectionName = transform.Find("Name").GetComponent<Text>();
-
     }
 
     // Update is called once per frame
@@ -32,15 +29,17 @@ public class CollectionBehaviour : MonoBehaviour
     private void CloseCollection()
     {
         Debug.Log("onclick");
-        Destroy(transform.gameObject);
+        Destroy(gameObject);
     }
 
     public void SetCollection(int id)
     {
-        this.ID = id;
+        collections[ID].gameObject.SetActive(false);
+        ID = id;
+        collections[ID].gameObject.SetActive(true);
         obj = CollectionPanel.AllCollections[id];
-        // this.collectionName.text = obj.GetName();
-        // this.collectionDescription.text = obj.GetDescription();
+        collectionName.text = obj.GetName();
+        collectionDescription.text = obj.GetDescription();
     }
 
 }

@@ -112,7 +112,7 @@ MonoBehaviour:
   scrollPos: {x: -24.326563, y: 44.425617}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 362.8
+  blockViewHeight: 515
   zoom: 0.7299998
   scrollViewRect:
     serializedVersion: 2
@@ -152,9 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 68.369865
-    y: 74.1096
-    width: 109.1781
+    x: 61.520546
+    y: 79.58905
+    width: 112.10048
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1720,8 +1720,7 @@ MonoBehaviour:
   indentLevel: 2
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "chara3 original middle:\u53C8\u89C1\u9762\u4E86\nchara3 original
-      middle:\u6309\u7167\u7EA6\u5B9A\uFF0C\u6211\u6765\u63A5\u7740\u8BB2\u8FD9\u4E2A\u6545\u4E8B\nchara3
+    stringVal: "chara3 original middle:\u53C8\u89C1\u9762\u4E86\nchara3 original middle:\u6309\u7167\u7EA6\u5B9A\uFF0C\u6211\u6765\u63A5\u7740\u8BB2\u8FD9\u4E2A\u6545\u4E8B\nchara3
       original middle:\u5B69\u5B50\u4EEC\u5BF9\u5973\u5DEB\u7684\u6545\u4E8B\u5F88\u597D\u5947\uFF0C\u82F1\u4FCA\u7684\u9752\u5E74\u4EEC\u4E5F\u603B\u60F3\u53BB\u4E00\u7779\u5973\u5DEB\u7684\u98CE\u91C7\nchara3
       original middle:\u5973\u5DEB\u5BB6\u7684\u9501\u5C31\u865A\u63D2\u5728\u9798\u91CC\uFF0C\u6302\u5728\u95E8\u628A\u4E0A\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u6562\u4E0A\u524D\u53BB\u62E8\u5F00\u5B83\nchara3
       original middle:\u7406\u7531\u4E5F\u5F88\u7B80\u5355\uFF0C\u4F20\u8BF4\u5973\u5DEB\u662F\u8FD9\u7247\u5927\u9646\u4E0A\u6700\u5F3A\u5927\u7684\u5973\u5DEB\nchara3

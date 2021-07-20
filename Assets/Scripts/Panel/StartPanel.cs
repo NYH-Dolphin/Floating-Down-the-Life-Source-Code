@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Fungus;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ public class StartPanel : BasePanel
     private Boolean skipClicked = false;
 
     private Flowchart flowchart;
+    private Boolean notDestroy = true;
 
     //初始化
     public override void OnInit()
@@ -71,15 +73,18 @@ public class StartPanel : BasePanel
             a += Time.smoothDeltaTime;
             black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         }
-        if (a > 0.9)
-            StartCoroutine(Disappear());
 
+        if (a > 0.9 && notDestroy)
+        {
+            Destroy(flowchart.gameObject);
+            notDestroy = true;
+            StartCoroutine(Disappear());
+        }
     }
 
     IEnumerator Disappear()
     {
         yield return new WaitForSeconds(1f);
-        Destroy(flowchart.gameObject);
         PanelManager.Open<GamePanel>();
         Close();
     }
