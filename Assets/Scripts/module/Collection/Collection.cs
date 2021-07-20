@@ -9,7 +9,12 @@ public class Collection
     private String Name;
     private String Description;
     
-    private static int maxCount;
+    private static int maxCount = 5;
+
+    public static int GetCollection()
+    {
+        return maxCount;
+    }
 
     public Collection(int id)
     {

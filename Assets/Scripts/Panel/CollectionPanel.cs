@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CollectionPanel : BasePanel
 {
-    private int Page = 1;
+    private int Page = 0;
 
     private Button left;
     private Button right;
@@ -12,7 +13,7 @@ public class CollectionPanel : BasePanel
 
     private List<GameObject> girds = new List<GameObject>();
     
-    public static int COLLECTIONCNT;
+    private int MaxPage;
     public static Collection[] AllCollections;
     private static int[] Unlocked;
 
@@ -24,13 +25,15 @@ public class CollectionPanel : BasePanel
     {
         skinPath = "CollectionPanel";
         layer = PanelManager.Layer.Panel;
-        
-        COLLECTIONCNT = 12 * Page;
-        AllCollections = new Collection[COLLECTIONCNT];
-        Unlocked = new int[COLLECTIONCNT];
-        observerList = new GridBehavior[COLLECTIONCNT];
 
-        for (int i = 0; i < COLLECTIONCNT; i++)
+        MaxPage = Collection.GetCollection() / 12;
+        if (Collection.GetCollection() % 12 != 0)
+            MaxPage++;
+        AllCollections = new Collection[MaxPage * 12];
+        Unlocked = new int[MaxPage * 12];
+        observerList = new GridBehavior[MaxPage * 12];
+
+        for (int i = 0; i < MaxPage; i++)
         {
             AllCollections[i] = new Collection(i);
         }
@@ -71,8 +74,10 @@ public class CollectionPanel : BasePanel
                 GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
                     GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
                 grid.transform.localPosition = new Vector3(j, i, 0);
-                grid.GetComponent<GridBehavior>().Init(Page * 12 + count);
+                grid.GetComponent<GridBehavior>().Init(Page * 12 + count, Unlocked[Page*12+count]==0);
+                observerList[Page * 12 + count] = grid.GetComponent<GridBehavior>();
                 girds.Add(grid);
+                count++;
             }
         }
     }
@@ -88,7 +93,7 @@ public class CollectionPanel : BasePanel
 	
     private void OnRightClick()
     {
-        if (Page < 2)
+        if (Page < MaxPage - 1)
         {
             Page++;
             showPage();
@@ -98,5 +103,11 @@ public class CollectionPanel : BasePanel
     private void OnCloseClick()
     {
         Close();
+    }
+
+    public static void UnlockCollection(int id)
+    {
+        Unlocked[id]++;
+        observerList[id].SetIconVisibility(Unlocked[id]==0);
     }
 }
