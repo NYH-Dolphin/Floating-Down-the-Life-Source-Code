@@ -26,8 +26,8 @@ public class CollectionPanel : BasePanel
         skinPath = "CollectionPanel";
         layer = PanelManager.Layer.Panel;
 
-        MaxPage = Collection.GetCollection() / 12;
-        if (Collection.GetCollection() % 12 != 0)
+        MaxPage = Collection.GetCollectionCount() / 12;
+        if (Collection.GetCollectionCount() % 12 != 0)
             MaxPage++;
         AllCollections = new Collection[MaxPage * 12];
         Unlocked = new int[MaxPage * 12];

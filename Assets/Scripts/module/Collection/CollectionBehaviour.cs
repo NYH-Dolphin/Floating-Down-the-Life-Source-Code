@@ -10,7 +10,9 @@ public class CollectionBehaviour : MonoBehaviour
     public Text collectionName;
     public Text collectionDescription;
     public Button closeButton;
+    public Image[] collections;
     
+    private int ID = 0;
     private Collection obj = null;
     void Start()
     {
@@ -32,6 +34,9 @@ public class CollectionBehaviour : MonoBehaviour
 
     public void SetCollection(int id)
     {
+        collections[ID].gameObject.SetActive(false);
+        ID = id;
+        collections[ID].gameObject.SetActive(true);
         obj = CollectionPanel.AllCollections[id];
         collectionName.text = obj.GetName();
         collectionDescription.text = obj.GetDescription();

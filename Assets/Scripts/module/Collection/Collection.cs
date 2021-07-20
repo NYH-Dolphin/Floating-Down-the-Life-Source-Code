@@ -11,7 +11,7 @@ public class Collection
     
     private static int maxCount = 5;
 
-    public static int GetCollection()
+    public static int GetCollectionCount()
     {
         return maxCount;
     }

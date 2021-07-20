@@ -28,7 +28,7 @@ public class GridBehavior : MonoBehaviour
 
     public void Init(int id, Boolean isLocked)
     {
-        if (id >= Collection.GetCollection())
+        if (id >= Collection.GetCollectionCount())
         {
             gameObject.transform.Find("lock").gameObject.SetActive(false);
             return;
