@@ -31,13 +31,20 @@ public class Collection
 
     static void InitNameMap()
     {
-        NameMap.Add(0,"balloon");
-        
+        NameMap.Add(0, "coll1");
+        NameMap.Add(1, "coll2");
+        NameMap.Add(2, "coll3");
+        NameMap.Add(3, "coll4");
+        NameMap.Add(4, "coll5");
     }
 
     static void InitDescriptMap()
     {
-        DescriptMap.Add(0,"balloon");
+        DescriptMap.Add(0, "Description1");
+        DescriptMap.Add(1, "Description2");
+        DescriptMap.Add(2, "Description3");
+        DescriptMap.Add(3, "Description4");
+        DescriptMap.Add(4, "Description5");
     }
 
     public String GetName()
@@ -49,5 +56,4 @@ public class Collection
     {
         return this.Description;
     }
-
 }

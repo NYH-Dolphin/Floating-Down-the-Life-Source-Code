@@ -33,7 +33,7 @@ public class CollectionPanel : BasePanel
         Unlocked = new int[MaxPage * 12];
         observerList = new GridBehavior[MaxPage * 12];
 
-        for (int i = 0; i < MaxPage; i++)
+        for (int i = 0; i < MaxPage * 12; i++)
         {
             AllCollections[i] = new Collection(i);
         }
