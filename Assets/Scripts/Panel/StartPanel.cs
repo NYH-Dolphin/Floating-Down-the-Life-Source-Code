@@ -68,31 +68,22 @@ public class StartPanel : BasePanel
             }
 
             animator.SetFloat("posX", Jimmy_small.transform.position.x);
-            if (Jimmy_small.transform.position.y < -500)
-            {
-                a += Time.smoothDeltaTime;
-                black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
-            }
-
-            if (a > 0.9)
-                StartCoroutine(Disappear());
         }
-
-        // 点击跳过
-        if (skipClicked)
+        
+        if (Jimmy_small.transform.position.y < -500 || skipClicked)
         {
             a += Time.smoothDeltaTime;
-            Destroy(flowchart.gameObject);
-            // Destroy(Jim.gameObject);
-            // Destroy(Jimmy.gameObject);
             black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
-            StartCoroutine(Disappear());
         }
+        if (a > 0.9)
+            StartCoroutine(Disappear());
+
     }
 
     IEnumerator Disappear()
     {
         yield return new WaitForSeconds(1f);
+        Destroy(flowchart.gameObject);
         PanelManager.Open<GamePanel>();
         Close();
     }
