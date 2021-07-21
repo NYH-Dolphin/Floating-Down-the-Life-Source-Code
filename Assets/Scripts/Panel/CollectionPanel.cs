@@ -19,7 +19,7 @@ public class CollectionPanel : BasePanel
 
     private static GridBehavior[] observerList;
     
-    
+
     //初始化
     public override void OnInit()
     {
@@ -38,9 +38,9 @@ public class CollectionPanel : BasePanel
             AllCollections[i] = new Collection(i);
         }
         
-        Unlocked[2] = 1;
-        Unlocked[0] = 1;
-        Unlocked[3] = 4;
+        // Unlocked[2] = 1;
+        // Unlocked[0] = 1;
+        // Unlocked[3] = 4;
     }
 
     //显示

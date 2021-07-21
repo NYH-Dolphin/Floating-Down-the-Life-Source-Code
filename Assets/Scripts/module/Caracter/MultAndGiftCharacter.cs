@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
-
-public class GiftCharacter : CharacterBehaviour
+/// <summary>
+/// 本角色会多次谈话在剧情结束后会赠送收藏品给 Jimmy
+/// </summary>
+public class MultAndGiftCharacter : CharacterBehaviour
 {
-    private bool hasGifted = false; // 是否已经赠送过气球
+    private bool hasGifted = false; // 是否已经赠送过礼物
     private static int meetTime = 1;
-    
-    
     private bool hasConversation = false; // 是否与该角色的这个实例有过对话
+    
     void Start()
     {
         base.Start();
@@ -30,16 +31,20 @@ public class GiftCharacter : CharacterBehaviour
             HeightRecord.Continue();
             JimmyBehaviour.Move();
         }
-        GiveBalloonCheck();
+        GiveGiftCheck();
     }
     
-    // 检测是否给予 Jimmy 一个气球
-    private void GiveBalloonCheck()
+    // 检测是否给予 Jimmy 一个礼物
+    private void GiveGiftCheck()
     {
-        if (!hasGifted && flowchart.GetBooleanVariable("gifted"))
+        // 礼物 id
+        // giftID 初始设置成 -1
+        int id = flowchart.GetIntegerVariable("giftID");
+        if (!hasGifted && id != -1)
         {
             hasGifted = true;
-            Jimmy.GetComponent<JimmyBehaviour>().AddBalloon(1);
+            Debug.Log("Has give gift!!!!! ID is " + id );
+            CollectionPanel.UnlockCollection(id);
         }
     }
     

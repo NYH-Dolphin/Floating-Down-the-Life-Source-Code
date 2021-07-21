@@ -3,7 +3,7 @@
 /// <summary>
 /// 本角色会多次谈话在剧情结束后会赠送气球给 Jimmy
 /// </summary>
-public class Chara2 : CharacterBehaviour
+public class MultAndBalloonCharacter : CharacterBehaviour
 {
     
     

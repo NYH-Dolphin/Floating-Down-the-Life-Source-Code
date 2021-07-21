@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 本角色在剧情结束后会赠送气球给 Jimmy
 /// </summary>
-public class Chara4 : CharacterBehaviour
+public class BalloonCharacter : CharacterBehaviour
 {
     
     private bool hasGifted = false; // 是否已经赠送过气球
