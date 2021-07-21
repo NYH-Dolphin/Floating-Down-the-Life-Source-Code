@@ -154,6 +154,11 @@ public class JimmyBehaviour : MonoBehaviour
         Debug.Log("Jimmy: OnTriggerEnter2D");
         if (collision.gameObject.name.Contains("obstacle")&&!isCollide)
         {
+            if (collision.gameObject.name.Contains("obstacle_19"))
+            {
+                return;
+            }
+
             isCollide = true;
             LostBalloon();
         }
