@@ -82,7 +82,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 8453137618939513119}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 7635434062057152738}
   variables:
   - {fileID: 3625569095155749708}
   - {fileID: 3781192585513017482}
@@ -113,7 +114,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -56.454376
     y: 41.614525
-    width: 109.51222
+    width: 110.97563
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -481,7 +482,7 @@ MonoBehaviour:
   easeType: 2
   loopType: 0
   stopPreviousTweens: 0
-  waitUntilFinished: 1
+  waitUntilFinished: 0
   targetObjectOLD: {fileID: 0}
   tweenNameOLD: 
   durationOLD: 0

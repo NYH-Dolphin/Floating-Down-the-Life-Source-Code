@@ -79,9 +79,9 @@ public class GamePanel : BasePanel
         {
             string path = "";
             float random = Random.Range(0f, 1f);
-            if (random < 0.4)
+            if (random < 0.3)
                 path = "walls/WallS";
-            else if (random < 0.8)
+            else if (random < 0.6)
                 path = "walls/WallM";
             else
                 path = "walls/WallL";
