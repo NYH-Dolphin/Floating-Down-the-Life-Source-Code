@@ -69,7 +69,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2408732403943996664}
   selectedCommands:
-  - {fileID: 237007437456837201}
+  - {fileID: 1721498788559007057}
   variables:
   - {fileID: 7781874261562386808}
   - {fileID: 5885072419959627621}
@@ -101,7 +101,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 111
+    width: 72.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   eventHandler: {fileID: 5138699941789024469}
   commandList:
   - {fileID: 8799189366872454668}
-  - {fileID: 237007437456837201}
   - {fileID: 1721498788559007057}
+  - {fileID: 237007437456837201}
   - {fileID: 318710577745119198}
   - {fileID: 9190154139678369949}
   suppressAllAutoSelections: 0

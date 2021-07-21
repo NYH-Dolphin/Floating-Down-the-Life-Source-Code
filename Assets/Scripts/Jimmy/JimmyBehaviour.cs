@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Fungus;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,12 +15,14 @@ public class JimmyBehaviour : MonoBehaviour
     public Animator animator;                   // Animator 组件
    
     private Boolean isCollide = false;          // 判断是否碰撞
-    private const int InvalidTimeTick = 300;   // 无敌时间
+    private const int InvalidTimeTick = 300;    // 无敌时间
     private int invalidTimeCount = 0;           // 无敌时间记数
     private Renderer jimmyRenderer = null;      // Jimmy 的图片
-    
-    
-    
+
+    private static bool stop = false;           // 控制 Jimmy 是否能移动
+
+
+
     // 气球的名字和可以使用的气球
     private static readonly string[] BalloonsName =
     {
@@ -64,9 +67,11 @@ public class JimmyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Float();
-        ControlSpeed();
-        
+        if (!stop)
+        {
+            Float();
+            ControlSpeed();
+        }
         
         if (isCollide)
         {
@@ -154,12 +159,24 @@ public class JimmyBehaviour : MonoBehaviour
         }
     }
 
+    
+    // 停止 Jimmy 的移动和漂浮
+    public static void Stop()
+    {
+        stop = true;
+    }
+    
+    // Jimmy 继续移动
+    public static void Move()
+    {
+        stop = false;
+    }
+    
+    
     // Jimmy 的移动
-
     private const float MAXFLOATSPEED = 500f;
     private const float MINFLOATSPEED = 100f;
     private float floatSpeed = 100f;
-    
     void Float()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
