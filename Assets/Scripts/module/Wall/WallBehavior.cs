@@ -17,7 +17,7 @@ public class WallBehavior : MonoBehaviour
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
     private readonly string[] _leftCharacterName = {"character1", "character4","character5",
         "character6","character7"};
-    private readonly string[] _rightCharacterName = {"character3"};
+    private readonly string[] _rightCharacterName = {"character8"};
 
     private GameObject obstacle = null;
     private int obstaclePossibility = 40;
@@ -142,7 +142,7 @@ public class WallBehavior : MonoBehaviour
     private bool RandomGenerate(int percentage)
     {
         // 随机生成 [1,100]之间的数
-        int num = Random.Range(1, 101);
+        int num = Random.Range(1, 100);
         if (num <= percentage)
         {
             return true;

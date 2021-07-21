@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 424639616832175313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 3, z: 1}
   m_Children:
   - {fileID: 5186115977063808727}
   m_Father: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 5669866547295374737}
   selectedCommands:
-  - {fileID: 6470404446589298888}
+  - {fileID: 8369900626956251349}
   variables:
   - {fileID: 9141704576287708271}
   - {fileID: 6718859522689462537}
@@ -2316,7 +2316,11 @@ MonoBehaviour:
   indentLevel: 1
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: zzy smile middle:hello
+    stringVal: 'zzy smile middle:
+
+      hide zzy:
+
+'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1

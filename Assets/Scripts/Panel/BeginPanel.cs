@@ -5,7 +5,7 @@ public class BeginPanel : BasePanel
 	public Button start;
 	public Button rules;
 	public Button collection;
-
+	public Button settings;
 	//初始化
 	public override void OnInit()
 	{
@@ -20,9 +20,17 @@ public class BeginPanel : BasePanel
 		start = skin.transform.Find("start").GetComponent<Button>();
 		rules = skin.transform.Find("rules").GetComponent<Button>();
 		collection = skin.transform.Find("collection").GetComponent<Button>();
+		settings = skin.transform.Find("settings").GetComponent<Button>();
+		
 		start.onClick.AddListener(OnBeginClick);
 		rules.onClick.AddListener(OnRulesClick);
 		collection.onClick.AddListener(OnCollectionClick);
+		settings.onClick.AddListener(OnSettingClick);
+	}
+
+	private void OnSettingClick()
+	{
+		PanelManager.Open<SettingPanel>();
 	}
 
 	//关闭
