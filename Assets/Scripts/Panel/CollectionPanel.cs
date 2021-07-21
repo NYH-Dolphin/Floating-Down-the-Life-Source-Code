@@ -15,10 +15,6 @@ public class CollectionPanel : BasePanel
     
     private int MaxPage;
     public static Collection[] AllCollections;
-    private static int[] Unlocked;
-
-    private static GridBehavior[] observerList;
-    
 
     //初始化
     public override void OnInit()
@@ -30,17 +26,11 @@ public class CollectionPanel : BasePanel
         if (Collection.GetCollectionCount() % 12 != 0)
             MaxPage++;
         AllCollections = new Collection[MaxPage * 12];
-        Unlocked = new int[MaxPage * 12];
-        observerList = new GridBehavior[MaxPage * 12];
 
         for (int i = 0; i < MaxPage * 12; i++)
         {
             AllCollections[i] = new Collection(i);
         }
-        
-        // Unlocked[2] = 1;
-        // Unlocked[0] = 1;
-        // Unlocked[3] = 4;
     }
 
     //显示
@@ -74,8 +64,7 @@ public class CollectionPanel : BasePanel
                 GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
                     GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
                 grid.transform.localPosition = new Vector3(j, i, 0);
-                grid.GetComponent<GridBehavior>().Init(Page * 12 + count, Unlocked[Page*12+count]==0);
-                observerList[Page * 12 + count] = grid.GetComponent<GridBehavior>();
+                grid.GetComponent<GridBehavior>().Init(Page * 12 + count);
                 girds.Add(grid);
                 count++;
             }
@@ -103,11 +92,5 @@ public class CollectionPanel : BasePanel
     private void OnCloseClick()
     {
         Close();
-    }
-
-    public static void UnlockCollection(int id)
-    {
-        Unlocked[id]++;
-        observerList[id].SetIconVisibility(Unlocked[id]==0);
     }
 }
