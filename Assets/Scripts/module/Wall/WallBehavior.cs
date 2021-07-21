@@ -9,15 +9,14 @@ public class WallBehavior : MonoBehaviour
 {
     private static float speed = 200f;
 
-    private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_9",
-        "obstacle_10","obstacle_12","obstacle_18","obstacle_19","obstacle_20"};
-    private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_4", 
-        "obstacle_5","obstacle_11","obstacle_15","obstacle_17","obstacle_21"};
-    private readonly string[] _largeObstacles = {"obstacle_7", "obstacle_8","obstacle_13","obstacle_14","obstacle_16"};
+    private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_10", "obstacle_12", "obstacle_19", "obstacle_20"};
+    private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_15", "obstacle_17", "obstacle_21"};
+    private readonly string[] _largeObstacles = {"obstacle_4", "obstacle_5", "obstacle_7", "obstacle_8", "obstacle_9", "obstacle_11", "obstacle_13", "obstacle_14", "obstacle_16", "obstacle_18"};
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
     private readonly string[] _leftCharacterName = {"character1", "character4","character5",
         "character6","character7"};
-    private readonly string[] _rightCharacterName = {"character8"};
+    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12"};
+
 
     private GameObject obstacle = null;
     private int obstaclePossibility = 40;
@@ -142,7 +141,7 @@ public class WallBehavior : MonoBehaviour
     private bool RandomGenerate(int percentage)
     {
         // 随机生成 [1,100]之间的数
-        int num = Random.Range(1, 100);
+        int num = Random.Range(1, 101);
         if (num <= percentage)
         {
             return true;

@@ -26,25 +26,21 @@ public class GridBehavior : MonoBehaviour
         
     }
 
-    public void Init(int id, Boolean isLocked)
+    public void Init(int id)
     {
+        string key = "collection_lock_" + id;
+        Boolean isLocked = PlayerPrefs.GetInt(key) == 0;
         if (id >= Collection.GetCollectionCount())
         {
             gameObject.transform.Find("lock").gameObject.SetActive(false);
             return;
         }
 
-        this.ID = id;
-        this.Locked = isLocked;
-        String CollectionName = "coll" + this.ID;
+        ID = id;
+        Locked = isLocked;
+        String CollectionName = "coll" + ID;
         LockIcon = gameObject.transform.Find("lock").gameObject;
         CollectionIcon = gameObject.transform.Find(CollectionName).gameObject;
-        ChangeIconVisibility();
-    }
-
-    public void SetIconVisibility(Boolean locked)
-    {
-        this.Locked = locked;
         ChangeIconVisibility();
     }
 

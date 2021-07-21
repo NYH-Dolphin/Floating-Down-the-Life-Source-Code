@@ -18,9 +18,9 @@ public class Collection
 
     public Collection(int id)
     {
-        this.ID = id;
-        this.Name = NameMap.Get(id);
-        this.Description = DescriptMap.Get(id);
+        ID = id;
+        Name = NameMap.Get(id);
+        Description = DescriptMap.Get(id);
     }
 
     public static void Init()
@@ -49,11 +49,11 @@ public class Collection
 
     public String GetName()
     {
-        return this.Name;
+        return Name;
     }
 
     public String GetDescription()
     {
-        return this.Description;
+        return Description;
     }
 }
