@@ -5,67 +5,42 @@ using UnityEngine.UI;
 
 public class SettingPanel : BasePanel
 {
-
     private Button close;
-
-    public static Collection[] AllCollections;
-
-
+    public Button delete;
+    private Slider sd;
 
 
     //初始化
     public override void OnInit()
     {
-        skinPath = "CollectionPanel";
+        skinPath = "SettingPanel";
         layer = PanelManager.Layer.Panel;
-        
     }
 
     //显示
     public override void OnShow(params object[] args)
     {
-
         close = skin.transform.Find("close").GetComponent<Button>();
-        
+        delete = skin.transform.Find("delete").GetComponent<Button>();
+        // sd = skin.transform.Find("Volumn").GetComponent<Slider>();
         close.onClick.AddListener(OnCloseClick);
-        showPage();
+        delete.onClick.AddListener(OnDeleteClick);
+    }
+
+    private void OnDeleteClick()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     //关闭
     public override void OnClose()
     {
-		
     }
 
-    private void showPage()
-    {
-        
-        int count = 0;
-        for (int i = 475; i >= -200; i -= 225)
-        {
-            for (int j = -200; j <= 200; j += 200)
-            {
-                GameObject grid = Instantiate(Resources.Load<GameObject>("collection/grid"),
-                    GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
-                count++;
-            }
-        }
-    }
-    
-    private void OnLeftClick()
-    {
-        
-    }
-	
-    private void OnRightClick()
-    {
-       
-    }
 
     private void OnCloseClick()
     {
+        PanelManager.Open<BeginPanel>();
         Close();
     }
-
-    
 }
