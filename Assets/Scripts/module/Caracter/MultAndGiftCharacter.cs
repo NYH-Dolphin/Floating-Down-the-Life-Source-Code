@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// 本角色会多次谈话在剧情结束后会赠送气球给 Jimmy
-/// </summary>
-public class Chara5 : CharacterBehaviour
+public class GiftCharacter : CharacterBehaviour
 {
-    
-    
-    private bool hasGiftedBalloon = false; // 是否已经赠送过气球
-    private bool hasGiftedCollection = false; // 是否已经赠送收集品
+    private bool hasGifted = false; // 是否已经赠送过气球
     private static int meetTime = 1;
-
+    
+    
     private bool hasConversation = false; // 是否与该角色的这个实例有过对话
     void Start()
     {
@@ -23,24 +18,27 @@ public class Chara5 : CharacterBehaviour
         InBounds(distance);
         if (InConversation())
         {
+            flowchart.SetIntegerVariable("inBound", 0); // 如果正在对话中的话 不能再按 Enter 进入对话
             WallBehavior.Stop();
             HeightRecord.Pause();
+            JimmyBehaviour.Stop();
             hasConversation = true;
         }
         else
         {
             WallBehavior.Move();
             HeightRecord.Continue();
+            JimmyBehaviour.Move();
         }
-        GiveCheck();
+        GiveBalloonCheck();
     }
     
     // 检测是否给予 Jimmy 一个气球
-    private void GiveCheck()
+    private void GiveBalloonCheck()
     {
-        if (!hasGiftedBalloon && flowchart.GetBooleanVariable("gifted"))
+        if (!hasGifted && flowchart.GetBooleanVariable("gifted"))
         {
-            hasGiftedBalloon = true;
+            hasGifted = true;
             Jimmy.GetComponent<JimmyBehaviour>().AddBalloon(1);
         }
     }
@@ -82,5 +80,4 @@ public class Chara5 : CharacterBehaviour
         }
 
     }
-    
 }
