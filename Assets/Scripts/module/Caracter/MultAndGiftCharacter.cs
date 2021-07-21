@@ -43,8 +43,8 @@ public class MultAndGiftCharacter : CharacterBehaviour
         if (!hasGifted && id != -1)
         {
             hasGifted = true;
-            Debug.Log("Has give gift!!!!! ID is " + id );
-            CollectionPanel.UnlockCollection(id);
+            string collectionName = "collection_lock_" + id;
+            PlayerPrefs.SetInt(collectionName, 1);
         }
     }
     

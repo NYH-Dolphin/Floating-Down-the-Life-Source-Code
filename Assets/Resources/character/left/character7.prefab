@@ -79,7 +79,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2184916439386349102}
   selectedCommands:
-  - {fileID: 339609412471870917}
+  - {fileID: 8061497024484895555}
   variables:
   - {fileID: 595188222307468156}
   - {fileID: 7029228977137435161}
@@ -746,7 +746,7 @@ MonoBehaviour:
         gameObjectVal: {fileID: 0}
       integerData:
         integerRef: {fileID: 0}
-        integerVal: 1
+        integerVal: 2
       materialData:
         materialRef: {fileID: 0}
         materialVal: {fileID: 0}
