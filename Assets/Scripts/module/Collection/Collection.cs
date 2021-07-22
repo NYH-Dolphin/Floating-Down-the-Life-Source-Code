@@ -9,7 +9,7 @@ public class Collection
     private String Name;
     private String Description;
     
-    private static int maxCount = 5;
+    private static int maxCount = 6;
 
     public static int GetCollectionCount()
     {
@@ -36,6 +36,7 @@ public class Collection
         NameMap.Add(2, "九尾猫的铃铛");
         NameMap.Add(3, "电影票");
         NameMap.Add(4, "coll5");
+        NameMap.Add(5, "书签");
     }
 
     static void InitDescriptMap()
@@ -45,6 +46,7 @@ public class Collection
         DescriptMap.Add(2, "Description3");
         DescriptMap.Add(3, "一张不限场次的电影票，去看看想看的电影吧");
         DescriptMap.Add(4, "Description5");
+        DescriptMap.Add(5, "正在施工，敬请期待XD");
     }
 
     public String GetName()
