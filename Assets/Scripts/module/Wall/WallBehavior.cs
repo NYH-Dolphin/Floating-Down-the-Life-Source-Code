@@ -13,10 +13,13 @@ public class WallBehavior : MonoBehaviour
     private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_15", "obstacle_17", "obstacle_21"};
     private readonly string[] _largeObstacles = {"obstacle_4", "obstacle_5", "obstacle_7", "obstacle_8", "obstacle_9", "obstacle_11", "obstacle_13", "obstacle_14", "obstacle_16", "obstacle_18"};
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    private readonly string[] _leftCharacterName = {"character1", "character4","character5",
-        "character6","character7"};
-    // private readonly string[] _rightCharacterName = {"character2","character3","character8","character12"};
-    private readonly string[] _rightCharacterName = {"character3","character8"};
+    
+    // private readonly string[] _leftCharacterName = {"character11"};
+    // private readonly string[] _rightCharacterName = {"character13"};
+    private readonly string[] _leftCharacterName = {"character1", "character4","character5", "character6",
+        "character7", "character11"};
+    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12","character13"};
+   
 
 
     private GameObject obstacle = null;
