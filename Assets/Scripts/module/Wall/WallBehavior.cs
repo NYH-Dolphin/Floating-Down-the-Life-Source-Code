@@ -15,7 +15,8 @@ public class WallBehavior : MonoBehaviour
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
     private readonly string[] _leftCharacterName = {"character1", "character4","character5",
         "character6","character7"};
-    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12"};
+    // private readonly string[] _rightCharacterName = {"character2","character3","character8","character12"};
+    private readonly string[] _rightCharacterName = {"character3","character8"};
 
 
     private GameObject obstacle = null;

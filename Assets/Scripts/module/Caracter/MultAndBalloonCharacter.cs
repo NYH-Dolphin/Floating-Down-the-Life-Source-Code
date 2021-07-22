@@ -8,7 +8,7 @@ public class MultAndBalloonCharacter : CharacterBehaviour
     
     
     private bool hasGifted = false; // 是否已经赠送过气球
-    private static int meetTime = 1;
+    // private static int meetTime = 1;
     
     
     private bool hasConversation = false; // 是否与该角色的这个实例有过对话
@@ -54,7 +54,7 @@ public class MultAndBalloonCharacter : CharacterBehaviour
         if (distance <= 200)
         {
             // flowchart 预先 +1
-            flowchart.SetIntegerVariable("meetTime", meetTime);
+            // flowchart.SetIntegerVariable("meetTime", meetTime);
 
             Debug.Log("Trigger Conversation");
             flowchart.SetIntegerVariable("inBound", 1);
@@ -64,24 +64,24 @@ public class MultAndBalloonCharacter : CharacterBehaviour
             flowchart.SetIntegerVariable("inBound", 0);
             
             // 有过谈话，但是离开了
-            if (hasConversation)
-            {
-                int flowChartMeetTime = flowchart.GetIntegerVariable("meetTime");
-                meetTime = meetTime == flowChartMeetTime ? meetTime + 1 : meetTime;
-                hasConversation = false;
-            }
-            // 没有谈话过且远离了
-            else
-            {
-                int flowchartMeetTime = flowchart.GetIntegerVariable("meetTime");
-                // 之前进入了 200 内，flowChartMeetTime 预先 +1 了
-                // 减去 1
-                if (flowchartMeetTime == meetTime)
-                {
-                    flowchartMeetTime--;
-                    flowchart.SetIntegerVariable("meetTime", flowchartMeetTime);
-                }
-            }
+            // if (hasConversation)
+            // {
+            //     int flowChartMeetTime = flowchart.GetIntegerVariable("meetTime");
+            //     meetTime = meetTime == flowChartMeetTime ? meetTime + 1 : meetTime;
+            //     hasConversation = false;
+            // }
+            // // 没有谈话过且远离了
+            // else
+            // {
+            //     int flowchartMeetTime = flowchart.GetIntegerVariable("meetTime");
+            //     // 之前进入了 200 内，flowChartMeetTime 预先 +1 了
+            //     // 减去 1
+            //     if (flowchartMeetTime == meetTime)
+            //     {
+            //         flowchartMeetTime--;
+            //         flowchart.SetIntegerVariable("meetTime", flowchartMeetTime);
+            //     }
+            // }
         }
 
     }
