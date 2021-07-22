@@ -3,14 +3,15 @@ using UnityEngine.UI;
 
 public class RulesPanel : BasePanel
 {
-
-    private Button home;
+    // private Button home;
     private Button next;
     private Button last;
+    private Button close;
     private Text ruleText;
 
     private int ruleCount = 0;
     private readonly GameObject[] pics = new GameObject[3];
+
     private readonly string[] rules =
     {
         "A D/ ← →: Manipulate Jimmy to move last and right",
@@ -28,17 +29,20 @@ public class RulesPanel : BasePanel
     //显示
     public override void OnShow(params object[] args)
     {
-        home = skin.transform.Find("home").GetComponent<Button>();
+        // home = skin.transform.Find("home").GetComponent<Button>();
         next = skin.transform.Find("next").GetComponent<Button>();
         last = skin.transform.Find("last").GetComponent<Button>();
-        home.onClick.AddListener(OnHomeClick);
+        close = skin.transform.Find("close").GetComponent<Button>();
+
+
+        // home.onClick.AddListener(OnHomeClick);
         next.onClick.AddListener(OnNextClick);
         last.onClick.AddListener(OnLastClick);
-
+        close.onClick.AddListener(OnCloseClick);
         pics[0] = skin.transform.Find("rule1").gameObject;
         pics[1] = skin.transform.Find("rule2").gameObject;
         pics[2] = skin.transform.Find("rule3").gameObject;
-        
+
         pics[1].SetActive(false);
         pics[2].SetActive(false);
 
@@ -46,10 +50,15 @@ public class RulesPanel : BasePanel
         ruleText.text = rules[ruleCount];
     }
 
+    private void OnCloseClick()
+    {
+        PanelManager.Open<BeginPanel>();
+        Close();
+    }
+
     //关闭
     public override void OnClose()
     {
-		
     }
 
     private void OnHomeClick()
@@ -57,7 +66,7 @@ public class RulesPanel : BasePanel
         PanelManager.Open<BeginPanel>();
         Close();
     }
-    
+
     private void OnNextClick()
     {
         if (ruleCount < 2)
@@ -68,7 +77,7 @@ public class RulesPanel : BasePanel
             pics[ruleCount].SetActive(true);
         }
     }
-    
+
     private void OnLastClick()
     {
         if (ruleCount > 0)
@@ -79,5 +88,4 @@ public class RulesPanel : BasePanel
             pics[ruleCount].SetActive(true);
         }
     }
-    
 }
