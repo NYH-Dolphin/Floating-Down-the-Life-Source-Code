@@ -20,7 +20,7 @@ public class WallBehavior : MonoBehaviour
         "character7", "character11"};
 
     private readonly string[] _rightCharacterName = {"character2","character3","character8","character12",
-        "character13", "character10"};
+        "character13", "character10","character15"};
 
    
 
