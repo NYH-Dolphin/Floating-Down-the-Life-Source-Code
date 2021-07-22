@@ -6,18 +6,14 @@ using UnityEngine.UI;
 public class MusicController : MonoBehaviour
 {
     // Start is called before the first frame update
-    // public AudioSource audioSource;
-    public Slider slider;
     public AudioClip[] audios;
-    public static int index = 0;
+    private static int index = 0;
 
     void Start()
     {
         GetComponent<AudioSource>().clip = audios[index];
+        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
         GetComponent<AudioSource>().Play();
-        // audioSource.Play();
-        // GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
-        // slider.value = GetComponent<AudioSource>().volume;
     }
 
 
@@ -27,7 +23,7 @@ public class MusicController : MonoBehaviour
         transfer();
     }
 
-    public void transfer()
+    private void transfer()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -52,12 +48,5 @@ public class MusicController : MonoBehaviour
             GetComponent<AudioSource>().Play();
             Debug.Log(GetComponent<AudioSource>().clip.name);
         }
-    }
-
-    public void Controlsound()
-    {
-        // audioSource.volume = slider.value;
-        GetComponent<AudioSource>().volume = slider.value;
-        PlayerPrefs.SetFloat("Volume", slider.value);
     }
 }

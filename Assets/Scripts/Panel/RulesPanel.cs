@@ -10,13 +10,14 @@ public class RulesPanel : BasePanel
     private Text ruleText;
 
     private int ruleCount = 0;
-    private readonly GameObject[] pics = new GameObject[3];
+    private readonly GameObject[] pics = new GameObject[4];
 
     private readonly string[] rules =
     {
-        "A D/ ← →: Manipulate Jimmy to move last and right",
-        "Crash: Jimmy will lose one balloon if collide with an obstacle",
-        "Enter/Click: Talk with some one to hear from his/her story"
+        "A D / ← →: 控制Jimmy向左或向右移动",
+        "S / ↓: 长按Jimmy加速下落，松开恢复",
+        "当Jimmy触碰到障碍物时会损失一个气球",
+        "Enter/Click: 与角色交流，聆听Ta的故事"
     };
 
     //初始化
@@ -42,11 +43,13 @@ public class RulesPanel : BasePanel
         pics[0] = skin.transform.Find("rule1").gameObject;
         pics[1] = skin.transform.Find("rule2").gameObject;
         pics[2] = skin.transform.Find("rule3").gameObject;
+        pics[3] = skin.transform.Find("rule4").gameObject;
 
         pics[1].SetActive(false);
         pics[2].SetActive(false);
+        pics[3].SetActive(false);
 
-        ruleText = skin.transform.Find("ruleText/rule").GetComponent<Text>();
+        ruleText = skin.transform.Find("ruleText").GetComponent<Text>();
         ruleText.text = rules[ruleCount];
     }
 
@@ -69,7 +72,7 @@ public class RulesPanel : BasePanel
 
     private void OnNextClick()
     {
-        if (ruleCount < 2)
+        if (ruleCount < rules.Length - 1)
         {
             pics[ruleCount].SetActive(false);
             ruleCount++;

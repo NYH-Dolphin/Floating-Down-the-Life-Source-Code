@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SettingPanel : BasePanel
 {
     private Button close;
-    public Button delete;
+    private Button delete;
     private Slider sd;
 
 
@@ -22,9 +22,11 @@ public class SettingPanel : BasePanel
     {
         close = skin.transform.Find("close").GetComponent<Button>();
         delete = skin.transform.Find("delete").GetComponent<Button>();
-        // sd = skin.transform.Find("Volumn").GetComponent<Slider>();
+        sd = skin.transform.Find("Slider").GetComponent<Slider>();
         close.onClick.AddListener(OnCloseClick);
         delete.onClick.AddListener(OnDeleteClick);
+        sd.onValueChanged.AddListener(ControlSound);
+        sd.value = PlayerPrefs.GetFloat("Volume");
     }
 
     private void OnDeleteClick()
@@ -42,5 +44,11 @@ public class SettingPanel : BasePanel
     {
         PanelManager.Open<BeginPanel>();
         Close();
+    }
+    
+    private void ControlSound(float arg0)
+    {
+        GameObject.Find("Audio Source").GetComponent<AudioSource>().volume = sd.value;
+        PlayerPrefs.SetFloat("Volume", sd.value);
     }
 }
