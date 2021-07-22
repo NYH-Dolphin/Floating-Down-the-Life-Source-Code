@@ -31,19 +31,19 @@ public class Collection
 
     static void InitNameMap()
     {
-        NameMap.Add(0, "coll1");
-        NameMap.Add(1, "coll2");
-        NameMap.Add(2, "coll3");
-        NameMap.Add(3, "coll4");
+        NameMap.Add(0, "计划表");
+        NameMap.Add(1, "黑童话集");
+        NameMap.Add(2, "九尾猫的铃铛");
+        NameMap.Add(3, "电影票");
         NameMap.Add(4, "coll5");
     }
 
     static void InitDescriptMap()
     {
-        DescriptMap.Add(0, "Description1");
-        DescriptMap.Add(1, "Description2");
+        DescriptMap.Add(0, "据说会有梦想和目标，才会走的更远");
+        DescriptMap.Add(1, "这好像不是我童年看到过的童话故事呢...");
         DescriptMap.Add(2, "Description3");
-        DescriptMap.Add(3, "Description4");
+        DescriptMap.Add(3, "一张不限场次的电影票，去看看想看的电影吧");
         DescriptMap.Add(4, "Description5");
     }
 
