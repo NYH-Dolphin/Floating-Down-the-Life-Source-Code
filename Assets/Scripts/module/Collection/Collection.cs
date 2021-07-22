@@ -35,16 +35,16 @@ public class Collection
         NameMap.Add(1, "黑童话集");
         NameMap.Add(2, "九尾猫的铃铛");
         NameMap.Add(3, "电影票");
-        NameMap.Add(4, "coll5");
+        NameMap.Add(4, "草莓味的硬糖");
     }
 
     static void InitDescriptMap()
     {
         DescriptMap.Add(0, "据说会有梦想和目标，才会走的更远");
         DescriptMap.Add(1, "这好像不是我童年看到过的童话故事呢...");
-        DescriptMap.Add(2, "Description3");
+        DescriptMap.Add(2, "跟随了九尾猫多年的铃铛，或许可以实现一个愿望");
         DescriptMap.Add(3, "一张不限场次的电影票，去看看想看的电影吧");
-        DescriptMap.Add(4, "Description5");
+        DescriptMap.Add(4, "甜甜...");
     }
 
     public String GetName()
@@ -55,5 +55,10 @@ public class Collection
     public String GetDescription()
     {
         return Description;
+    }
+
+    public static string GetName(int id)
+    {
+        return NameMap.Get(id);
     }
 }

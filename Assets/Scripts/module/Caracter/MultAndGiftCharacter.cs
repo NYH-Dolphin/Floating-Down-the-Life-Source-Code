@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 /// <summary>
 /// 本角色会多次谈话在剧情结束后会赠送收藏品给 Jimmy
 /// </summary>
@@ -45,6 +46,7 @@ public class MultAndGiftCharacter : CharacterBehaviour
             hasGifted = true;
             string collectionName = "collection_lock_" + id;
             PlayerPrefs.SetInt(collectionName, 1);
+            StartCoroutine(GetCollection(id));
         }
     }
     
@@ -53,36 +55,20 @@ public class MultAndGiftCharacter : CharacterBehaviour
     {
         if (distance <= 200)
         {
-            // flowchart 预先 +1
-            // flowchart.SetIntegerVariable("meetTime", meetTime);
-
             Debug.Log("Trigger Conversation");
             flowchart.SetIntegerVariable("inBound", 1);
         }
         else
         {
             flowchart.SetIntegerVariable("inBound", 0);
-            
-            // 有过谈话，但是离开了
-            // if (hasConversation)
-            // {
-            //     int flowChartMeetTime = flowchart.GetIntegerVariable("meetTime");
-            //     meetTime = meetTime == flowChartMeetTime ? meetTime + 1 : meetTime;
-            //     hasConversation = false;
-            // }
-            // // 没有谈话过且远离了
-            // else
-            // {
-            //     int flowchartMeetTime = flowchart.GetIntegerVariable("meetTime");
-            //     // 之前进入了 200 内，flowChartMeetTime 预先 +1 了
-            //     // 减去 1
-            //     if (flowchartMeetTime == meetTime)
-            //     {
-            //         flowchartMeetTime--;
-            //         flowchart.SetIntegerVariable("meetTime", flowchartMeetTime);
-            //     }
-            // }
         }
 
+    }
+    
+    IEnumerator GetCollection(int id)
+    {
+        yield return new WaitForSeconds(0.5f);
+        string collectionName = Collection.GetName(id);
+        PanelManager.Open<GetCollectPanel>(collectionName);
     }
 }
