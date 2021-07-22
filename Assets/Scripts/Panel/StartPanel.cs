@@ -76,7 +76,7 @@ public class StartPanel : BasePanel
 
         if (a > 0.9 && notDestroy)
         {
-            Destroy(flowchart.gameObject);
+            // Destroy(flowchart.gameObject);
             notDestroy = true;
             StartCoroutine(Disappear());
         }

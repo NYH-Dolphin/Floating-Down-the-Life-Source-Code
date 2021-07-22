@@ -18,7 +18,10 @@ public class WallBehavior : MonoBehaviour
     // private readonly string[] _rightCharacterName = {"character14"};
     private readonly string[] _leftCharacterName = {"character1", "character4","character5", "character6",
         "character7", "character11"};
-    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12","character13"};
+
+    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12",
+        "character13", "character10"};
+
    
 
 
