@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5987111270932493036}
   - component: {fileID: 5987111270932493037}
   - component: {fileID: 5987111270932493038}
-  - component: {fileID: 7692345576253954629}
+  - component: {fileID: 9174664718688711108}
   m_Layer: 0
   m_Name: purple_balloon
   m_TagString: Untagged
@@ -122,7 +122,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.025455017, y: 2.2527971}
   m_Size: {x: 2.010755, y: 2.6289232}
   m_Direction: 0
---- !u!114 &7692345576253954629
+--- !u!114 &9174664718688711108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5987111270932493039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba03baa365e99646a4dca8ca4fbd82d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e055e621302b0b4b80ff6f2e2ed42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  offsetXYZ: {x: 1, y: 1, z: 1}

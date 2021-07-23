@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1652409029719932721}
   - component: {fileID: 6220472349772639776}
   - component: {fileID: 7282403107149874094}
-  - component: {fileID: 194247103824872366}
+  - component: {fileID: 4973642009961470279}
   m_Layer: 0
   m_Name: grassgreen_balloon
   m_TagString: Untagged
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &194247103824872366
+--- !u!114 &4973642009961470279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4474341593958721043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba03baa365e99646a4dca8ca4fbd82d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e055e621302b0b4b80ff6f2e2ed42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  offsetXYZ: {x: 1, y: 1, z: 1}

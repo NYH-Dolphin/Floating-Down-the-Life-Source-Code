@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3408077226753932588}
   - component: {fileID: 4734033428475280249}
   - component: {fileID: 5462104015893570465}
-  - component: {fileID: 7865236562822171669}
+  - component: {fileID: 9163579736193075320}
   m_Layer: 0
   m_Name: cyan_balloon
   m_TagString: Untagged
@@ -127,7 +127,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.6491075, y: 2.3611255}
   m_Size: {x: 1.7720511, y: 2.2251282}
   m_Direction: 0
---- !u!114 &7865236562822171669
+--- !u!114 &9163579736193075320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,6 +136,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 487850945783879516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba03baa365e99646a4dca8ca4fbd82d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e055e621302b0b4b80ff6f2e2ed42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  offsetXYZ: {x: 1, y: 1, z: 1}
