@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public class Collection
 {
@@ -62,5 +63,17 @@ public class Collection
     public static string GetName(int id)
     {
         return NameMap.Get(id);
+    }
+
+    public static int GetUnlockNum()
+    {
+        int unlockNum = 0;
+        for (int i = 0; i < maxCount; i++)
+        {
+            string key = "collection_lock_" + i;
+            if (PlayerPrefs.GetInt(key) != 0)
+                unlockNum++;
+        }
+        return unlockNum;
     }
 }
