@@ -14,9 +14,9 @@ public class RulesPanel : BasePanel
 
     private readonly string[] rules =
     {
-        "A D / ← →: 控制Jimmy向左或向右移动",
-        "S / ↓: 长按Jimmy加速下落，松开恢复",
-        "当Jimmy触碰到障碍物时会损失一个气球",
+        "A D / ← →: 左右移动",
+        "S / ↓: 长按加速下落，松开恢复",
+        "当触碰到障碍物时会损失气球",
         "Enter/Click: 与角色交流，聆听Ta的故事"
     };
 
