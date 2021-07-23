@@ -94,7 +94,7 @@ public class JimmyBehaviour : MonoBehaviour
     {
         float changeSpeed = 500 - balloons.Count * 120f;
         // 冲刺加速
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             float currentSpeed = WallBehavior.GetSpeed();
             currentSpeed += Time.deltaTime * 100;

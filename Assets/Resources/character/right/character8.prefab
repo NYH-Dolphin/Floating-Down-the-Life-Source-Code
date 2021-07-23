@@ -192,8 +192,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5567292779302246975}
-  selectedCommands:
-  - {fileID: 1679632754016266374}
+  selectedCommands: []
   variables:
   - {fileID: 6417618318906241220}
   - {fileID: 2947555125199896917}
@@ -226,7 +225,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 317.8904
     y: 165.7192
-    width: 109.0164
+    width: 69.0164
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
