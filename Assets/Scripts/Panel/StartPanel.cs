@@ -39,6 +39,14 @@ public class StartPanel : BasePanel
         black = skin.transform.Find("black").gameObject;
         black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         flowchart = skin.transform.Find("Flowchart").GetComponent<Flowchart>();
+        
+        // 高度记录
+        HeightRecord.RefreshHeight();
+        HeightRecord.Continue();
+        WallBehavior.Continue();
+        HeightRecord.Begin();
+        WallBehavior.Begin();
+        // Debug.Log("Total height is: " + HeightRecord.GetTotalHeight());
     }
 
     private void OnSkipClick()

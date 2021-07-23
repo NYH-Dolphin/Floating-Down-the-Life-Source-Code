@@ -10,7 +10,7 @@ public class GamePanel : BasePanel
 {
     private List<GameObject> leftWall = new List<GameObject>();
     private List<GameObject> rightWall = new List<GameObject>();
-    
+
     // // 天气面板
     private SpriteRenderer morning;
     private SpriteRenderer noon;
@@ -18,10 +18,13 @@ public class GamePanel : BasePanel
     private List<SpriteRenderer> background = new List<SpriteRenderer>();
     private int showIndex;
     private Flowchart backgroundFlowChart;
-    
+
     private GameObject Jimmy;
     private GameObject heightUI; // 显示下降高度的UI组件
     private Button stop;
+
+    private bool ending = false; // 是否是结局
+    private float endingTime = 0f; // 墙壁还能再往上的时间 5s
 
     //初始化
     public override void OnInit()
@@ -36,13 +39,13 @@ public class GamePanel : BasePanel
         // 暂停 Button
         stop = skin.transform.Find("stop").GetComponent<Button>();
         stop.onClick.AddListener(OnStopClick);
-        
+
         // Jimmy
         string JimmyPath = "Jimmy/Jimmy";
         Jimmy = Instantiate(Resources.Load<GameObject>(JimmyPath),
             GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
         Jimmy.transform.localPosition = new Vector3(0, 600, 0);
-        
+
         // 下降高度 Label
         string LabelPath = "UI/Label";
         heightUI = Instantiate(Resources.Load<GameObject>(LabelPath),
@@ -91,7 +94,7 @@ public class GamePanel : BasePanel
                 GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
             float height = wallL.GetComponent<RectTransform>().rect.height;
             wallL.transform.localPosition = new Vector3(400, end - height / 2, 0);
-            wallR.transform.localPosition = new Vector3(-400,end - height / 2, 0);
+            wallR.transform.localPosition = new Vector3(-400, end - height / 2, 0);
             leftWall.Add(wallL);
             rightWall.Add(wallR);
             wallL.transform.SetAsFirstSibling();
@@ -123,59 +126,16 @@ public class GamePanel : BasePanel
     {
         if (Jimmy.transform.localPosition.y >= 100)
             Jimmy.transform.localPosition += (300 * Time.smoothDeltaTime) * new Vector3(0, -1, 0);
-        RandomGenerateMode();
-        // ChangeBackground();
-        
+
+        if (!HeightRecord.IsEnd())
+        {
+            RandomGenerateMode();
+        }
+        else
+        {
+            EndingMode();
+        }
     }
-
-
-    // private float lastHeight; // 最近一次 height
-    // // 逐渐切换背景
-    // private void ChangeBackground()
-    // {
-    //     
-    //     float height = heightUI.GetComponent<HeightRecord>().GetHeight();
-    //     float current = (height - lastHeight) / 30;
-    //     Debug.Log("showIndex is " + showIndex);
-    //     // Debug.Log(current);
-    //     switch (showIndex)
-    //     {
-    //         case 0:
-    //             Color colorA = background[0].color;
-    //             background[0].color = new Color(colorA.r, colorA.g, colorA.b, 1 - current);
-    //             Color colorB = background[1].color;
-    //             background[1].color = new Color(colorB.r, colorB.g, colorB.b, current);
-    //             break;
-    //         case 1:
-    //             colorA = background[1].color;
-    //             background[1].color = new Color(colorA.r, colorA.g, colorA.b, 1 - current);
-    //             colorB = background[2].color;
-    //             background[2].color = new Color(colorB.r, colorB.g, colorB.b, current);
-    //             break;
-    //         case 2:
-    //             colorA = background[2].color;
-    //             background[2].color = new Color(colorA.r, colorA.g, colorA.b, 1 - current);
-    //             colorB = background[0].color;
-    //             background[0].color = new Color(colorB.r, colorB.g, colorB.b, current);
-    //             break;
-    //     }
-    //     // 每 100m 切换一次背景
-    //     if (height % 30 == 0)
-    //     {
-    //         lastHeight = height;
-    //         if (showIndex == 0)
-    //         {
-    //             showIndex = 1;
-    //         }else if (showIndex == 1)
-    //         {
-    //             showIndex = 2;
-    //         }
-    //         else if(showIndex == 2)
-    //         {
-    //             showIndex = 0;
-    //         }
-    //     }
-    // }
 
     //关闭
     public override void OnClose()
@@ -183,7 +143,7 @@ public class GamePanel : BasePanel
         leftWall = new List<GameObject>();
         rightWall = new List<GameObject>();
     }
-    
+
     // 墙壁、障碍物、窗台和角色的随机生成
     void RandomGenerateMode()
     {
@@ -227,6 +187,88 @@ public class GamePanel : BasePanel
                 else
                     wallR.GetComponent<WallBehavior>().GenerateCharacter(80);
             }
+        }
+
+        // 左墙壁销毁
+        GameObject firstLeft = leftWall.First();
+        if (firstLeft.transform.localPosition.y - firstLeft.GetComponent<RectTransform>().rect.height / 2 >= 815)
+        {
+            leftWall.Remove(firstLeft);
+            Destroy(firstLeft);
+        }
+
+        // 右墙壁销毁
+        GameObject firstRight = rightWall.First();
+        if (firstRight.transform.localPosition.y - firstRight.GetComponent<RectTransform>().rect.height / 2 >= 815)
+        {
+            rightWall.Remove(firstRight);
+            Destroy(firstRight);
+        }
+    }
+
+
+    // private const int endMeter = 100;
+    //
+    // // 检查游戏是否到了结局
+    // void CheckEnding()
+    // {
+    //     if (HeightRecord.GetTotalHeight() == endMeter)
+    //     {
+    //         ending = true;
+    //         HeightRecord.End();// 终止高度记录
+    //         HeightRecord.RefreshTotalHeight(); // totalHeight 清零
+    //     }
+    // }
+
+    private bool hasGenerate = false;
+
+    // 结局地面生成
+    void EndingMode()
+    {
+        endingTime += Time.deltaTime;
+        if (endingTime <= 3)
+        {
+            EndingGenerateMode();
+        }
+        else
+        {
+            if (!hasGenerate)
+            {
+                if (leftWall.Last().GetComponent<RectTransform>().localPosition.y >= -650)
+                {
+                    leftWall.Last().GetComponent<WallBehavior>().GenerateGround();
+                    hasGenerate = true;
+                }
+            }
+
+            if (leftWall.Last().GetComponent<RectTransform>().localPosition.y >= -550)
+            {
+                Jimmy.GetComponent<JimmyBehaviour>().FallIntoTheGround();
+                WallBehavior.End();
+            }
+        }
+    }
+
+
+    void EndingGenerateMode()
+    {
+        // 左墙壁随机生成
+        GameObject lastLeft = leftWall.Last();
+        if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -815)
+        {
+            string path = "walls/WallL";
+            GameObject wallL = Instantiate(Resources.Load<GameObject>(path),
+                GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+            GameObject wallR = Instantiate(Resources.Load<GameObject>(path),
+                GameObject.Find("Root/Canvas/GamePanel(Clone)").transform, true);
+            float height = wallL.GetComponent<RectTransform>().rect.height;
+            wallL.transform.localPosition = new Vector3(400, -800 - height / 2, 0);
+            wallR.transform.localPosition = new Vector3(-400, -800 - height / 2, 0);
+            Debug.Log(endingTime);
+            leftWall.Add(wallL);
+            rightWall.Add(wallR);
+            wallL.transform.SetAsFirstSibling();
+            wallR.transform.SetAsFirstSibling();
         }
 
         // 左墙壁销毁

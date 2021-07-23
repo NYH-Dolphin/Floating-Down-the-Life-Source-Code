@@ -32,7 +32,7 @@ public class OverPanel : BasePanel
 
     private void OnHomeClick()
     {
-        WallBehavior.Move();
+        WallBehavior.Continue();
         HeightRecord.Continue();
         CharacterBehaviour.real_stop = false;
         PanelManager.panels["GamePanel"].Close();
@@ -42,7 +42,7 @@ public class OverPanel : BasePanel
     
     private void OnRetryClick()
     {
-        WallBehavior.Move();
+        WallBehavior.Continue();
         HeightRecord.Continue();
         CharacterBehaviour.real_stop = false;
         PanelManager.panels["GamePanel"].Close();

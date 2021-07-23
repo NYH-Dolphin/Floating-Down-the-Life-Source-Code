@@ -23,16 +23,16 @@ public class MultAndBalloonAndGiftCharacter : CharacterBehaviour
         if (InConversation())
         {
             flowchart.SetIntegerVariable("inBound", 0); // 如果正在对话中的话 不能再按 Enter 进入对话
-            WallBehavior.Stop();
+            WallBehavior.Pause();
             HeightRecord.Pause();
-            JimmyBehaviour.Stop();
+            JimmyBehaviour.Pause();
             hasConversation = true;
         }
         else
         {
-            WallBehavior.Move();
+            WallBehavior.Continue();
             HeightRecord.Continue();
-            JimmyBehaviour.Move();
+            JimmyBehaviour.Continue();
         }
 
         GiveGiftCheck();

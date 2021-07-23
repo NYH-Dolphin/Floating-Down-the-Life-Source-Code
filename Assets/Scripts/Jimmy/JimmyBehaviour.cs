@@ -8,19 +8,17 @@ using Random = UnityEngine.Random;
 
 public class JimmyBehaviour : MonoBehaviour
 {
-    
-    
     public ArrayList balloons = new ArrayList();
+
     // private float speed = 700;                  // Jimmy 做匀速直线运动的速度
-    public Animator animator;                   // Animator 组件
-   
-    private Boolean isCollide = false;          // 判断是否碰撞
-    private const int InvalidTimeTick = 300;    // 无敌时间
-    private int invalidTimeCount = 0;           // 无敌时间记数
-    private Renderer jimmyRenderer = null;      // Jimmy 的图片
+    public Animator animator; // Animator 组件
 
-    private static bool stop = false;           // 控制 Jimmy 是否能移动
+    private Boolean isCollide = false; // 判断是否碰撞
+    private const int InvalidTimeTick = 300; // 无敌时间
+    private int invalidTimeCount = 0; // 无敌时间记数
+    private Renderer jimmyRenderer = null; // Jimmy 的图片
 
+    private static bool stop = false; // 控制 Jimmy 是否能移动
 
 
     // 气球的名字和可以使用的气球
@@ -30,8 +28,10 @@ public class JimmyBehaviour : MonoBehaviour
         "grassgreen_balloon", "green_balloon", "orange_balloon", "pink_balloon",
         "purple_balloon", "red_balloon", "skyblue_balloon", "yellow_balloon", "gray_balloon"
     };
+
     // 记录气球和对应的气球的 localPosition
     private static HashMap<string, Vector3> balloonsPosition = new HashMap<string, Vector3>();
+
     // 气球池，池子里的气球可以被随意调用
     private HashSet<string> balloonPool = new HashSet<string>();
 
@@ -48,13 +48,12 @@ public class JimmyBehaviour : MonoBehaviour
     private string _balloonPath;
 
 
-
     // Start is called before the first frame update
     // 初始情况下拿着三个气球
     void Start()
     {
         jimmyRenderer = gameObject.GetComponent<Renderer>();
-        
+
 
         // 初始化 balloonName 和 balloonPosition
         InitialBalloonsAttribute();
@@ -72,13 +71,16 @@ public class JimmyBehaviour : MonoBehaviour
             Float();
             ControlSpeed();
         }
-        
+
         if (isCollide)
         {
-            if(balloons.Count>0)
+            if (balloons.Count > 0)
                 Shake();
         }
-        if (transform.localPosition.y < -700)
+        
+        CheckTerminate();
+        
+        if (transform.localPosition.y < -850)
             PanelManager.Open<OverPanel>();
     }
 
@@ -86,6 +88,7 @@ public class JimmyBehaviour : MonoBehaviour
     private const float DASHSPEED = 500f;
     private const float MINSPEED = 200f;
     private const float MAXSPEED = 400f;
+
     // 全局控制墙壁的生成速度 —— 相对是 Jimmy 的移动速度
     private void ControlSpeed()
     {
@@ -152,7 +155,7 @@ public class JimmyBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Jimmy: OnTriggerEnter2D");
-        if (collision.gameObject.name.Contains("obstacle")&&!isCollide)
+        if (collision.gameObject.name.Contains("obstacle") && !isCollide)
         {
             if (collision.gameObject.name.Contains("obstacle_19"))
             {
@@ -164,24 +167,25 @@ public class JimmyBehaviour : MonoBehaviour
         }
     }
 
-    
+
     // 停止 Jimmy 的移动和漂浮
-    public static void Stop()
+    public static void Pause()
     {
         stop = true;
     }
-    
+
     // Jimmy 继续移动
-    public static void Move()
+    public static void Continue()
     {
         stop = false;
     }
-    
-    
+
+
     // Jimmy 的移动
     private const float MAXFLOATSPEED = 500f;
     private const float MINFLOATSPEED = 100f;
     private float floatSpeed = 100f;
+
     void Float()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -189,7 +193,6 @@ public class JimmyBehaviour : MonoBehaviour
         // 向左移动
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            
             // Debug.Log("LEFT");
             floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
             floatSpeed += Time.deltaTime * 700;
@@ -208,7 +211,6 @@ public class JimmyBehaviour : MonoBehaviour
         // 向右移动
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            
             // Debug.Log("RIGHT");
             floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
             floatSpeed += Time.deltaTime * 700;
@@ -236,6 +238,7 @@ public class JimmyBehaviour : MonoBehaviour
                 p.x += 0.7f * floatSpeed * Time.deltaTime;
             }
         }
+
         // Debug.Log(floatSpeed);
         transform.position = p;
     }
@@ -245,7 +248,7 @@ public class JimmyBehaviour : MonoBehaviour
     {
         if (balloons.Count == 0)
         {
-            WallBehavior.Stop();
+            WallBehavior.Pause();
             HeightRecord.Pause();
             CharacterBehaviour.real_stop = true;
             // Time.timeScale. = 0;
@@ -255,35 +258,40 @@ public class JimmyBehaviour : MonoBehaviour
             transform.GetComponent<Rigidbody2D>().gravityScale = 30;
         }
     }
-    
+
+
+    public void FallIntoTheGround()
+    {
+        transform.GetComponent<Rigidbody2D>().gravityScale = 30;
+    }
+
     /// <summary>
     /// Jimmy 与气球交互的代码
     /// ///////////////////////////////////////////////////////////////////////////////////
     /// </summary>
-    
+
     // 初始化气球的属性
     private void InitialBalloonsAttribute()
     {
-        
         foreach (string balloonName in BalloonsName)
         {
             balloonPool.Add(balloonName);
         }
-        balloonsPosition.Add("gray_balloon", new Vector3(0.8f,-1.03f, 0f));
-        balloonsPosition.Add("red_balloon", new Vector3(1.25f,2.58f, 0f));
-        balloonsPosition.Add("orange_balloon", new Vector3(0.67f,1.13f, 0f));
-        balloonsPosition.Add("pink_balloon", new Vector3(1.17f,2.36f, 0f));
-        balloonsPosition.Add("cyan_balloon", new Vector3(1f,3f, 0f)); // ?????
-        balloonsPosition.Add("yellow_balloon", new Vector3(1.17f,2.97f, 0f)); 
-        balloonsPosition.Add("blue_balloon", new Vector3(1.33f,3f, 0f)); 
-        balloonsPosition.Add("purple_balloon", new Vector3(1.29f,2.96f, 0f)); 
-        balloonsPosition.Add("grassgreen_balloon", new Vector3(0.8f,1f, 0f)); 
-        balloonsPosition.Add("green_balloon", new Vector3(2f,3.2f, 0f)); 
-        balloonsPosition.Add("skyblue_balloon", new Vector3(1.27f,2.57f, 0f));
 
+        balloonsPosition.Add("gray_balloon", new Vector3(0.8f, -1.03f, 0f));
+        balloonsPosition.Add("red_balloon", new Vector3(1.25f, 2.58f, 0f));
+        balloonsPosition.Add("orange_balloon", new Vector3(0.67f, 1.13f, 0f));
+        balloonsPosition.Add("pink_balloon", new Vector3(1.17f, 2.36f, 0f));
+        balloonsPosition.Add("cyan_balloon", new Vector3(1f, 3f, 0f)); // ?????
+        balloonsPosition.Add("yellow_balloon", new Vector3(1.17f, 2.97f, 0f));
+        balloonsPosition.Add("blue_balloon", new Vector3(1.33f, 3f, 0f));
+        balloonsPosition.Add("purple_balloon", new Vector3(1.29f, 2.96f, 0f));
+        balloonsPosition.Add("grassgreen_balloon", new Vector3(0.8f, 1f, 0f));
+        balloonsPosition.Add("green_balloon", new Vector3(2f, 3.2f, 0f));
+        balloonsPosition.Add("skyblue_balloon", new Vector3(1.27f, 2.57f, 0f));
     }
 
-    
+
     // 指定 Jimmy 增加多少个气球
     public void AddBalloon(int number)
     {
@@ -294,16 +302,16 @@ public class JimmyBehaviour : MonoBehaviour
             GameObject balloon =
                 Instantiate(Resources.Load<GameObject>(_balloonPath), gameObject.transform, true);
             balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
-            if(status==floatingStatus.RIGHT)
+            if (status == floatingStatus.RIGHT)
             {
                 balloon.transform.RotateAround(transform.position, transform.up, 180f);
             }
-            
+
             balloons.Add(balloon);
         }
     }
-    
-    
+
+
     // --- 不使用
     // Jimmy 增加一个气球
     public void AddBalloon()
@@ -315,8 +323,8 @@ public class JimmyBehaviour : MonoBehaviour
         balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
         balloons.Add(balloon);
     }
-    
-    
+
+
     // Jimmy 随机从气球池使用一个气球
     public string GenerateBlueName()
     {
@@ -328,18 +336,18 @@ public class JimmyBehaviour : MonoBehaviour
 
     // --- 不使用
     // Jimmy 使用一个指定名字的气球
-    public  void GenerateBlueName(string balloonName)
+    public void GenerateBlueName(string balloonName)
     {
         balloonPool.Remove(balloonName);
     }
 
     // Jimmy 归还一个气球进入气球池 —— Destroy 一个气球后，气球归还气球池
-    public  void ReturnBalloon(string balloonName)
+    public void ReturnBalloon(string balloonName)
     {
         balloonPool.Add(balloonName);
     }
-    
-    
+
+
     // 气球跟随左右移动
     private void NotifyBalloons()
     {
@@ -348,7 +356,7 @@ public class JimmyBehaviour : MonoBehaviour
             balloon.transform.RotateAround(transform.position, transform.up, 180f);
         }
     }
-    
+
     // Jimmy 丢失一个气球
     private void LostBalloon()
     {
@@ -362,9 +370,7 @@ public class JimmyBehaviour : MonoBehaviour
             ReturnBalloon(balloonName);
             Destroy(balloon);
         }
-        CheckTerminate();
+
+
     }
-
-
-
 }

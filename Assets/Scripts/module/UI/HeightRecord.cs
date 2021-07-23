@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class HeightRecord : MonoBehaviour
 {
-
-    private float height = 0; // 记录目前的高度
+    
     public GameObject heightRecord; // 字符
-    private static bool pause = false;
+    private static bool pause = false; // 仅是暂停
+    private static bool end = false;   // 结束记录
+    private static float height = 0; // 记录目前的高度
+    private static float totalHeight = 0; // 记录游戏的高度加总 —— 标识着游戏的结束
+    // 结束的米数记录
+    private const int endMeter = 600;
 
     void Start()
     {
@@ -16,10 +20,15 @@ public class HeightRecord : MonoBehaviour
 
     void Update()
     {
-        if (!pause)
+        if (!end)
         {
-            height += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
-            heightRecord.GetComponent<TMP_Text>().text = (int) height + " m";
+            if (!pause)
+            {
+                CheckEnding();
+                height += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
+                totalHeight += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
+                heightRecord.GetComponent<TMP_Text>().text = (int) height + " m";
+            }
         }
     }
 
@@ -35,12 +44,59 @@ public class HeightRecord : MonoBehaviour
     {
         pause = false;
     }
+    
+    
+    // 开始
+    public static void Begin()
+    {
+        end = false;
+    }
+
+    // 结束
+    public static void End()
+    {
+        end = true;
+    }
 
     
-    public int GetHeight()
+    // GamePanel 调用判断是否游戏结束
+    public static bool IsEnd()
+    {
+        return end;
+    }
+
+    public static int GetHeight()
     {
         return (int)height;
     }
+    
+    // Start Panel 每次刷新height
+    public static void RefreshHeight()
+    {
+        height = 0;
+    }
 
+    
+    public static int GetTotalHeight()
+    {
+        return (int) totalHeight;
+    }
+    
+    
+    public static void RefreshTotalHeight()
+    {
+        totalHeight = 0;
+    }
+    
+    
+    // 检查游戏是否到了结局
+    private static void CheckEnding()
+    {
+        if ((int)totalHeight == endMeter)
+        {
+            End();// 终止高度记录
+            RefreshTotalHeight(); // totalHeight 清零
+        }
+    }
 
 }

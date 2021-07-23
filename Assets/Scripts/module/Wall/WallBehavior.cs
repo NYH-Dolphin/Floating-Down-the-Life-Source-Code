@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using Fungus;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,7 +26,8 @@ public class WallBehavior : MonoBehaviour
     private GameObject obstacle = null;
     private int obstaclePossibility = 40;
 
-    private static bool stop = false; // 如果有 conversation 停止
+    private static bool pause = false; // 如果有 conversation 停止
+    private static bool end = false; // 游戏结束
     private GameObject window;
     public GameObject character;
 
@@ -41,7 +43,7 @@ public class WallBehavior : MonoBehaviour
     {
         // 生成障碍物的概率随时间而增加
         LabelUI = transform.parent.Find("Label(Clone)").gameObject;
-        obstaclePossibility = 40 + LabelUI.GetComponent<HeightRecord>().GetHeight() / 4;
+        obstaclePossibility = 40 + HeightRecord.GetHeight() / 4;
         if (obstaclePossibility > 100)
             obstaclePossibility = 100;
 
@@ -129,15 +131,27 @@ public class WallBehavior : MonoBehaviour
         }
     }
 
+    public void GenerateGround()
+    {
+        string groundPath = "walls/ground";
+        GameObject ground = Instantiate(Resources.Load<GameObject>(groundPath),
+            transform, true);
+        ground.transform.localPosition = new Vector3(-400, -50, 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // 继续运动
-        if (!stop)
+        // 游戏没有结束
+        if (!end)
         {
-            Vector3 p = transform.localPosition;
-            p += (speed * Time.smoothDeltaTime) * new Vector3(0, 1, 0);
-            transform.localPosition = p;
+            // 继续运动
+            if (!pause)
+            {
+                Vector3 p = transform.localPosition;
+                p += (speed * Time.smoothDeltaTime) * new Vector3(0, 1, 0);
+                transform.localPosition = p;
+            }
         }
     }
 
@@ -156,17 +170,28 @@ public class WallBehavior : MonoBehaviour
 
     // 被 GamePanel 调用，停止运动
     // conversation mode
-    public static void Stop()
+    public static void Pause()
     {
-        stop = true;
+        pause = true;
     }
 
 
     // 被 GamePanel 调用，继续运动
     // conversation mode
-    public static void Move()
+    public static void Continue()
     {
-        stop = false;
+        pause = false;
+    }
+
+
+    public static void Begin()
+    {
+        end = false;
+    }
+
+    public static void End()
+    {
+        end = true;
     }
 
     public static void SetSpeed(float speed)
