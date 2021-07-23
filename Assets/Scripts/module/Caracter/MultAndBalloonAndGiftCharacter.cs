@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 /// <summary>
 /// 本角色会多次谈话在剧情结束后会赠送气球或礼物或同时赠送给 Jimmy
 /// </summary>
@@ -49,6 +50,7 @@ public class MultAndBalloonAndGiftCharacter : CharacterBehaviour
             hasGifted = true;
             string collectionName = "collection_lock_" + id;
             PlayerPrefs.SetInt(collectionName, 1);
+            StartCoroutine(GetCollection(id));
         }
     }
 
@@ -71,5 +73,12 @@ public class MultAndBalloonAndGiftCharacter : CharacterBehaviour
         }
         else
             flowchart.SetIntegerVariable("inBound", 0);
+    }
+    
+    IEnumerator GetCollection(int id)
+    {
+        yield return new WaitForSeconds(0.8f);
+        string collectionName = Collection.GetName(id);
+        PanelManager.Open<GetCollectPanel>(collectionName);
     }
 }

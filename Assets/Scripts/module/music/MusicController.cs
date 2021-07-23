@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class MusicController : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Slider slider;
     public AudioClip[] audios;
-    private static int index = 0;
+    public static int index = 0;
 
     void Start()
     {
         GetComponent<AudioSource>().clip = audios[index];
-        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
         GetComponent<AudioSource>().Play();
+        // GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
+        // slider.value = GetComponent<AudioSource>().volume;
     }
 
 
@@ -23,30 +25,42 @@ public class MusicController : MonoBehaviour
         transfer();
     }
 
-    private void transfer()
+    public void transfer()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (GetComponent<AudioSource>().isPlaying)
         {
-            index++;
-            index %= audios.Length;
-
-            GetComponent<AudioSource>().clip = audios[index];
-            GetComponent<AudioSource>().Play();
-            Debug.Log(GetComponent<AudioSource>().clip.name);
-            Debug.Log(index);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (index == 0)
-                index = audios.Length - 1;
-            else
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                index--;
-            }
+                index++;
+                index %= audios.Length;
 
-            GetComponent<AudioSource>().clip = audios[index];
-            GetComponent<AudioSource>().Play();
-            Debug.Log(GetComponent<AudioSource>().clip.name);
+                GetComponent<AudioSource>().clip = audios[index];
+                GetComponent<AudioSource>().Play();
+                Debug.Log(GetComponent<AudioSource>().clip.name);
+                Debug.Log(index);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                if (index == 0)
+                    index = audios.Length - 1;
+                else
+                {
+                    index--;
+                }
+
+                GetComponent<AudioSource>().clip = audios[index];
+                GetComponent<AudioSource>().Play();
+                Debug.Log(GetComponent<AudioSource>().clip.name);
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            GetComponent<AudioSource>().Pause();
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (!GetComponent<AudioSource>().isPlaying)
+                GetComponent<AudioSource>().Play();
         }
     }
 }
