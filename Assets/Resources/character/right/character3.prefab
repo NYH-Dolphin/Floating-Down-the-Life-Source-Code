@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 2031029678388856244}
   - component: {fileID: 3294333600225668482}
   - component: {fileID: 5560328717816121826}
+  - component: {fileID: 9145132347843668727}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -123,7 +124,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 8076157342146265049}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 9145132347843668727}
   variables:
   - {fileID: 415730237155341601}
   - {fileID: 6500794994417573487}
@@ -157,7 +159,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 276.95294
     y: 39.156677
-    width: 71.250015
+    width: 111.250015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -194,6 +196,7 @@ MonoBehaviour:
   - {fileID: 7262933241211614240}
   - {fileID: 8026194521283230307}
   - {fileID: 5136552399143740812}
+  - {fileID: 9145132347843668727}
   - {fileID: 4076884842247512762}
   - {fileID: 3749250162556750120}
   - {fileID: 6024741969679190016}
@@ -7658,6 +7661,51 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &9145132347843668727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594307574382576118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 91
+  indentLevel: 2
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim closeEye middle:...\nJim closeEye middle:......\nJim think middle:\u4ECE\u6211\u6765\u5230\u8FD9\u91CC\u7684\u65F6\u5019\uFF0C\u6211\u5C31\u5F00\u59CB\u5199\u65E5\u8BB0\nJim
+      think middle:\u4E00\u4E2A\u662F\u5E0C\u671B\u8BB0\u5F55\u6211\u7684\u7ECF\u5386\nJim
+      think middle:\u4E00\u4E2A\u662F\u62B1\u7740\u4E00\u4E9B\u5C0F\u5C0F\u5E0C\u671B\uFF0C\u5982\u679C
+      Jimmy \u80FD\u591F\u56DE\u6765\uFF0C\u6216\u8BB8\u4ED6\u80FD\u591F\u77E5\u9053\uFF0C\u8FD8\u6709\u6211\u7684\u5B58\u5728\nJim
+      poker middle:\u73B0\u5728\u6211\u60F3\u8D77\u6765\u4E86\nJim poker middle:\u4ECE
+      Jimmy 10 \u5C81\u7684\u65F6\u5019\uFF0C\u4ED6\u4E5F\u5F00\u59CB\u5199\u65E5\u8BB0\nJim
+      original middle:\u4ED6\u6709\u4E24\u4EFD\u65E5\u8BB0\nJim original middle:
+      \u4E00\u4EFD\u662F\u653E\u5728\u660E\u663E\u7684\u5730\u65B9\uFF0C\u8BB0\u5F55\u7740\u5F88\u591A\u5F00\u5FC3\u7684\u4E8B\u60C5\r\nJim
+      original middle:\u4E00\u4EFD\u662F\u672A\u66FE\u7ED9\u4EFB\u4F55\u4EBA\u770B\u8FC7\u7684\uFF0C\u88AB
+      Jimmy \u85CF\u8D77\u6765\u7684\nJim sad middle:\u90A3\u4E9B\u8BB0\u6EE1\u60B2\u4F24\u7684\u65E5\u8BB0\nJim
+      sad middle:\u300C10 \u6708 23 \u65E5\uFF0C\u5F53\u6211\u4F5C\u4E3A\u5149\u8292\u7167\u8000\u522B\u4EBA\u7684\u65F6\u5019\uFF0C\u4E3A\u4EC0\u4E48\u6211\u7684\u751F\u6D3B\u6F06\u9ED1\u800C\u53C8\u770B\u4E0D\u5230\u5C3D\u5934\u300D\nJim
+      sad middle:\u300C12 \u6708 5 \u65E5\uFF0C\u8C01\u80FD\u542C\u542C\u6211\u8BF4\u8BDD\uFF0C\u6BCF\u5F53\u6211\u5F00\u53E3\uFF0C\u4ED6\u4EEC\u4E3A\u4EC0\u4E48\u90FD\u662F\uFF0C\u4F60\u8FD9\u4E48\u4F18\u79C0\uFF0C\u4E00\u5B9A\u53EF\u4EE5\u2026\uFF0C\u6211\u4E0D\u4F18\u79C0\uFF0C\u6211\u4E0D\u662F\u4F18\u79C0\u7684\uFF0C\u6709\u4EBA\u5417\uFF1F\u6709\u4EBA\u5417\uFF01\uFF01\uFF01\u300D\nJim
+      sad middle:\u300C3 \u6708 7 \u65E5\uFF0C\u7236\u4EB2\u9664\u4E86\u5B66\u4E60\u4EC0\u4E48\u90FD\u4E0D\u95EE\uFF0C\u9664\u4E86\u6210\u7EE9\u4EC0\u4E48\u90FD\u4E0D\u770B\uFF0C\u4E3A\u4EC0\u4E48\u4E3A\u4EC0\u4E48\u4E3A\u4EC0\u4E48\u4E3A\u4EC0\u4E48\u2026\u4E3A\u4EC0\u4E48\u4E0D\u80FD\u95EE\u95EE\u6211\u7684\u5FC3\u60C5\u548C\u6211\u7684\u6001\u5EA6\u662F\u4EC0\u4E48\u6837\u7684\u5462\uFF1F\u300D\nJim
+      sad middle:\u300C5 \u6708 16 \u65E5\uFF0C\u6240\u6709\u4EBA\u90FD\u628A\u6700\u91CD\u7684\u90A3\u4EFD\u4EFB\u52A1\u4EA4\u5230\u6211\u7684\u624B\u91CC\uFF0C\u6211\u77E5\u9053\u5728\u4ED6\u4EEC\u773C\u91CC\u6211\u5F88\u53EF\u9760\uFF0C\u53EF\u662F\u6211\u771F\u7684\u5FEB\u5598\u4E0D\u8FC7\u6C14\u6765\u4E86\u300D\nJim
+      closeEye middle:\u4EE5\u53CA Jimmy \u6D88\u5931\u524D\u6700\u540E\u7684\u5199\u4E0B\u7684\u2026\nJim
+      closeEye middle:\u300C\u6211\u60F3\u5FD8\u8BB0\u8FD9\u4E00\u5207\u2026\u300D\nhide
+      Jim:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!1 &6617961114067573897
 GameObject:
   m_ObjectHideFlags: 0

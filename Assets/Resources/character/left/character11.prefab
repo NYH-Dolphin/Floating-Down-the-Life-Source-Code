@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1230758831288937426}
   - component: {fileID: 4429503300047780520}
   - component: {fileID: 8412945753368764642}
+  - component: {fileID: 8572637859975893165}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -177,7 +178,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 4028540262320301510}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 8572637859975893165}
   variables:
   - {fileID: 21493086666582968}
   - {fileID: 5079767577447166830}
@@ -211,7 +213,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140
     y: 83
-    width: 74.21052
+    width: 114.21052
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -230,11 +232,12 @@ MonoBehaviour:
   - {fileID: 3351243964554896300}
   - {fileID: 8487672982830219361}
   - {fileID: 5189419100464670159}
+  - {fileID: 8572637859975893165}
+  - {fileID: 8412945753368764642}
   - {fileID: 394603214439490902}
   - {fileID: 1174874399933058636}
   - {fileID: 4762095585211143702}
   - {fileID: 8929301023716344810}
-  - {fileID: 8412945753368764642}
   - {fileID: 1230758831288937426}
   - {fileID: 3226918663392943414}
   - {fileID: 4429503300047780520}
@@ -3221,3 +3224,37 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &8572637859975893165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549686591701338069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  indentLevel: 2
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim think middle:...\nJim think middle:......\nhide Jim:\nJimmy original
+      middle:\u90A3\u662F\u4F11\u606F\u65E5\u53BB\u7684\u9762\u5305\u5E97\nJimmy
+      original middle:\u201C\u554A\u5440\u5E74\u8F7B\u4EBA\uFF0C\u5E74\u7EAA\u8F7B\u8F7B\u600E\u4E48\u8FD9\u4E48\u91CD\u7684\u9ED1\u773C\u5708\u5462\uFF01\u201D\nJimmy
+      think middle:\u201C\u597D\u597D\u4F11\u606F\u5440\uFF01\u8FD9\u662F\u4E24\u4E2A\u9762\u5305\uFF0C\u6536\u4F60\u4E2A\u516D\u6298\u5427\uFF0C\u65E9\u4E0A\u591A\u5403\u70B9\uFF0C\u4E0D\u8981\u592A\u7D2F\u4E86\u201D\nJimmy
+      think middle:\u201C\u73B0\u5728\u7684\u5B69\u5B50\u554A\uFF0C\u538B\u529B\u53EF\u5927\u4E86\u2026\u4E00\u4E2A\u52B2\u7684\u5B66\u4E60\uFF0C\u8EAB\u4F53\u90FD\u7D2F\u762B\u4E86\uFF01\u201D\nhide
+      Jimmy:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1

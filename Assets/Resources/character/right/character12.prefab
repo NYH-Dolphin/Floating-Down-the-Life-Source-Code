@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 5190131350218410674}
   - component: {fileID: 4349398839075288090}
   - component: {fileID: 8277631870732354564}
+  - component: {fileID: 1378007200746516487}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -87,11 +88,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 61.229088, y: 70.43273}
+  scrollPos: {x: 568.0646, y: -2.7460122}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 264.3333
-  zoom: 0.66999984
+  zoom: 0.27999985
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -99,8 +100,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2408732403943996664}
-  selectedCommands: []
+  - {fileID: 1813805089631339173}
+  selectedCommands:
+  - {fileID: 1378007200746516487}
   variables:
   - {fileID: 7781874261562386808}
   - {fileID: 739968990057263502}
@@ -135,7 +137,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 21.724167
     y: 113.37927
-    width: 73.2836
+    width: 104.28574
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1069,7 +1071,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 263.72415
     y: 24.44831
-    width: 79.253746
+    width: 110.00003
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1275,7 +1277,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 267.1725
     y: 99.51726
-    width: 80.44778
+    width: 110.00003
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1305,7 +1307,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 267.89658
     y: 179.75864
-    width: 81.64181
+    width: 112.85718
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1316,6 +1318,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 3858453671797829131}
   - {fileID: 2115616864729749331}
+  - {fileID: 1378007200746516487}
   - {fileID: 4349398839075288090}
   - {fileID: 2920538582307685615}
   suppressAllAutoSelections: 0
@@ -4061,6 +4064,38 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &1378007200746516487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844122224866681395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 37
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jimmy think middle:...\nJimmy think middle:......\nJimmy think middle:\u732B\u54AA\u5728\u7761\u89C9\nJimmy
+      think middle:\u5B83\u547C\u565C\u547C\u565C\u7684\uFF0C\u809A\u5B50\u4E0A\u4E0B\u8D77\u4F0F\uFF0C\u53D1\u51FA\u5747\u5300\u7684\u5410\u606F\u58F0\nJimmy
+      bigSmile middle:\u6478\u6478\u5B83\u7684\u5934\u5427\nJimmy bigSmile middle:\u771F\u5E78\u798F\u5440\uFF0C\u6CA1\u6709\u538B\u529B\nhide
+      Jimmy:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!1 &7918280788158559471
 GameObject:
   m_ObjectHideFlags: 0

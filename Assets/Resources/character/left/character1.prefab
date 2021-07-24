@@ -58,6 +58,9 @@ GameObject:
   - component: {fileID: 7725821358577025548}
   - component: {fileID: 4250668922326993044}
   - component: {fileID: 5256696266846232963}
+  - component: {fileID: 5101148198806196761}
+  - component: {fileID: 8258576899264737093}
+  - component: {fileID: 2318162216159888209}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -92,11 +95,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 330.40268, y: 59.74211}
+  scrollPos: {x: 659.32227, y: 26.225576}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 332.8
-  zoom: 0.43
+  zoom: 0.30999994
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -104,7 +107,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 5385321253360151699}
+  - {fileID: 5330734335566733650}
   selectedCommands: []
   variables:
   - {fileID: 4849689706199698369}
@@ -136,9 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -5.1629505
-    y: 34.914753
-    width: 73.25581
+    x: -2.837369
+    y: 32.589172
+    width: 111.93549
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -725,7 +728,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -124.48773
     y: 89.35112
-    width: 60
+    width: 78.3871
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -755,7 +758,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 116.618225
     y: 85.537735
-    width: 62.09302
+    width: 101.612915
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -835,7 +838,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -110.27818
     y: 179.11899
-    width: 60
+    width: 62.90323
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -845,6 +848,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 3804868251669231631}
+  - {fileID: 5101148198806196761}
   - {fileID: 7725821358577025548}
   - {fileID: 2562402968352763994}
   - {fileID: 8451620032722972251}
@@ -866,7 +870,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2.476266
     y: 195.66672
-    width: 60
+    width: 65.48387
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -876,6 +880,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 4445288529089417633}
+  - {fileID: 8258576899264737093}
   - {fileID: 4250668922326993044}
   - {fileID: 4801816042894056845}
   - {fileID: 4269143731403836542}
@@ -897,7 +902,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 110.65423
     y: 182.34456
-    width: 60
+    width: 65.48387
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -907,6 +912,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 3558896436916780253}
+  - {fileID: 2318162216159888209}
   - {fileID: 5256696266846232963}
   - {fileID: 5261486283893030316}
   - {fileID: 5276886490314213223}
@@ -3937,6 +3943,147 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &5101148198806196761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561874337106527280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 78
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim think right:...\nJim think right:.....\nJim answer right:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\nJim
+      answer right:\u81EA\u4ECE Jimmy \u6D88\u5931\uFF0C\u800C\u6211\u51FA\u6765\u540E\uFF0C\u8FD9\u4E2A\u5BB6\u5EAD\u4F3C\u4E4E\u843D\u5BDE\u4E86\u5F88\u591A\nJim
+      sad right:\u8FD9\u4E5F\u662F\u6211\u4F24\u5FC3\u7684\u6839\u6E90\nJim sad right:\u6211\u66F4\u5E0C\u671B\u4ED6\u4EEC\u628A\u6211\u5F53\u4E00\u4E2A\u65B0\u7684\u4E2A\u4F53\u770B\u5F85\uFF0C\u800C\u4E0D\u662F
+      Jimmy\nfamily mother left:\u5988\u5988\u603B\u662F\u5FCD\u4E0D\u4F4F\u62B1\u7740\u6211\u54ED\nJim
+      closeEye right:\u5B9E\u5728\u6CA1\u6709\u529E\u6CD5\uFF0C\u6211\u53EA\u80FD\u626E\u6F14
+      Jimmy \u8BA9\u5988\u5988\u5F00\u5FC3\nJim closeEye right:\u8BA9\u5988\u5988\u89C9\u5F97
+      Jimmy \u53EA\u662F\u77ED\u6682\u5931\u5FC6\u4E86\nfamily sister left:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\uFF0C\u53EA\u6709
+      Jimmy \u7684\u59D0\u59D0 Chloe \u662F\u7406\u89E3\u6211\u7684\nJim poker right:\u5979\u4ECE\u6765\u4E0D\u53EB\u6211
+      Jimmy\uFF0C\u800C\u662F\u6539\u79F0 Jim\nJim poker right:\u5979\u4F1A\u5E26\u6211\u4E86\u89E3\u5468\u56F4\u964C\u751F\u7684\u4E8B\u7269\uFF0C\u7ED9\u6211\u4ECB\u7ECD\u7238\u7238\u5988\u5988\u662F\u4EC0\u4E48\u6837\u7684\u4EBA\nJim
+      poker right:\u7ED9\u6211\u4ECB\u7ECD\u6BCF\u5929\u7684\u751F\u6D3B\u60C5\u51B5\uFF0C\u5F88\u5C11\u8DDF\u6211\u8BB2
+      Jimmy\nfamily sister left:\u5979\u8DDF\u5988\u5988\u8BF4\uFF0CJim \u4E0D\u662F
+      Jimmy\uFF0C\u8BA9\u4ED6\u4EEC\u4E3A\u6211\u51C6\u5907\u4E86\u81EA\u5DF1\u7684\u623F\u95F4\uFF0C\u4FDD\u7559\u4E86
+      Jimmy \u7684\u623F\u95F4\nJim answer right:\u5BF9\u4E86\uFF0C\u4E09\u5929\u524D\uFF0CChloe
+      \u8DDF\u8FD8\u6211\u8BF4\nfamily sister left:\u201CJim\uFF0C\u8981\u4E0D\u8981\u8BD5\u8BD5\u4E0A\u5B66\uFF0C\u53BB\u8BA4\u8BC6\u4E00\u4E9B\u65B0\u7684\u4EBA\u548C\u4E8B\u201D\nJim
+      sad right:\u53EF\u6211\u9F9F\u7F29\u5728\u81EA\u5DF1\u7684\u65B9\u5BF8\u4E4B\u5730\u5185\uFF0C\u6CA1\u6709\u5C1D\u8BD5\nJim
+      sad right:\u554A\u2026\u4E3A\u4EC0\u4E48\u8981\u8DF3\u4E0B\u6765\u5462\u2026\nJim
+      sad right:\u6211\u4E3A\u4EC0\u4E48\u4E00\u5B9A\u8981\u201C\u53D8\u6210\u201D
+      Jimmy \u5462\nJim think right:\u6709\u4EBA\u7406\u89E3\u6211\uFF0C\u800C\u6211\u5C31\u662F\u201C\u6211\u201D\u4E0D\u597D\u5417\nhide
+      family:\nhide Jim:\n\n\n\n"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &8258576899264737093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561874337106527280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 79
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim think right:...\nJim think right:.....\nJim answer right:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\nJim
+      answer right:\u81EA\u4ECE Jimmy \u6D88\u5931\uFF0C\u800C\u6211\u51FA\u6765\u540E\uFF0C\u8FD9\u4E2A\u5BB6\u5EAD\u4F3C\u4E4E\u843D\u5BDE\u4E86\u5F88\u591A\nJim
+      sad right:\u8FD9\u4E5F\u662F\u6211\u4F24\u5FC3\u7684\u6839\u6E90\nJim sad right:\u6211\u66F4\u5E0C\u671B\u4ED6\u4EEC\u628A\u6211\u5F53\u4E00\u4E2A\u65B0\u7684\u4E2A\u4F53\u770B\u5F85\uFF0C\u800C\u4E0D\u662F
+      Jimmy\nfamily mother left:\u5988\u5988\u603B\u662F\u5FCD\u4E0D\u4F4F\u62B1\u7740\u6211\u54ED\nJim
+      closeEye right:\u5B9E\u5728\u6CA1\u6709\u529E\u6CD5\uFF0C\u6211\u53EA\u80FD\u626E\u6F14
+      Jimmy \u8BA9\u5988\u5988\u5F00\u5FC3\nJim closeEye right:\u8BA9\u5988\u5988\u89C9\u5F97
+      Jimmy \u53EA\u662F\u77ED\u6682\u5931\u5FC6\u4E86\nfamily sister left:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\uFF0C\u53EA\u6709
+      Jimmy \u7684\u59D0\u59D0 Chloe \u662F\u7406\u89E3\u6211\u7684\nJim poker right:\u5979\u4ECE\u6765\u4E0D\u53EB\u6211
+      Jimmy\uFF0C\u800C\u662F\u6539\u79F0 Jim\nJim poker right:\u5979\u4F1A\u5E26\u6211\u4E86\u89E3\u5468\u56F4\u964C\u751F\u7684\u4E8B\u7269\uFF0C\u7ED9\u6211\u4ECB\u7ECD\u7238\u7238\u5988\u5988\u662F\u4EC0\u4E48\u6837\u7684\u4EBA\nJim
+      poker right:\u7ED9\u6211\u4ECB\u7ECD\u6BCF\u5929\u7684\u751F\u6D3B\u60C5\u51B5\uFF0C\u5F88\u5C11\u8DDF\u6211\u8BB2
+      Jimmy\nfamily sister left:\u5979\u8DDF\u5988\u5988\u8BF4\uFF0CJim \u4E0D\u662F
+      Jimmy\uFF0C\u8BA9\u4ED6\u4EEC\u4E3A\u6211\u51C6\u5907\u4E86\u81EA\u5DF1\u7684\u623F\u95F4\uFF0C\u4FDD\u7559\u4E86
+      Jimmy \u7684\u623F\u95F4\nJim answer right:\u5BF9\u4E86\uFF0C\u4E09\u5929\u524D\uFF0CChloe
+      \u8DDF\u8FD8\u6211\u8BF4\nfamily sister left:\u201CJim\uFF0C\u8981\u4E0D\u8981\u8BD5\u8BD5\u4E0A\u5B66\uFF0C\u53BB\u8BA4\u8BC6\u4E00\u4E9B\u65B0\u7684\u4EBA\u548C\u4E8B\u201D\nJim
+      sad right:\u53EF\u6211\u9F9F\u7F29\u5728\u81EA\u5DF1\u7684\u65B9\u5BF8\u4E4B\u5730\u5185\uFF0C\u6CA1\u6709\u5C1D\u8BD5\nJim
+      sad right:\u554A\u2026\u4E3A\u4EC0\u4E48\u8981\u8DF3\u4E0B\u6765\u5462\u2026\nJim
+      sad right:\u6211\u4E3A\u4EC0\u4E48\u4E00\u5B9A\u8981\u201C\u53D8\u6210\u201D
+      Jimmy \u5462\nJim think right:\u6709\u4EBA\u7406\u89E3\u6211\uFF0C\u800C\u6211\u5C31\u662F\u201C\u6211\u201D\u4E0D\u597D\u5417\nhide
+      family:\nhide Jim:\n\n\n\n"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &2318162216159888209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561874337106527280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 80
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim think right:...\nJim think right:.....\nJim answer right:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\nJim
+      answer right:\u81EA\u4ECE Jimmy \u6D88\u5931\uFF0C\u800C\u6211\u51FA\u6765\u540E\uFF0C\u8FD9\u4E2A\u5BB6\u5EAD\u4F3C\u4E4E\u843D\u5BDE\u4E86\u5F88\u591A\nJim
+      sad right:\u8FD9\u4E5F\u662F\u6211\u4F24\u5FC3\u7684\u6839\u6E90\nJim sad right:\u6211\u66F4\u5E0C\u671B\u4ED6\u4EEC\u628A\u6211\u5F53\u4E00\u4E2A\u65B0\u7684\u4E2A\u4F53\u770B\u5F85\uFF0C\u800C\u4E0D\u662F
+      Jimmy\nfamily mother left:\u5988\u5988\u603B\u662F\u5FCD\u4E0D\u4F4F\u62B1\u7740\u6211\u54ED\nJim
+      closeEye right:\u5B9E\u5728\u6CA1\u6709\u529E\u6CD5\uFF0C\u6211\u53EA\u80FD\u626E\u6F14
+      Jimmy \u8BA9\u5988\u5988\u5F00\u5FC3\nJim closeEye right:\u8BA9\u5988\u5988\u89C9\u5F97
+      Jimmy \u53EA\u662F\u77ED\u6682\u5931\u5FC6\u4E86\nfamily sister left:\u5728\u8FD9\u4E2A\u5BB6\u5EAD\u4E2D\uFF0C\u53EA\u6709
+      Jimmy \u7684\u59D0\u59D0 Chloe \u662F\u7406\u89E3\u6211\u7684\nJim poker right:\u5979\u4ECE\u6765\u4E0D\u53EB\u6211
+      Jimmy\uFF0C\u800C\u662F\u6539\u79F0 Jim\nJim poker right:\u5979\u4F1A\u5E26\u6211\u4E86\u89E3\u5468\u56F4\u964C\u751F\u7684\u4E8B\u7269\uFF0C\u7ED9\u6211\u4ECB\u7ECD\u7238\u7238\u5988\u5988\u662F\u4EC0\u4E48\u6837\u7684\u4EBA\nJim
+      poker right:\u7ED9\u6211\u4ECB\u7ECD\u6BCF\u5929\u7684\u751F\u6D3B\u60C5\u51B5\uFF0C\u5F88\u5C11\u8DDF\u6211\u8BB2
+      Jimmy\nfamily sister left:\u5979\u8DDF\u5988\u5988\u8BF4\uFF0CJim \u4E0D\u662F
+      Jimmy\uFF0C\u8BA9\u4ED6\u4EEC\u4E3A\u6211\u51C6\u5907\u4E86\u81EA\u5DF1\u7684\u623F\u95F4\uFF0C\u4FDD\u7559\u4E86
+      Jimmy \u7684\u623F\u95F4\nJim answer right:\u5BF9\u4E86\uFF0C\u4E09\u5929\u524D\uFF0CChloe
+      \u8DDF\u8FD8\u6211\u8BF4\nfamily sister left:\u201CJim\uFF0C\u8981\u4E0D\u8981\u8BD5\u8BD5\u4E0A\u5B66\uFF0C\u53BB\u8BA4\u8BC6\u4E00\u4E9B\u65B0\u7684\u4EBA\u548C\u4E8B\u201D\nJim
+      sad right:\u53EF\u6211\u9F9F\u7F29\u5728\u81EA\u5DF1\u7684\u65B9\u5BF8\u4E4B\u5730\u5185\uFF0C\u6CA1\u6709\u5C1D\u8BD5\nJim
+      sad right:\u554A\u2026\u4E3A\u4EC0\u4E48\u8981\u8DF3\u4E0B\u6765\u5462\u2026\nJim
+      sad right:\u6211\u4E3A\u4EC0\u4E48\u4E00\u5B9A\u8981\u201C\u53D8\u6210\u201D
+      Jimmy \u5462\nJim think right:\u6709\u4EBA\u7406\u89E3\u6211\uFF0C\u800C\u6211\u5C31\u662F\u201C\u6211\u201D\u4E0D\u597D\u5417\nhide
+      family:\nhide Jim:\n\n\n\n"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!1 &6392836396157546497
 GameObject:
   m_ObjectHideFlags: 0

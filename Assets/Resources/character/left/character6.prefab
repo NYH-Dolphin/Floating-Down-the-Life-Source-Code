@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 4248564453311482927}
   - component: {fileID: 8223098658855734127}
   - component: {fileID: 305713514969056277}
+  - component: {fileID: 5500728378528767135}
+  - component: {fileID: 458144682397762545}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -89,7 +91,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1233451755}
+  - {fileID: 1233451746}
   selectedCommands: []
   variables:
   - {fileID: 1233451723}
@@ -124,7 +126,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 84.7348
     y: 61
-    width: 68.37831
+    width: 108.37831
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -765,7 +767,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0.36065674
     y: 134
-    width: 74.864784
+    width: 114.864784
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -775,6 +777,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 7355794712353828931}
+  - {fileID: 5500728378528767135}
   - {fileID: 1233451736}
   - {fileID: 305713514969056277}
   - {fileID: 1233451735}
@@ -797,7 +800,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 174.67346
     y: 135.87756
-    width: 74.864784
+    width: 114.864784
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -807,6 +810,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 721881528634440741}
+  - {fileID: 458144682397762545}
   - {fileID: 1233451727}
   - {fileID: 8223098658855734127}
   - {fileID: 1233451726}
@@ -3120,6 +3124,80 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &5500728378528767135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233451719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jimmy closeEye middle:...\nJimmy closeEye middle:......\nJimmy closeEye
+      middle:\u538B\u529B\u592A\u5927\u7684\u65F6\u5019\uFF0C\u6211\u53EA\u80FD\u9760\u8FD0\u52A8\u91CA\u653E\u81EA\u6211\nJimmy
+      think middle:\u56E0\u4E3A\u6CA1\u4EBA\u4E0E\u6211\u4EA4\u8C08\u8FD9\u4E9B\uFF0C\u8DD1\u6B65\u662F\u6700\u4F73\u7684\u9009\u62E9\nJimmy
+      think middle:\u56F4\u7740\u516C\u56ED\u7ED5\u5708\nJimmy think middle:\u6700\u540E\u8DD1\u5230\u6CA1\u6709\u4EBA\u7684\u8349\u576A\u4E0A\nJimmy
+      answer middle:\u5BF9\u7740\u5929\u7A7A\u5927\u558A\nJimmy answer middle:\u4EFB\u51ED\u6C57\u6C34\u6D41\u6DCC\nhide
+      Jimmy:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &458144682397762545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233451719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim doubt right:\u6211\u7684\u8111\u6D77\u4E2D\u7A81\u7136\u95EA\u70C1\u5904\u4E00\u4E9B\u4E0D\u5C5E\u4E8E\u6211\u7684\u7247\u6BB5\nJim
+      doubt right:\u8FD9\u662F\u5C5E\u4E8E Jimmy \u7684\u90E8\u5206\u5417\nJimmy
+      confidence left:\u90A3\u662F Jimmy\uFF0C\u4ED6\u5728\u5FEB\u4E50\u7684\u548C\u522B\u4EBA\u4EA4\u8C08\nJimmy
+      confidence left:\u603B\u662F\u88AB\u670B\u53CB\u56F4\u7740\uFF0C\u975E\u5E38\u70ED\u95F9\u7684\u6837\u5B50\nJim
+      think right:\u770B\u6765\u4ED6\u4EEC\u8BF4\u7684\u5927\u5BB6\u90FD\u559C\u6B22
+      Jimmy \u662F\u771F\u7684\u5462\nJimmy sad left:\u90A3\u4E5F\u662F Jimmy\uFF0C\u4ED6\u5728\u9634\u6697\u7684\u623F\u95F4\u89D2\u843D\u91CC\u62B1\u7740\u5934\u4F4E\u58F0\u54ED\u6CE3\u7740\nJimmy
+      bigSmile left:\u53EF\u662F\u5F53\u5988\u5988\u8D70\u8FDB\u623F\u95F4\u65F6\uFF0C\u4ED6\u597D\u50CF\u7A81\u7136\u53D8\u4E86\u4E2A\u4EBA\u4E00\u6837\nJim
+      doubt right:\u5C31\u4EC0\u4E48\u4E8B\u4E5F\u6CA1\u6709\u4E86\nJim doubt right:\u4ED6\u5BF9\u5BB6\u4EBA\u9690\u7792\u4E86\u4EC0\u4E48\u5417\uFF1F\nJimmy
+      bigSmile left:\u201C\u5988\u5988\uFF0C\u665A\u5B89\u201D\uFF0CJimmy \u4F3C\u4E4E\u5F88\u5E78\u798F\u6837\u5B50\nJim
+      closeEye right:\u95E8\u5916\u4F20\u6765\u7684\u5149\u7EBF\u9010\u6E10\u6D88\u5931\nJim
+      closeEye right:\u623F\u5C4B\u6F06\u9ED1\u4E00\u7247\nJim closeEye right:\u2026\nhide
+      Jimmy:\nhide Jim:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!1 &8890230891742069428
 GameObject:
   m_ObjectHideFlags: 0

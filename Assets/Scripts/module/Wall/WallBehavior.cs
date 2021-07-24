@@ -10,17 +10,29 @@ public class WallBehavior : MonoBehaviour
 {
     private static float speed = 200f;
 
-    private readonly string[] _smallObstacles = {"obstacle_2", "obstacle_6", "obstacle_10", "obstacle_12", "obstacle_19", "obstacle_20"};
+    private readonly string[] _smallObstacles =
+        {"obstacle_2", "obstacle_6", "obstacle_10", "obstacle_12", "obstacle_19", "obstacle_20"};
+
     private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_15", "obstacle_17", "obstacle_21"};
-    private readonly string[] _largeObstacles = {"obstacle_4", "obstacle_5", "obstacle_7", "obstacle_8", "obstacle_9", "obstacle_11", "obstacle_13", "obstacle_14", "obstacle_16", "obstacle_18"};
+
+    private readonly string[] _largeObstacles =
+    {
+        "obstacle_4", "obstacle_5", "obstacle_7", "obstacle_8", "obstacle_9", "obstacle_11", "obstacle_13",
+        "obstacle_14", "obstacle_16", "obstacle_18"
+    };
+
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    
-    // private readonly string[] _leftCharacterName = {"character6"};
-    // private readonly string[] _rightCharacterName = {"character14"};
-    private readonly string[] _leftCharacterName = {"character1", "character4","character5", "character6",
-        "character7", "character11"};
-    private readonly string[] _rightCharacterName = {"character2","character3","character8","character12","character13", "character14"};
-   
+
+    // private readonly string[] _leftCharacterName = {"character11"};
+    // private readonly string[] _rightCharacterName = {"character3"};
+    private readonly string[] _leftCharacterName =
+    {
+        "character1", "character4", "character5", "character6",
+        "character7", "character11"
+    };
+
+    private readonly string[] _rightCharacterName =
+        {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
 
 
     private GameObject obstacle = null;
@@ -36,7 +48,6 @@ public class WallBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public Boolean GenerateObstacle()
@@ -119,7 +130,7 @@ public class WallBehavior : MonoBehaviour
                 character = Instantiate(Resources.Load<GameObject>(characterPath),
                     transform, true);
                 character.transform.localPosition = new Vector3(-200, 0, 0);
-                        
+
                 // 窗台
                 string windowName = _windowStillsName[Random.Range(0, _windowStillsName.Length)];
                 string windowPath = "window/right/" + windowName;
@@ -136,7 +147,7 @@ public class WallBehavior : MonoBehaviour
         string groundPath = "walls/ground";
         GameObject ground = Instantiate(Resources.Load<GameObject>(groundPath),
             transform, true);
-        ground.transform.localPosition = new Vector3(-400, -50, 0);
+        ground.transform.localPosition = new Vector3(-400, 14, 0);
     }
 
     // Update is called once per frame
@@ -164,6 +175,7 @@ public class WallBehavior : MonoBehaviour
         {
             return true;
         }
+
         return false;
     }
 
@@ -203,5 +215,4 @@ public class WallBehavior : MonoBehaviour
     {
         return WallBehavior.speed;
     }
-    
 }

@@ -10,7 +10,7 @@ public class Collection
     private String Name;
     private String Description;
     
-    private static int maxCount = 7;
+    private static int maxCount = 9;
 
     public static int GetCollectionCount()
     {
@@ -39,6 +39,8 @@ public class Collection
         NameMap.Add(4, "草莓味的硬糖");
         NameMap.Add(5, "书签");
         NameMap.Add(6, "小杠铃");
+        NameMap.Add(7, "完整的心");
+        NameMap.Add(8, "小花花");
     }
 
     static void InitDescriptMap()
@@ -50,6 +52,8 @@ public class Collection
         DescriptMap.Add(4, "甜甜...");
         DescriptMap.Add(5, "正在施工，敬请期待XD");
         DescriptMap.Add(6, "平时要注意锻炼身体！");
+        DescriptMap.Add(7, "一个完整的心，两个相互的温暖的人");
+        DescriptMap.Add(8, "把它献给你最爱的人吧~");
     }
 
     public String GetName()

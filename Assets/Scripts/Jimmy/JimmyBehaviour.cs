@@ -248,7 +248,7 @@ public class JimmyBehaviour : MonoBehaviour
     {
         if (balloons.Count == 0)
         {
-            WallBehavior.Pause();
+            WallBehavior.End();
             HeightRecord.Pause();
             CharacterBehaviour.real_stop = true;
             // Time.timeScale. = 0;
