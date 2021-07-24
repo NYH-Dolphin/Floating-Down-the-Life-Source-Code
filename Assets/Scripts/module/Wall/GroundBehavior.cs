@@ -8,9 +8,8 @@ public class GroundBehavior : MonoBehaviour
 
     public Flowchart flowchart;
     private bool back;
-    public GamePanel panel;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
