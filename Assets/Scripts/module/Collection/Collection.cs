@@ -51,7 +51,7 @@ public class Collection
         DescriptMap.Add(2, "跟随了九尾猫多年的铃铛，或许可以实现一个愿望");
         DescriptMap.Add(3, "一张不限场次的电影票，去看看想看的电影吧");
         DescriptMap.Add(4, "甜甜...");
-        DescriptMap.Add(5, "正在施工，敬请期待XD");
+        DescriptMap.Add(5, "好漂亮的书签，别让它落灰了");
         DescriptMap.Add(6, "平时要注意锻炼身体！");
         DescriptMap.Add(7, "一个完整的心，两个相互的温暖的人");
         DescriptMap.Add(8, "把它献给你最爱的人吧~");
