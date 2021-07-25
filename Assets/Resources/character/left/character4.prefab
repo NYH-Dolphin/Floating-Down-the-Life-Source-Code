@@ -80,8 +80,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 8453137618939513119}
-  selectedCommands:
-  - {fileID: 3278395912625383077}
+  selectedCommands: []
   variables:
   - {fileID: 3625569095155749708}
   - {fileID: 3781192585513017482}
@@ -1248,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
+  scope: 2
   key: meetTime4
   value: 1
 --- !u!114 &5201229373767136651
