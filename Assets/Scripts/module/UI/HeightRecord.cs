@@ -9,9 +9,9 @@ public class HeightRecord : MonoBehaviour
     private static bool pause = false; // 仅是暂停
     private static bool end = false;   // 结束记录
     private static float height = 0; // 记录目前的高度
-    private static float totalHeight = 0; // 记录游戏的高度加总 —— 标识着游戏的结束
+    // private static float totalHeight = 0; // 记录游戏的高度加总 —— 标识着游戏的结束
     // 结束的米数记录
-    private const int endMeter = 100;
+    private const int endMeter = 600;
 
     void Start()
     {
@@ -26,7 +26,9 @@ public class HeightRecord : MonoBehaviour
             {
                 CheckEnding();
                 height += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
-                totalHeight += Time.deltaTime * (WallBehavior.GetSpeed() / 200);
+                float totalHeight = PlayerPrefs.GetFloat("totalHeight") +
+                                    Time.deltaTime * (WallBehavior.GetSpeed() / 200);
+                PlayerPrefs.SetFloat("totalHeight", totalHeight);
                 heightRecord.GetComponent<TMP_Text>().text = (int) height + " m";
             }
         }
@@ -76,23 +78,23 @@ public class HeightRecord : MonoBehaviour
         height = 0;
     }
 
-    
-    public static int GetTotalHeight()
+
+    private static int GetTotalHeight()
     {
-        return (int) totalHeight;
+        return (int) PlayerPrefs.GetFloat("totalHeight");
     }
-    
-    
-    public static void RefreshTotalHeight()
+
+
+    private static void RefreshTotalHeight()
     {
-        totalHeight = 0;
+        PlayerPrefs.SetFloat("totalHeight", 0);
     }
     
     
     // 检查游戏是否到了结局
     private static void CheckEnding()
     {
-        if ((int)totalHeight == endMeter)
+        if (GetTotalHeight() == endMeter)
         {
             End();// 终止高度记录
             RefreshTotalHeight(); // totalHeight 清零

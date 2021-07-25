@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7181475447860307553}
   - component: {fileID: 1652409029719932721}
-  - component: {fileID: 6220472349772639776}
-  - component: {fileID: 7282403107149874094}
   - component: {fileID: 4973642009961470279}
   m_Layer: 0
   m_Name: grassgreen_balloon
@@ -85,43 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!70 &6220472349772639776
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474341593958721043}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.2872888, y: 4.3746047}
-  m_Size: {x: 1.9729102, y: 2.4424126}
-  m_Direction: 0
---- !u!50 &7282403107149874094
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474341593958721043}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4973642009961470279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,5 +95,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e055e621302b0b4b80ff6f2e2ed42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  offsetXYZ: {x: 1, y: 1, z: 1}
