@@ -8,12 +8,13 @@ using Random = UnityEngine.Random;
 
 public class JimmyBehaviour : MonoBehaviour
 {
+    public AudioSource audioSource;
     public ArrayList balloons = new ArrayList();
 
     // private float speed = 700;                  // Jimmy 做匀速直线运动的速度
     public Animator animator; // Animator 组件
 
-    private Boolean isCollide = false; // 判断是否碰撞
+    public Boolean isCollide = false; // 判断是否碰撞
     private const int InvalidTimeTick = 300; // 无敌时间
     private int invalidTimeCount = 0; // 无敌时间记数
     private Renderer jimmyRenderer = null; // Jimmy 的图片
@@ -77,9 +78,9 @@ public class JimmyBehaviour : MonoBehaviour
             if (balloons.Count > 0)
                 Shake();
         }
-        
+
         CheckTerminate();
-        
+
         if (transform.localPosition.y < -850)
             PanelManager.Open<OverPanel>();
     }
@@ -193,7 +194,8 @@ public class JimmyBehaviour : MonoBehaviour
         // 向左移动
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            // Debug.Log("LEFT");
+            // Debug.Log("LEF
+            //  T");
             floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
             floatSpeed += Time.deltaTime * 700;
             floatSpeed = floatSpeed >= MAXFLOATSPEED ? MAXFLOATSPEED : floatSpeed;
@@ -358,6 +360,8 @@ public class JimmyBehaviour : MonoBehaviour
     {
         if (balloons.Count > 0)
         {
+            audioSource.Play();
+            print("气球破了");
             GameObject balloon = (GameObject) balloons[0];
             balloons.RemoveAt(0);
             string balloonName = balloon.name;
