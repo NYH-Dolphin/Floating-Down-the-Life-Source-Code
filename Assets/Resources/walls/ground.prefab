@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowchart: {fileID: 5727871412357861244}
-  panel: {fileID: 0}
+  audios: []
 --- !u!1 &9158052499036412024
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +217,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 6979684330590963660}
-  selectedCommands:
-  - {fileID: 4909638717691265754}
+  selectedCommands: []
   variables:
   - {fileID: 255022746962587660}
   - {fileID: 1329324532981445702}
@@ -248,7 +247,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 111.714264
+    width: 109.04759
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

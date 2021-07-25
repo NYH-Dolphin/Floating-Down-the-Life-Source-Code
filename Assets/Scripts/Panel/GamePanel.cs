@@ -226,7 +226,7 @@ public class GamePanel : BasePanel
     void EndingMode()
     {
         endingTime += Time.deltaTime;
-        if (endingTime <= 3)
+        if (endingTime <= 2)
         {
             EndingGenerateMode();
         }

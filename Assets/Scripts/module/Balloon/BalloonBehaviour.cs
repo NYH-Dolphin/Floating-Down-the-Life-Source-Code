@@ -4,7 +4,7 @@ public class BalloonBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private static JimmyBehaviour Jimmy = null;
+    public static JimmyBehaviour Jimmy = null;
 
     public static void setJimmyBehaviour(JimmyBehaviour j)
     {

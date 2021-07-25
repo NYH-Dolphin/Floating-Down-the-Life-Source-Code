@@ -11,7 +11,7 @@ public class HeightRecord : MonoBehaviour
     private static float height = 0; // 记录目前的高度
     private static float totalHeight = 0; // 记录游戏的高度加总 —— 标识着游戏的结束
     // 结束的米数记录
-    private const int endMeter = 100;
+    private const int endMeter = 10;
 
     void Start()
     {
@@ -94,6 +94,7 @@ public class HeightRecord : MonoBehaviour
     {
         if ((int)totalHeight == endMeter)
         {
+            GameObject.Find("Audio Source").GetComponent<MusicController>().PlayEndMusic();
             End();// 终止高度记录
             RefreshTotalHeight(); // totalHeight 清零
         }

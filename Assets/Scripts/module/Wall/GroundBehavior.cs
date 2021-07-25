@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
 {
-
     public Flowchart flowchart;
     private bool back;
-
+    private int collection;
+    public AudioClip[] audios;
+    private int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,15 @@ public class GroundBehavior : MonoBehaviour
     void Update()
     {
         back = flowchart.GetBooleanVariable("back");
+        collection = flowchart.GetIntegerVariable("collection");
+
         if (back)
         {
             GamePanel gamePanel = (GamePanel) PanelManager.panels["GamePanel"];
             gamePanel.Close();
             flowchart.SetBooleanVariable("back", false);
             PanelManager.Open<BeginPanel>();
+            GameObject.Find("Audio Source").GetComponent<MusicController>().PlayStartMusic();
             // PlayerPrefs.DeleteAll();
         }
     }
