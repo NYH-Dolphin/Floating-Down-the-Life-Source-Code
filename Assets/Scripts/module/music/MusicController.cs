@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MusicController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Slider slider;
     public AudioClip[] audios;
     private static int index = 0;
 
@@ -42,7 +41,7 @@ public class MusicController : MonoBehaviour
         transfer();
     }
 
-    public void transfer()
+    private void transfer()
     {
         if (GetComponent<AudioSource>().isPlaying)
         {

@@ -253,10 +253,6 @@ public class JimmyBehaviour : MonoBehaviour
             WallBehavior.End();
             HeightRecord.Pause();
             CharacterBehaviour.real_stop = true;
-            // Time.timeScale. = 0;
-            // GetComponent<SpriteRenderer>().sortingOrder = -1;
-            // foreach (GameObject balloon in GetComponent<JimmyBehaviour>().balloons)
-            //     balloon.GetComponent<SpriteRenderer>().sortingOrder = -1;
             transform.GetComponent<Rigidbody2D>().gravityScale = 30;
         }
     }
