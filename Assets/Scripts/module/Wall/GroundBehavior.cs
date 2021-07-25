@@ -8,6 +8,8 @@ public class GroundBehavior : MonoBehaviour
 
     public Flowchart flowchart;
     private bool back;
+    
+    private const int characterNum = 15;
 
 
     // Start is called before the first frame update
@@ -15,6 +17,13 @@ public class GroundBehavior : MonoBehaviour
     {
         // 获得目前的解锁数量，触发不同的结局
         flowchart.SetIntegerVariable("collection", Collection.GetUnlockNum());
+        
+        // 重置所有角色的 meetTime
+        for (int i = 1; i <= characterNum; i++)
+        {
+            string meetTime = "meetTime" + i;
+            flowchart.SetIntegerVariable(meetTime, 1);
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +36,8 @@ public class GroundBehavior : MonoBehaviour
             gamePanel.Close();
             flowchart.SetBooleanVariable("back", false);
             PanelManager.Open<BeginPanel>();
+            
+            // 删除所有collection
             // PlayerPrefs.DeleteAll();
         }
     }
