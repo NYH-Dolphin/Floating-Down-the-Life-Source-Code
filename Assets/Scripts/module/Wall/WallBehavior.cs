@@ -33,6 +33,9 @@ public class WallBehavior : MonoBehaviour
 
     private readonly string[] _rightCharacterName =
         {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
+    
+    private static readonly int[] _left = {5, 5, 5, 5, 5, 5, 5, 5};
+    private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
 
 
     private GameObject obstacle = null;
@@ -48,6 +51,7 @@ public class WallBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     public Boolean GenerateObstacle()
@@ -108,7 +112,7 @@ public class WallBehavior : MonoBehaviour
             if (p.x < 0)
             {
                 // 角色
-                string characterName = _leftCharacterName[Random.Range(0, _leftCharacterName.Length)];
+                string characterName = _leftCharacterName[GetCharacterNum(true)];
                 string characterPath = "character/left/" + characterName;
                 character = Instantiate(Resources.Load<GameObject>(characterPath),
                     transform, true);
@@ -125,7 +129,7 @@ public class WallBehavior : MonoBehaviour
             else
             {
                 // 角色
-                string characterName = _rightCharacterName[Random.Range(0, _rightCharacterName.Length)];
+                string characterName = _rightCharacterName[GetCharacterNum(false)];
                 string characterPath = "character/right/" + characterName;
                 character = Instantiate(Resources.Load<GameObject>(characterPath),
                     transform, true);
@@ -214,5 +218,44 @@ public class WallBehavior : MonoBehaviour
     public static float GetSpeed()
     {
         return WallBehavior.speed;
+    }
+
+    private int GetCharacterNum(bool isLeft)
+    {
+        if (isLeft)
+        {
+            int sum = 0;
+            foreach (var t in _left)
+                sum += t;
+            int ram = Random.Range(0, sum);
+            sum = 0;
+            for (int i = 0; i < _left.Length; i++)
+            {
+                sum += _left[i];
+                if (sum > ram)
+                {
+                    _left[i] = _left[i] > 1 ? _left[i] - 1 : 1;
+                    return i;
+                }
+            }
+        }
+        else
+        {
+            int sum = 0;
+            foreach (var t in _right)
+                sum += t;
+            int ram = Random.Range(0, sum);
+            sum = 0;
+            for (int i = 0; i < _right.Length; i++)
+            {
+                sum += _right[i];
+                if (sum > ram)
+                {
+                    _right[i] = _right[i] > 1 ? _right[i] - 1 : 1;
+                    return i;
+                }
+            }
+        }
+        return 0;
     }
 }

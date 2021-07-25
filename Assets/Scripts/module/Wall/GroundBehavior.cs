@@ -9,7 +9,7 @@ public class GroundBehavior : MonoBehaviour
     public Flowchart flowchart;
     private bool back;
     
-    private const int characterNum = 15;
+    private const int characterNum = 19;
 
 
     // Start is called before the first frame update

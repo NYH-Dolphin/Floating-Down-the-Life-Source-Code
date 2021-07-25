@@ -48,22 +48,16 @@ public class MusicController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 index++;
-                index %= 2;
+                index %= 5;
 
                 GetComponent<AudioSource>().clip = audios[index];
                 GetComponent<AudioSource>().Play();
-                Debug.Log(GetComponent<AudioSource>().clip.name);
-                Debug.Log(index);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                if (index == 0)
-                    index = 1;
-                else
-                {
-                    index--;
-                }
-
+                index--;
+                index %= 5;
+                
                 GetComponent<AudioSource>().clip = audios[index];
                 GetComponent<AudioSource>().Play();
                 Debug.Log(GetComponent<AudioSource>().clip.name);
