@@ -170,7 +170,7 @@ public class GamePanel : BasePanel
             rightWall.Add(wallR);
             wallL.transform.SetAsFirstSibling();
             wallR.transform.SetAsFirstSibling();
-            Boolean hasObstacle;
+            bool hasObstacle;
             if (Random.Range(0f, 1f) < 0.5)
                 hasObstacle = wallL.GetComponent<WallBehavior>().GenerateObstacle();
             else

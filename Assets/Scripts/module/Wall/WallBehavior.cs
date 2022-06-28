@@ -33,15 +33,14 @@ public class WallBehavior : MonoBehaviour
     //     "character1"
     // };
 
-    // private readonly string[] _rightCharacterName =
-    //     {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
     private readonly string[] _rightCharacterName =
-        {"character13"};
+        {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
+    // private readonly string[] _rightCharacterName = {"character13"};
     
     private static readonly int[] _left = {5, 5, 5, 5, 5, 5, 5, 5};
     // private static readonly int[] _left = {5};
-    // private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
-    private static readonly int[] _right = {5};
+    private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
+    // private static readonly int[] _right = {5};
 
 
     private GameObject obstacle = null;

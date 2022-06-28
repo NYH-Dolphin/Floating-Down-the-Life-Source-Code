@@ -86,7 +86,7 @@ public class JimmyBehaviour : MonoBehaviour
     }
 
 
-    private const float DASHSPEED = 500f;
+    private const float DASHSPEED = 800f;
     private const float MINSPEED = 200f;
     private const float MAXSPEED = 400f;
 
