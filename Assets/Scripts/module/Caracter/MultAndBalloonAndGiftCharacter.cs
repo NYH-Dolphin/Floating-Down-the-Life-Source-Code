@@ -63,18 +63,6 @@ public class MultAndBalloonAndGiftCharacter : CharacterBehaviour
         }
     }
 
-    // 在范围内 - 可以触发与 Jimmy 之间的会话
-    private void InBounds(float distance)
-    {
-        if (distance <= 200)
-        {
-            // Debug.Log("Trigger Conversation");
-            flowchart.SetIntegerVariable("inBound", 1);
-        }
-        else
-            flowchart.SetIntegerVariable("inBound", 0);
-    }
-    
     IEnumerator GetCollection(int id)
     {
         yield return new WaitForSeconds(0.8f);

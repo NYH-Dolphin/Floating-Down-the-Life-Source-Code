@@ -47,43 +47,5 @@ public class MultAndBalloonCharacter : CharacterBehaviour
             Jimmy.GetComponent<JimmyBehaviour>().AddBalloon(1);
         }
     }
-    
-    // 在范围内 - 可以触发与 Jimmy 之间的会话
-    private void InBounds(float distance)
-    {
-        if (distance <= 200)
-        {
-            // flowchart 预先 +1
-            // flowchart.SetIntegerVariable("meetTime", meetTime);
 
-            Debug.Log("Trigger Conversation");
-            flowchart.SetIntegerVariable("inBound", 1);
-        }
-        else
-        {
-            flowchart.SetIntegerVariable("inBound", 0);
-            
-            // 有过谈话，但是离开了
-            // if (hasConversation)
-            // {
-            //     int flowChartMeetTime = flowchart.GetIntegerVariable("meetTime");
-            //     meetTime = meetTime == flowChartMeetTime ? meetTime + 1 : meetTime;
-            //     hasConversation = false;
-            // }
-            // // 没有谈话过且远离了
-            // else
-            // {
-            //     int flowchartMeetTime = flowchart.GetIntegerVariable("meetTime");
-            //     // 之前进入了 200 内，flowChartMeetTime 预先 +1 了
-            //     // 减去 1
-            //     if (flowchartMeetTime == meetTime)
-            //     {
-            //         flowchartMeetTime--;
-            //         flowchart.SetIntegerVariable("meetTime", flowchartMeetTime);
-            //     }
-            // }
-        }
-
-    }
-    
 }

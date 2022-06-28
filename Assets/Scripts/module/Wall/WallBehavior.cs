@@ -22,20 +22,26 @@ public class WallBehavior : MonoBehaviour
     };
 
     private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-
-    // private readonly string[] _leftCharacterName = {"character19"};
-    // private readonly string[] _rightCharacterName = {"character3"};
+    
     private readonly string[] _leftCharacterName =
     {
         "character1", "character4", "character5", "character6",
         "character7", "character11", "character18", "character19"
     };
+    // private readonly string[] _leftCharacterName =
+    // {
+    //     "character1"
+    // };
 
+    // private readonly string[] _rightCharacterName =
+    //     {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
     private readonly string[] _rightCharacterName =
-        {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
+        {"character13"};
     
     private static readonly int[] _left = {5, 5, 5, 5, 5, 5, 5, 5};
-    private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
+    // private static readonly int[] _left = {5};
+    // private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
+    private static readonly int[] _right = {5};
 
 
     private GameObject obstacle = null;
