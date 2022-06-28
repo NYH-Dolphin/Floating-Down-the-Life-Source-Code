@@ -43,19 +43,19 @@ public class BeginPanel : BasePanel
     }
 
     //当按下开始按钮
-    public void OnBeginClick()
+    private void OnBeginClick()
     {
         PanelManager.Open<StartPanel>();
         Close();
     }
 
-    public void OnRulesClick()
+    private void OnRulesClick()
     {
         PanelManager.Open<RulesPanel>();
         Close();
     }
 
-    public void OnCollectionClick()
+    private void OnCollectionClick()
     {
         PanelManager.Open<CollectionPanel>();
     }

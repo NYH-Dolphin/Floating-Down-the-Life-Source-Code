@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Collection
 {
-    private static Dictionary<int, String> NameDicCN = new Dictionary<int, string>();
-    private static Dictionary<int, String> DescriptDicCN = new Dictionary<int, string>();
-    private static Dictionary<int, String> DescriptDicEN = new Dictionary<int, string>();
-    private static Dictionary<int, String> NameDicEN = new Dictionary<int, string>();
-    private static HashMap<int, String> NameMap = new HashMap<int, string>();
-    private static HashMap<int, String> DescriptMap = new HashMap<int, string>();
-    
+    private static Dictionary<int, string> NameDicCN = new Dictionary<int, string>();
+    private static Dictionary<int, string> DescriptDicCN = new Dictionary<int, string>();
+    private static Dictionary<int, string> DescriptDicEN = new Dictionary<int, string>();
+    private static Dictionary<int, string> NameDicEN = new Dictionary<int, string>();
+
     private int ID;
 
     public string Name => PlayerPrefs.GetString("language", "EN") == "CN" ? NameDicCN[ID] : NameDicEN[ID];
@@ -34,7 +32,7 @@ public class Collection
         InitDescriptionMap();
     }
 
-    static void InitNameMap()
+    private static void InitNameMap()
     {
         NameDicCN[0] = "计划表";
         NameDicEN[0] = "Schedule";
@@ -58,7 +56,7 @@ public class Collection
         NameDicEN[9] = "Bird Egg";
     }
 
-    static void InitDescriptionMap()
+    private static void InitDescriptionMap()
     {
         DescriptDicCN[0] = "据说会有梦想和目标，才会走的更远";
         DescriptDicEN[0] = "It is said that with dreams and goals can you go further";

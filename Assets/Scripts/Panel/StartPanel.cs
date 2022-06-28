@@ -17,10 +17,10 @@ public class StartPanel : BasePanel
     private float a = 0f;
     
     private Button skip;
-    private Boolean skipClicked = false;
+    private bool skipClicked;
 
     private Flowchart flowchart;
-    private Boolean notDestroy = true;
+    private bool notDestroy = true;
 
     //初始化
     public override void OnInit()
@@ -39,7 +39,8 @@ public class StartPanel : BasePanel
         black = skin.transform.Find("black").gameObject;
         black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         flowchart = skin.transform.Find("Flowchart").GetComponent<Flowchart>();
-        
+        flowchart.SetStringVariable("language", PlayerPrefs.GetString("language", "EN"));
+
         // 高度记录
         HeightRecord.RefreshHeight();
         HeightRecord.Continue();
@@ -47,6 +48,13 @@ public class StartPanel : BasePanel
         HeightRecord.Begin();
         WallBehavior.Begin();
         // Debug.Log("Total height is: " + HeightRecord.GetTotalHeight());
+        
+        
+        // 如果不是第一次进行游戏，则立即跳过
+        if(PlayerPrefs.GetInt("Initial", 0) == 1)
+        {
+            StartCoroutine(Disappear());
+        }
     }
 
     private void OnSkipClick()
@@ -92,7 +100,17 @@ public class StartPanel : BasePanel
 
     IEnumerator Disappear()
     {
-        yield return new WaitForSeconds(1f);
+        if (PlayerPrefs.GetInt("Initial", 0) == 0)
+        {
+            PlayerPrefs.SetInt("Initial", 1);
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+            yield return new WaitForSeconds(0.01f);
+        }
+
         PanelManager.Open<GamePanel>();
         Close();
     }

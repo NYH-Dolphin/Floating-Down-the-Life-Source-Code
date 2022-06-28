@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6531051900998653964, guid: 3f36f23b597d3d5488a4297325c55775, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 631baedb11ead6340bf69d5292525632, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 5927727398563323180}
   - component: {fileID: 4535940600902633038}
   - component: {fileID: 7042074872645998127}
+  - component: {fileID: 3359588182419849110}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -309,6 +310,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Skip
+--- !u!114 &3359588182419849110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848141588518200740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1fddcfc78e4875969f3b938b7ae214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CN: "\u8DF3\u8FC7"
+  EN: Skip
 --- !u!1 &4665862465857197012
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +629,11 @@ GameObject:
   - component: {fileID: 557370007005848700}
   - component: {fileID: 6925876086040677270}
   - component: {fileID: 5419426155896600995}
+  - component: {fileID: 3771464919712542980}
+  - component: {fileID: 4361247393750959586}
+  - component: {fileID: 7374733313135171396}
+  - component: {fileID: 6665635087123644741}
+  - component: {fileID: 6224562712086146688}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -648,10 +668,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 21.99499, y: 29.74009}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 386
+  blockViewHeight: 390.8
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -661,10 +681,10 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 613808589345574754}
-  selectedCommands:
-  - {fileID: 3994357568105183741}
+  selectedCommands: []
   variables:
   - {fileID: 2576029579265418542}
+  - {fileID: 3771464919712542980}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -691,7 +711,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 111
+    width: 112.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -700,7 +720,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 7758904741104866422}
   commandList:
+  - {fileID: 4361247393750959586}
   - {fileID: 3994357568105183741}
+  - {fileID: 7374733313135171396}
+  - {fileID: 6224562712086146688}
+  - {fileID: 6665635087123644741}
   - {fileID: 6925876086040677270}
   - {fileID: 5419426155896600995}
   - {fileID: 557370007005848700}
@@ -733,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 2
-  indentLevel: 0
+  indentLevel: 1
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "Jim think middle:\u6211\u662F\u8C01\uFF1F\r\n\r\nJim think middle:\u4ED6\u4EEC\u662F\u8C01\uFF1F\r\n\r\nJim
@@ -1000,6 +1024,350 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &3771464919712542980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028233544202638523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: language
+  value: CN
+--- !u!114 &4361247393750959586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028233544202638523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 6
+  indentLevel: 0
+  anyOrAllConditions: 0
+  conditions:
+  - compareOperator: 0
+    anyVar:
+      variable: {fileID: 3771464919712542980}
+      data:
+        animatorData:
+          animatorRef: {fileID: 0}
+          animatorVal: {fileID: 0}
+        audioSourceData:
+          audioSourceRef: {fileID: 0}
+          audioSourceVal: {fileID: 0}
+        booleanData:
+          booleanRef: {fileID: 0}
+          booleanVal: 0
+        collectionData:
+          collectionRef: {fileID: 0}
+          collectionVal: {fileID: 0}
+        collider2DData:
+          collider2DRef: {fileID: 0}
+          collider2DVal: {fileID: 0}
+        colliderData:
+          colliderRef: {fileID: 0}
+          colliderVal: {fileID: 0}
+        colorData:
+          colorRef: {fileID: 0}
+          colorVal: {r: 0, g: 0, b: 0, a: 0}
+        floatData:
+          floatRef: {fileID: 0}
+          floatVal: 0
+        gameObjectData:
+          gameObjectRef: {fileID: 0}
+          gameObjectVal: {fileID: 0}
+        integerData:
+          integerRef: {fileID: 0}
+          integerVal: 0
+        materialData:
+          materialRef: {fileID: 0}
+          materialVal: {fileID: 0}
+        matrix4x4Data:
+          matrix4x4Ref: {fileID: 0}
+          matrix4x4Val:
+            e00: 0
+            e01: 0
+            e02: 0
+            e03: 0
+            e10: 0
+            e11: 0
+            e12: 0
+            e13: 0
+            e20: 0
+            e21: 0
+            e22: 0
+            e23: 0
+            e30: 0
+            e31: 0
+            e32: 0
+            e33: 0
+        objectData:
+          objectRef: {fileID: 0}
+          objectVal: {fileID: 0}
+        quaternionData:
+          quaternionRef: {fileID: 0}
+          quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+        rigidbody2DData:
+          rigidbody2DRef: {fileID: 0}
+          rigidbody2DVal: {fileID: 0}
+        rigidbodyData:
+          rigidbodyRef: {fileID: 0}
+          rigidbodyVal: {fileID: 0}
+        spriteData:
+          spriteRef: {fileID: 0}
+          spriteVal: {fileID: 0}
+        stringData:
+          stringRef: {fileID: 0}
+          stringVal: CN
+        textureData:
+          textureRef: {fileID: 0}
+          textureVal: {fileID: 0}
+        transformData:
+          transformRef: {fileID: 0}
+          transformVal: {fileID: 0}
+        vector2Data:
+          vector2Ref: {fileID: 0}
+          vector2Val: {x: 0, y: 0}
+        vector3Data:
+          vector3Ref: {fileID: 0}
+          vector3Val: {x: 0, y: 0, z: 0}
+        vector4Data:
+          vector4Ref: {fileID: 0}
+          vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  compareOperator: 0
+  anyVar:
+    variable: {fileID: 0}
+    data:
+      animatorData:
+        animatorRef: {fileID: 0}
+        animatorVal: {fileID: 0}
+      audioSourceData:
+        audioSourceRef: {fileID: 0}
+        audioSourceVal: {fileID: 0}
+      booleanData:
+        booleanRef: {fileID: 0}
+        booleanVal: 0
+      collectionData:
+        collectionRef: {fileID: 0}
+        collectionVal: {fileID: 0}
+      collider2DData:
+        collider2DRef: {fileID: 0}
+        collider2DVal: {fileID: 0}
+      colliderData:
+        colliderRef: {fileID: 0}
+        colliderVal: {fileID: 0}
+      colorData:
+        colorRef: {fileID: 0}
+        colorVal: {r: 0, g: 0, b: 0, a: 0}
+      floatData:
+        floatRef: {fileID: 0}
+        floatVal: 0
+      gameObjectData:
+        gameObjectRef: {fileID: 0}
+        gameObjectVal: {fileID: 0}
+      integerData:
+        integerRef: {fileID: 0}
+        integerVal: 0
+      materialData:
+        materialRef: {fileID: 0}
+        materialVal: {fileID: 0}
+      matrix4x4Data:
+        matrix4x4Ref: {fileID: 0}
+        matrix4x4Val:
+          e00: 0
+          e01: 0
+          e02: 0
+          e03: 0
+          e10: 0
+          e11: 0
+          e12: 0
+          e13: 0
+          e20: 0
+          e21: 0
+          e22: 0
+          e23: 0
+          e30: 0
+          e31: 0
+          e32: 0
+          e33: 0
+      objectData:
+        objectRef: {fileID: 0}
+        objectVal: {fileID: 0}
+      quaternionData:
+        quaternionRef: {fileID: 0}
+        quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+      rigidbody2DData:
+        rigidbody2DRef: {fileID: 0}
+        rigidbody2DVal: {fileID: 0}
+      rigidbodyData:
+        rigidbodyRef: {fileID: 0}
+        rigidbodyVal: {fileID: 0}
+      spriteData:
+        spriteRef: {fileID: 0}
+        spriteVal: {fileID: 0}
+      stringData:
+        stringRef: {fileID: 0}
+        stringVal: 
+      textureData:
+        textureRef: {fileID: 0}
+        textureVal: {fileID: 0}
+      transformData:
+        transformRef: {fileID: 0}
+        transformVal: {fileID: 0}
+      vector2Data:
+        vector2Ref: {fileID: 0}
+        vector2Val: {x: 0, y: 0}
+      vector3Data:
+        vector3Ref: {fileID: 0}
+        vector3Val: {x: 0, y: 0, z: 0}
+      vector4Data:
+        vector4Ref: {fileID: 0}
+        vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  variable: {fileID: 0}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &7374733313135171396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028233544202638523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  indentLevel: 0
+--- !u!114 &6665635087123644741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028233544202638523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+--- !u!114 &6224562712086146688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028233544202638523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 1
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Jim think middle:Who am I?\r\n\r\nJim think middle:Who are they?\r\n\r\nJim
+      sad middle:The noise made me uneasy\r\n\r\nJim sad middle:It was the hurried
+      footsteps of the hospital, the sound of crying, the sound of doctors asking
+      questions...\r\n\r\nJim closeEye middle:I tried to get rid of those sound\r\n\r\nJim
+      closeEye middle:The doctor kept asking me about Jimmy, but I couldn't remember
+      anything\r\n\r\nJim closeEye middle:From their description:\r\n\r\nJim closeEye
+      middle:They call me Jimmy, but actually I don't know anything about Jimmy\r\n\r\nJim
+      closeEye right:From their description\u2014\u2014\r\n\r\nJimmy bigSmile left:\r\n\r\nJim
+      closeEye right:Jimmy is a boy who is loved by everyone. He is kind and helpful.
+      Everyone likes to make friends with him and he cares about others kindly\r\n\r\nJim
+      think right:So this \"Jimmy\" got up one day, and become me???\r\n\r\nJim think
+      right:Strange as it sounds, according to them, it was \"me\" who came out of
+      Jimmy's heart\r\n\r\nJim sad right:Doctor said this syndrome is called [dissociative
+      dissociative personality disorder]\r\n\r\nJim sad right:Jimmy disappeared\r\n\r\nhide
+      Jimmy:\r\n\r\nJim think middle:Of course, I'm not really aware of this situation\r\n\r\nJim
+      think middle:I don't know any of them, not even Jimmy\r\n\r\nJim sad middle:Jimmy's
+      mom used to hold me and cry, and I had to pretend to be Jimmy to cheer her
+      up\r\n\r\nJim sad middle:Why did this happen to Jimmy and me?\r\n\r\nJim sad
+      middle:And their dejected looks took my breath away\r\n\r\nJim sad middle:I
+      had to do my best act as Jimmy as they knew him\r\n\r\nJim closeEye middle:One
+      month, three months, six months...\r\n\r\nJim closeEye middle:\u2026\u2026\r\n\r\nJim
+      think middle:Today is a fine day, I go to the roof\r\n\r\nJim think middle:It's
+      so far from the ground that I can hardly hear anything but the wind, you know\r\n\r\nJim
+      think middle:A little further away from Jimmy... Right?\r\n\r\nJim think middle:I
+      take a deep breath\r\n\r\nJim answer middle:There seemed to be a busy street
+      below\r\n\r\nJim answer middle:Let me say goodbye to these things\r\n\r\nJim
+      answer middle:Let them all drift away in the wind\r\n\r\nJim closeEye middle:I
+      jumped\r\n\r\nJim think middle:Suddenly\r\n\r\nJim think middle:I've got some
+      balloons wrapped around my hand\r\n\r\nJim think middle:As if to save my life?\r\n\r\nhide
+      Jim:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!1 &8346480890638589075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1734,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jim
       objectReference: {fileID: 0}
+    - target: {fileID: 6956075843064950395, guid: e93111c491c256047945cf8775303d18, type: 3}
+      propertyPath: nameColor.b
+      value: 0.23529413
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956075843064950395, guid: e93111c491c256047945cf8775303d18, type: 3}
+      propertyPath: nameColor.g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956075843064950395, guid: e93111c491c256047945cf8775303d18, type: 3}
+      propertyPath: nameColor.r
+      value: 0.41960788
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956075843064950395, guid: e93111c491c256047945cf8775303d18, type: 3}
+      propertyPath: portraitsFace
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93111c491c256047945cf8775303d18, type: 3}
 --- !u!4 &4289841022973858559 stripped
@@ -1380,6 +1764,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5437892822042989473}
     m_Modifications:
+    - target: {fileID: 4003036916341935444, guid: d33e0f3b86f33f147a5d69bef67d946f, type: 3}
+      propertyPath: nameColor.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003036916341935444, guid: d33e0f3b86f33f147a5d69bef67d946f, type: 3}
+      propertyPath: nameColor.g
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003036916341935444, guid: d33e0f3b86f33f147a5d69bef67d946f, type: 3}
+      propertyPath: nameColor.r
+      value: 0.427451
+      objectReference: {fileID: 0}
     - target: {fileID: 4003036916341935445, guid: d33e0f3b86f33f147a5d69bef67d946f, type: 3}
       propertyPath: m_Name
       value: Jimmy
