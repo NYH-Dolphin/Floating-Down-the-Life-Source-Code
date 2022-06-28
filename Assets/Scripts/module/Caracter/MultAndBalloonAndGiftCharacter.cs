@@ -68,7 +68,7 @@ public class MultAndBalloonAndGiftCharacter : CharacterBehaviour
     {
         if (distance <= 200)
         {
-            Debug.Log("Trigger Conversation");
+            // Debug.Log("Trigger Conversation");
             flowchart.SetIntegerVariable("inBound", 1);
         }
         else

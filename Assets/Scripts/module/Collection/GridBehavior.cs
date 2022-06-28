@@ -35,8 +35,7 @@ public class GridBehavior : MonoBehaviour
             return;
         }
         ID = id;
-        // Locked = PlayerPrefs.GetInt(key) == 0;//TODO 这里改成了 false
-        Locked = false;
+        Locked = PlayerPrefs.GetInt(key) == 0;//TODO 这里改成了 false 可以直接查看所有物品
         string collectionName = "coll" + ID;
         LockIcon = gameObject.transform.Find("lock").gameObject;
         CollectionIcon = gameObject.transform.Find(collectionName).gameObject;

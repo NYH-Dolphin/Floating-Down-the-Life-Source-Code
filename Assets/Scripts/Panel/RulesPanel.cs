@@ -12,13 +12,22 @@ public class RulesPanel : BasePanel
     private int ruleCount = 0;
     private readonly GameObject[] pics = new GameObject[4];
 
-    private readonly string[] rules =
+    private readonly string[] RulesCN =
     {
         "A D / ← →: 左右移动",
         "S / ↓: 长按加速下落，松开恢复",
         "当触碰到障碍物时会损失气球",
-        "Enter/Click: 与角色交流，聆听Ta的故事"
+        "Enter/点击: 与角色交流，聆听Ta的故事"
     };
+    
+    private readonly string[] RulesEN =
+    {
+        "A D / ← →: Move around",
+        "S / ↓: Long press to accelerate the fall, release to recover",
+        "The balloon will be lost when player touches an obstacle",
+        "Enter/Click: Talk to the characters and listen to their stories"
+    };
+
 
     //初始化
     public override void OnInit()
@@ -50,7 +59,7 @@ public class RulesPanel : BasePanel
         pics[3].SetActive(false);
 
         ruleText = skin.transform.Find("ruleText").GetComponent<Text>();
-        ruleText.text = rules[ruleCount];
+        ruleText.text = PlayerPrefs.GetString("language", "EN") == "CN" ? RulesCN[ruleCount] : RulesEN[ruleCount];
     }
 
     private void OnCloseClick()
@@ -72,11 +81,11 @@ public class RulesPanel : BasePanel
 
     private void OnNextClick()
     {
-        if (ruleCount < rules.Length - 1)
+        if (ruleCount < RulesCN.Length - 1)
         {
             pics[ruleCount].SetActive(false);
             ruleCount++;
-            ruleText.text = rules[ruleCount];
+            ruleText.text = PlayerPrefs.GetString("language", "EN") == "CN" ? RulesCN[ruleCount] : RulesEN[ruleCount];
             pics[ruleCount].SetActive(true);
         }
     }
@@ -87,7 +96,7 @@ public class RulesPanel : BasePanel
         {
             pics[ruleCount].SetActive(false);
             ruleCount--;
-            ruleText.text = rules[ruleCount];
+            ruleText.text = PlayerPrefs.GetString("language", "EN") == "CN" ? RulesCN[ruleCount] : RulesEN[ruleCount];
             pics[ruleCount].SetActive(true);
         }
     }
