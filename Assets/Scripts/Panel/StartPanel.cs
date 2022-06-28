@@ -62,7 +62,7 @@ public class StartPanel : BasePanel
     private void Update()
     {
         bool move = flowchart.GetBooleanVariable("move");
-        Debug.Log("move is " + move);
+        // Debug.Log("move is " + move);
         if (move)
         {
             if (Jimmy_small.transform.position.x < 70)

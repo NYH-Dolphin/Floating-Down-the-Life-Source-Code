@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils;
 
 public class GameMain : MonoBehaviour {
 	
@@ -7,7 +8,6 @@ public class GameMain : MonoBehaviour {
 		//初始化
 		PanelManager.Init();
 		//打开登陆面板
-		Debug.Log("begin");
 		PanelManager.Open<BeginPanel>();
 		Collection.Init();
 	}

@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Collection
 {
+    private static Dictionary<int, String> NameDicCN = new Dictionary<int, string>();
+    private static Dictionary<int, String> DescriptDicCN = new Dictionary<int, string>();
+    private static Dictionary<int, String> DescriptDicEN = new Dictionary<int, string>();
+    private static Dictionary<int, String> NameDicEN = new Dictionary<int, string>();
     private static HashMap<int, String> NameMap = new HashMap<int, string>();
     private static HashMap<int, String> DescriptMap = new HashMap<int, string>();
     
     private int ID;
-    private String Name;
-    private String Description;
-    
+
+    public string Name => PlayerPrefs.GetString("language", "EN") == "CN" ? NameDicCN[ID] : NameDicEN[ID];
+    public string Description => PlayerPrefs.GetString("language", "EN") == "CN" ? DescriptDicCN[ID] : DescriptDicEN[ID];
+
     private static int maxCount = 10;
 
     public static int GetCollectionCount()
@@ -20,57 +26,65 @@ public class Collection
     public Collection(int id)
     {
         ID = id;
-        Name = NameMap.Get(id);
-        Description = DescriptMap.Get(id);
     }
 
     public static void Init()
     {
         InitNameMap();
-        InitDescriptMap();
+        InitDescriptionMap();
     }
 
     static void InitNameMap()
     {
-        NameMap.Add(0, "计划表");
-        NameMap.Add(1, "黑童话集");
-        NameMap.Add(2, "九尾猫的铃铛");
-        NameMap.Add(3, "电影票");
-        NameMap.Add(4, "草莓味的硬糖");
-        NameMap.Add(5, "书签");
-        NameMap.Add(6, "小杠铃");
-        NameMap.Add(7, "完整的心");
-        NameMap.Add(8, "小花花");
-        NameMap.Add(9, "鸟蛋");
+        NameDicCN[0] = "计划表";
+        NameDicEN[0] = "Schedule";
+        NameDicCN[1] = "黑童话集";
+        NameDicEN[1] = "Dark Fairy Tale";
+        NameDicCN[2] = "九尾猫的铃铛";
+        NameDicEN[2] = "Bell from Nine-tailed Cat";
+        NameDicCN[3] = "电影票";
+        NameDicEN[3] = "Cinema ticket";
+        NameDicCN[4] = "草莓味的硬糖";
+        NameDicEN[4] = "Strawberry Candy";
+        NameDicCN[5] = "书签";
+        NameDicEN[5] = "Bookmark";
+        NameDicCN[6] = "小杠铃";
+        NameDicEN[6] = "Barbell";
+        NameDicCN[7] = "完整的心";
+        NameDicEN[7] = "Heart";
+        NameDicCN[8] = "小花花";
+        NameDicEN[8] = "Flower";
+        NameDicCN[9] = "鸟蛋";
+        NameDicEN[9] = "Bird Egg";
     }
 
-    static void InitDescriptMap()
+    static void InitDescriptionMap()
     {
-        DescriptMap.Add(0, "据说会有梦想和目标，才会走的更远");
-        DescriptMap.Add(1, "这好像不是我童年看到过的童话故事呢...");
-        DescriptMap.Add(2, "跟随了九尾猫多年的铃铛，或许可以实现一个愿望");
-        DescriptMap.Add(3, "一张不限场次的电影票，去看看想看的电影吧");
-        DescriptMap.Add(4, "甜甜...");
-        DescriptMap.Add(5, "好漂亮的书签，别让它落灰了");
-        DescriptMap.Add(6, "平时要注意锻炼身体！");
-        DescriptMap.Add(7, "一个完整的心，两个相互的温暖的人");
-        DescriptMap.Add(8, "把它献给你最爱的人吧~");
-        DescriptMap.Add(9, "不知道是什么鸟的鸟蛋");
-    }
-
-    public String GetName()
-    {
-        return Name;
-    }
-
-    public String GetDescription()
-    {
-        return Description;
+        DescriptDicCN[0] = "据说会有梦想和目标，才会走的更远";
+        DescriptDicEN[0] = "It is said that with dreams and goals can you go further";
+        DescriptDicCN[1] = "这好像不是我童年看到过的童话故事呢...";
+        DescriptDicEN[1] = "This is not the fairy tale I saw in my childhood...";
+        DescriptDicCN[2] = "跟随了九尾猫多年的铃铛，或许可以实现一个愿望";
+        DescriptDicEN[2] = "A bells that follows the nine-tailed cats for many years, one wish may come true";
+        DescriptDicCN[3] = "一张不限场次的电影票，去看看想看的电影吧";
+        DescriptDicEN[3] = "An unlimited ticket to see what you want to see";
+        DescriptDicCN[4] = "甜甜...";
+        DescriptDicEN[4] = "Sweaty...";
+        DescriptDicCN[5] = "好漂亮的书签，别让它落灰了";
+        DescriptDicEN[5] = "A a nice bookmark, Don't let it fall to dust!";
+        DescriptDicCN[6] = "平时要注意锻炼身体！";
+        DescriptDicEN[6] = "Pay attention to exercise!";
+        DescriptDicCN[7] = "一个完整的心，两个相互的温暖的人";
+        DescriptDicEN[7] = "A complete heart, two mutual warmth of the people";
+        DescriptDicCN[8] = "把它献给你最爱的人吧~";
+        DescriptDicEN[8] = "Give it to the one you love the most~";
+        DescriptDicCN[9] = "不知道是什么鸟的鸟蛋";
+        DescriptDicEN[9] = "Why there is a bird egg???";
     }
 
     public static string GetName(int id)
     {
-        return NameMap.Get(id);
+        return PlayerPrefs.GetString("language", "EN") == "CN" ? NameDicCN[id] : NameDicEN[id];
     }
 
     public static int GetUnlockNum()

@@ -9,7 +9,7 @@ public class GridBehavior : MonoBehaviour
     // Start is called before the first frame update
 
     private int ID = -1;
-    private Boolean Locked = true;
+    private bool Locked = true;
 
     private GameObject LockIcon;
     private GameObject CollectionIcon;
@@ -29,18 +29,17 @@ public class GridBehavior : MonoBehaviour
     public void Init(int id)
     {
         string key = "collection_lock_" + id;
-        Boolean isLocked = PlayerPrefs.GetInt(key) == 0;
         if (id >= Collection.GetCollectionCount())
         {
             gameObject.transform.Find("lock").gameObject.SetActive(false);
             return;
         }
-
         ID = id;
-        Locked = isLocked;
-        String CollectionName = "coll" + ID;
+        // Locked = PlayerPrefs.GetInt(key) == 0;//TODO 这里改成了 false
+        Locked = false;
+        string collectionName = "coll" + ID;
         LockIcon = gameObject.transform.Find("lock").gameObject;
-        CollectionIcon = gameObject.transform.Find(CollectionName).gameObject;
+        CollectionIcon = gameObject.transform.Find(collectionName).gameObject;
         ChangeIconVisibility();
     }
 
@@ -57,7 +56,7 @@ public class GridBehavior : MonoBehaviour
             GameObject detail = Instantiate(Resources.Load<GameObject>("collection/CollectionDetail"),
                 GameObject.Find("Root/Canvas/CollectionPanel(Clone)").transform, true);
             detail.transform.localPosition = new Vector3(0, 100, 0);
-            detail.transform.GetComponent<CollectionBehaviour>().SetCollection(this.ID);
+            detail.transform.GetComponent<CollectionBehaviour>().SetCollection(ID);
         }
     }
 }

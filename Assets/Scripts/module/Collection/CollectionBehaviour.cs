@@ -36,8 +36,8 @@ public class CollectionBehaviour : MonoBehaviour
         ID = id;
         collections[ID].gameObject.SetActive(true);
         obj = CollectionPanel.AllCollections[id];
-        collectionName.text = obj.GetName();
-        collectionDescription.text = obj.GetDescription();
+        collectionName.text = obj.Name;
+        collectionDescription.text = obj.Description;
     }
 
 }

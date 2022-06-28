@@ -33,7 +33,6 @@ public class BeginPanel : BasePanel
 
     private void OnSettingClick()
     {
-        Debug.Log("1111111111111111");
         PanelManager.Open<SettingPanel>();
         Close();
     }

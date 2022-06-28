@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1274624800182116875}
   - component: {fileID: 151812001549948849}
   - component: {fileID: 1954635292154001764}
+  - component: {fileID: 6626176906915593908}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -382,7 +383,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Game Over \uFF01"
+  m_Text: "\u6E38\u620F\u7ED3\u675F"
+--- !u!114 &6626176906915593908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743249631155204381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1fddcfc78e4875969f3b938b7ae214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CN: "\u6E38\u620F\u7ED3\u675F"
+  EN: Game Over
 --- !u!1 &7571413065136739651
 GameObject:
   m_ObjectHideFlags: 0
