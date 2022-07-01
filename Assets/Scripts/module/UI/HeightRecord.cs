@@ -94,7 +94,7 @@ public class HeightRecord : MonoBehaviour
     // 检查游戏是否到了结局
     private static void CheckEnding()
     {
-        if (GetTotalHeight() == endMeter)
+        if (GetTotalHeight() >= endMeter)
         {
             GameObject.Find("Audio Source").GetComponent<MusicController>().PlayEndMusic();
             End();// 终止高度记录

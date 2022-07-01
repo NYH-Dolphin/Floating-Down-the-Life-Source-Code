@@ -106,10 +106,10 @@ public class WallBehavior : MonoBehaviour
         return false;
     }
 
-    public void GenerateCharacter(int random)
+    public bool GenerateCharacter(int random)
     {
         if (obstacle != null)
-            return;
+            return false;
         Vector3 p = transform.localPosition;
         float height = GetComponent<RectTransform>().rect.height;
         if (height > 300 && RandomGenerate(random))
@@ -148,7 +148,11 @@ public class WallBehavior : MonoBehaviour
                 window.transform.localPosition = new Vector3(-375, 0, 0);
                 window.gameObject.layer = 2;
             }
+
+            return true;
         }
+
+        return false;
     }
 
     public void GenerateGround()

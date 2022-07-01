@@ -145,9 +145,11 @@ public class GamePanel : BasePanel
     }
 
     // 墙壁、障碍物、窗台和角色的随机生成
+    private bool leftHasCharacter; // 记录上一个墙是不是有角色生成
+    private bool rightHasCharacter; // 记录上一个墙是不是有角色生成
     void RandomGenerateMode()
     {
-        // 左墙壁随机生成
+        // 随机生成
         GameObject lastLeft = leftWall.Last();
         if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -815)
         {
@@ -172,20 +174,40 @@ public class GamePanel : BasePanel
             wallR.transform.SetAsFirstSibling();
             bool hasObstacle;
             if (Random.Range(0f, 1f) < 0.5)
-                hasObstacle = wallL.GetComponent<WallBehavior>().GenerateObstacle();
+            {
+                if (!leftHasCharacter)
+                {
+                    hasObstacle = wallL.GetComponent<WallBehavior>().GenerateObstacle();
+                }
+                else
+                {
+                    hasObstacle = false;
+                    leftHasCharacter = false;
+                }
+            }
             else
-                hasObstacle = wallR.GetComponent<WallBehavior>().GenerateObstacle();
+            {
+                if (!rightHasCharacter)
+                {
+                    hasObstacle = wallR.GetComponent<WallBehavior>().GenerateObstacle();
+                }
+                else
+                {
+                    hasObstacle = false;
+                    rightHasCharacter = false;
+                }
+            }
             if (hasObstacle)
             {
-                wallL.GetComponent<WallBehavior>().GenerateCharacter(50);
-                wallR.GetComponent<WallBehavior>().GenerateCharacter(50);
+                leftHasCharacter = wallL.GetComponent<WallBehavior>().GenerateCharacter(50);
+                rightHasCharacter = wallR.GetComponent<WallBehavior>().GenerateCharacter(50);
             }
             else
             {
                 if (Random.Range(0f, 1f) < 0.5)
-                    wallL.GetComponent<WallBehavior>().GenerateCharacter(80);
+                    leftHasCharacter = wallL.GetComponent<WallBehavior>().GenerateCharacter(80);
                 else
-                    wallR.GetComponent<WallBehavior>().GenerateCharacter(80);
+                    rightHasCharacter = wallR.GetComponent<WallBehavior>().GenerateCharacter(80);
             }
         }
 
@@ -206,19 +228,7 @@ public class GamePanel : BasePanel
         }
     }
 
-
-    // private const int endMeter = 100;
-    //
-    // // 检查游戏是否到了结局
-    // void CheckEnding()
-    // {
-    //     if (HeightRecord.GetTotalHeight() == endMeter)
-    //     {
-    //         ending = true;
-    //         HeightRecord.End();// 终止高度记录
-    //         HeightRecord.RefreshTotalHeight(); // totalHeight 清零
-    //     }
-    // }
+    
 
     private bool hasGenerate = false;
 

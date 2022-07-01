@@ -33,6 +33,12 @@ GameObject:
   - component: {fileID: 724957200304038705}
   - component: {fileID: 4499545755261512551}
   - component: {fileID: 1320239511013633951}
+  - component: {fileID: 7092388462170931215}
+  - component: {fileID: 2558087389062704217}
+  - component: {fileID: 2194961015652163323}
+  - component: {fileID: 1807252516300910923}
+  - component: {fileID: 8939974293278128276}
+  - component: {fileID: 8772075065139451499}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -81,13 +87,14 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2184916439386349102}
   selectedCommands:
-  - {fileID: 1320239511013633951}
+  - {fileID: 8772075065139451499}
   variables:
   - {fileID: 595188222307468156}
   - {fileID: 7029228977137435161}
   - {fileID: 6450799153861634884}
   - {fileID: 3411711947854743161}
   - {fileID: 640717185961722822}
+  - {fileID: 1807252516300910923}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -127,8 +134,13 @@ MonoBehaviour:
   - {fileID: 1264543971167953915}
   - {fileID: 542706021857484001}
   - {fileID: 7519536004123801601}
+  - {fileID: 7092388462170931215}
   - {fileID: 339609412471870917}
   - {fileID: 1320239511013633951}
+  - {fileID: 2558087389062704217}
+  - {fileID: 8772075065139451499}
+  - {fileID: 8939974293278128276}
+  - {fileID: 2194961015652163323}
   - {fileID: 4499545755261512551}
   - {fileID: 3855790003912777610}
   - {fileID: 3041019571744853797}
@@ -869,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 23
-  indentLevel: 2
+  indentLevel: 3
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "chara7 normal middle:\u563F\uFF0C\u53EF\u4EE5\u548C\u6211\u8BF4\u8BF4\u8BDD\u5417\uFF0C\u6211\u4E00\u4E2A\u4EBA\u597D\u5B64\u5355\nchara7
@@ -2187,7 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 35
-  indentLevel: 2
+  indentLevel: 3
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "Jim closeEye right:...\nJim closeEye right:......\nJim think right:\u8FD9\u662F\u2026\uFF1F\nJim
@@ -2200,6 +2212,402 @@ MonoBehaviour:
       answer right:\u539F\u6765\u5982\u6B64\nJim answer right:\u5979\u662F Jimmy
       \u7684\u5973\u670B\u53CB\u554A\nJim doubt right:\u770B\u6765\uFF0CJimmy \u6CA1\u6709\u628A\u8FD9\u4EF6\u4E8B\u60C5\u544A\u8BC9\u4ED6\u7684\u7238\u7238\u5988\u5988\nJim
       doubt right:\u8FD9\u662F\u4E3A\u4EC0\u4E48\u5462\uFF1F\nhide Jimmy:\nhide Jim:"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &7092388462170931215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  indentLevel: 2
+  anyOrAllConditions: 0
+  conditions:
+  - compareOperator: 0
+    anyVar:
+      variable: {fileID: 1807252516300910923}
+      data:
+        animatorData:
+          animatorRef: {fileID: 0}
+          animatorVal: {fileID: 0}
+        audioSourceData:
+          audioSourceRef: {fileID: 0}
+          audioSourceVal: {fileID: 0}
+        booleanData:
+          booleanRef: {fileID: 0}
+          booleanVal: 0
+        collectionData:
+          collectionRef: {fileID: 0}
+          collectionVal: {fileID: 0}
+        collider2DData:
+          collider2DRef: {fileID: 0}
+          collider2DVal: {fileID: 0}
+        colliderData:
+          colliderRef: {fileID: 0}
+          colliderVal: {fileID: 0}
+        colorData:
+          colorRef: {fileID: 0}
+          colorVal: {r: 0, g: 0, b: 0, a: 0}
+        floatData:
+          floatRef: {fileID: 0}
+          floatVal: 0
+        gameObjectData:
+          gameObjectRef: {fileID: 0}
+          gameObjectVal: {fileID: 0}
+        integerData:
+          integerRef: {fileID: 0}
+          integerVal: 0
+        materialData:
+          materialRef: {fileID: 0}
+          materialVal: {fileID: 0}
+        matrix4x4Data:
+          matrix4x4Ref: {fileID: 0}
+          matrix4x4Val:
+            e00: 0
+            e01: 0
+            e02: 0
+            e03: 0
+            e10: 0
+            e11: 0
+            e12: 0
+            e13: 0
+            e20: 0
+            e21: 0
+            e22: 0
+            e23: 0
+            e30: 0
+            e31: 0
+            e32: 0
+            e33: 0
+        objectData:
+          objectRef: {fileID: 0}
+          objectVal: {fileID: 0}
+        quaternionData:
+          quaternionRef: {fileID: 0}
+          quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+        rigidbody2DData:
+          rigidbody2DRef: {fileID: 0}
+          rigidbody2DVal: {fileID: 0}
+        rigidbodyData:
+          rigidbodyRef: {fileID: 0}
+          rigidbodyVal: {fileID: 0}
+        spriteData:
+          spriteRef: {fileID: 0}
+          spriteVal: {fileID: 0}
+        stringData:
+          stringRef: {fileID: 0}
+          stringVal: CN
+        textureData:
+          textureRef: {fileID: 0}
+          textureVal: {fileID: 0}
+        transformData:
+          transformRef: {fileID: 0}
+          transformVal: {fileID: 0}
+        vector2Data:
+          vector2Ref: {fileID: 0}
+          vector2Val: {x: 0, y: 0}
+        vector3Data:
+          vector3Ref: {fileID: 0}
+          vector3Val: {x: 0, y: 0, z: 0}
+        vector4Data:
+          vector4Ref: {fileID: 0}
+          vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  compareOperator: 0
+  anyVar:
+    variable: {fileID: 0}
+    data:
+      animatorData:
+        animatorRef: {fileID: 0}
+        animatorVal: {fileID: 0}
+      audioSourceData:
+        audioSourceRef: {fileID: 0}
+        audioSourceVal: {fileID: 0}
+      booleanData:
+        booleanRef: {fileID: 0}
+        booleanVal: 0
+      collectionData:
+        collectionRef: {fileID: 0}
+        collectionVal: {fileID: 0}
+      collider2DData:
+        collider2DRef: {fileID: 0}
+        collider2DVal: {fileID: 0}
+      colliderData:
+        colliderRef: {fileID: 0}
+        colliderVal: {fileID: 0}
+      colorData:
+        colorRef: {fileID: 0}
+        colorVal: {r: 0, g: 0, b: 0, a: 0}
+      floatData:
+        floatRef: {fileID: 0}
+        floatVal: 0
+      gameObjectData:
+        gameObjectRef: {fileID: 0}
+        gameObjectVal: {fileID: 0}
+      integerData:
+        integerRef: {fileID: 0}
+        integerVal: 0
+      materialData:
+        materialRef: {fileID: 0}
+        materialVal: {fileID: 0}
+      matrix4x4Data:
+        matrix4x4Ref: {fileID: 0}
+        matrix4x4Val:
+          e00: 0
+          e01: 0
+          e02: 0
+          e03: 0
+          e10: 0
+          e11: 0
+          e12: 0
+          e13: 0
+          e20: 0
+          e21: 0
+          e22: 0
+          e23: 0
+          e30: 0
+          e31: 0
+          e32: 0
+          e33: 0
+      objectData:
+        objectRef: {fileID: 0}
+        objectVal: {fileID: 0}
+      quaternionData:
+        quaternionRef: {fileID: 0}
+        quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+      rigidbody2DData:
+        rigidbody2DRef: {fileID: 0}
+        rigidbody2DVal: {fileID: 0}
+      rigidbodyData:
+        rigidbodyRef: {fileID: 0}
+        rigidbodyVal: {fileID: 0}
+      spriteData:
+        spriteRef: {fileID: 0}
+        spriteVal: {fileID: 0}
+      stringData:
+        stringRef: {fileID: 0}
+        stringVal: 
+      textureData:
+        textureRef: {fileID: 0}
+        textureVal: {fileID: 0}
+      transformData:
+        transformRef: {fileID: 0}
+        transformVal: {fileID: 0}
+      vector2Data:
+        vector2Ref: {fileID: 0}
+        vector2Val: {x: 0, y: 0}
+      vector3Data:
+        vector3Ref: {fileID: 0}
+        vector3Val: {x: 0, y: 0, z: 0}
+      vector4Data:
+        vector4Ref: {fileID: 0}
+        vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  variable: {fileID: 0}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &2558087389062704217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 37
+  indentLevel: 2
+--- !u!114 &2194961015652163323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 38
+  indentLevel: 2
+--- !u!114 &1807252516300910923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: language
+  value: EN
+--- !u!114 &8939974293278128276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  indentLevel: 3
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Jim closeEye right:...
+
+      Jim closeEye right:......
+
+      Jim
+      think right:This is...?
+
+      Jim think right:This is Jimmy''s school, right?
+
+      Jimmy
+      buling left:Jimmy is always accompanied by a girl
+
+      Jimmy buling left:Jimmy
+      sometimes held her hand
+
+      Jim what right:Ah, this is Arya
+
+      Jim
+      what right:Arya always came to visit me after my school break. She said she
+      was visiting on behalf of the whole class
+
+      Jim what right:I remembered
+      that every time Arya came by, she was always wanting to say something and then
+      leaving, looking at me wistfully
+
+      Jim answer right:So that is what it
+      is
+
+      Jim answer right:She''s Jimmy''s girlfriend
+
+      Jim doubt right:Seems
+      like, Jimmy didn''t tell his parents about her
+
+      Jim doubt right:Why
+      is this?
+
+      hide Jimmy:
+
+      hide Jim:'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &8772075065139451499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410589122583737715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 3
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "chara7 normal middle:Hey, can you talk to me? I'm all alone\r\nchara7
+      normal middle:I'm always on my own, I'm single, and my friends have their own
+      lives\r\nchara7 sad middle:... I have some conflicting feelings about being
+      in love\r\nchara7 normal middle:I'm single and I'm not looking for a partner
+      just for the sake of finding a partner. I feel great. It feels good to be independent\r\nchara7
+      normal middle:But sometimes it hurts to be alone... Especially after coming
+      home from a busy day, what face is dark room\r\nchara7 normal middle:I went
+      to the show with my friends two days ago. After the show, my friends held hands
+      with their boyfriends and girlfriends, hugged and kissed, and enjoyed the food
+      together\r\nchara7 normal middle:I'm not jealous... Not have to be in a relationship...\r\nchara7
+      pouty middle:\u2026\u2026\r\nchara7 pouty middle:... I just feel lonely, in
+      the world alone I lack of love and be loved lonely\r\nchara7 pouty middle:It's
+      like there's something missing inside of me, and I can't stop doubting myself\r\nchara7
+      sad middle:I really don't know... how to fall in love\r\nchara7 normal middle:Thank
+      you for listening to me. Here is a gift for you\r\nhide chara7:"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -2239,7 +2647,7 @@ RectTransform:
   m_GameObject: {fileID: 3315725003040000795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2623684277812127462}
   m_RootOrder: 1
@@ -2298,7 +2706,6 @@ GameObject:
   - component: {fileID: 2623684277812127462}
   - component: {fileID: 5865626416850979311}
   - component: {fileID: 8980071588438123812}
-  - component: {fileID: 8041337196899487425}
   - component: {fileID: 3860540940067418415}
   m_Layer: 0
   m_Name: character7
@@ -2366,32 +2773,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &8041337196899487425
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7517511255561719144}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.438549, y: -1.6575031}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 65.94943, y: 82.52553}
-  m_EdgeRadius: 0
 --- !u!114 &3860540940067418415
 MonoBehaviour:
   m_ObjectHideFlags: 0

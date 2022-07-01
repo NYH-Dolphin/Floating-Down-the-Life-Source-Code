@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterBehaviour : MonoBehaviour
 {
     public Fungus.Flowchart flowchart;
     public GameObject enterHint; // enter的进入提示
     protected GameObject Jimmy;
-
-    private bool scale = false;
+    private bool scale;
     public static bool real_stop = false;
 
     // Start is called before the first frame update
@@ -54,6 +54,7 @@ public class CharacterBehaviour : MonoBehaviour
         if (distance <= 200)
         {
             flowchart.SetIntegerVariable("inBound", 1);
+            if (enterHint == null) return;
             if (!scale)
             {
                 StartCoroutine(OnTriggerEnterImg());
@@ -62,6 +63,7 @@ public class CharacterBehaviour : MonoBehaviour
         else
         {
             flowchart.SetIntegerVariable("inBound", 0);
+            if (enterHint == null) return;
             if (scale)
             {
                 StartCoroutine(OnCloseEnterImg());
@@ -75,14 +77,14 @@ public class CharacterBehaviour : MonoBehaviour
         return flowchart.GetBooleanVariable("conversation");
     }
 
-    IEnumerator OnTriggerEnterImg()
+    private IEnumerator OnTriggerEnterImg()
     {
         iTween.ScaleTo(enterHint, iTween.Hash("time", 0.1f, "easetype", iTween.EaseType.easeInBounce, "scale", new Vector3(1,1,1)));
         scale = true;
         yield return null;
     }
-    
-    IEnumerator OnCloseEnterImg()
+
+    private IEnumerator OnCloseEnterImg()
     {
         iTween.ScaleTo(enterHint, iTween.Hash("time", 0.1f, "easetype", iTween.EaseType.easeInBounce, "scale", new Vector3(0,0,0)));
         scale = false;

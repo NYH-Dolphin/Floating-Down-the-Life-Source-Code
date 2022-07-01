@@ -14,12 +14,13 @@ public class JimmyBehaviour : MonoBehaviour
     // private float speed = 700;                  // Jimmy 做匀速直线运动的速度
     public Animator animator; // Animator 组件
 
-    public Boolean isCollide = false; // 判断是否碰撞
+    public bool isCollide; // 判断是否碰撞
     private const int InvalidTimeTick = 300; // 无敌时间
-    private int invalidTimeCount = 0; // 无敌时间记数
-    private Renderer jimmyRenderer = null; // Jimmy 的图片
+    private int invalidTimeCount; // 无敌时间记数
+    private Renderer jimmyRenderer; // Jimmy 的图片
 
-    private static bool stop = false; // 控制 Jimmy 是否能移动
+    private static bool stop; // 控制 Jimmy 是否能移动
+    public static bool inConversation;
 
 
     // 气球的名字和可以使用的气球
@@ -172,12 +173,14 @@ public class JimmyBehaviour : MonoBehaviour
     // 停止 Jimmy 的移动和漂浮
     public static void Pause()
     {
+        inConversation = true;
         stop = true;
     }
 
     // Jimmy 继续移动
     public static void Continue()
     {
+        inConversation = false;
         stop = false;
     }
 
