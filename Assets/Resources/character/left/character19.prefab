@@ -31,6 +31,11 @@ GameObject:
   - component: {fileID: 6952221303837832693}
   - component: {fileID: 4979782054493276031}
   - component: {fileID: 3241842837445581929}
+  - component: {fileID: 6307601023984593783}
+  - component: {fileID: 3331513833856938142}
+  - component: {fileID: 1783847797030522456}
+  - component: {fileID: 6816582833338886657}
+  - component: {fileID: 6536925624537011510}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -78,7 +83,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1643690332445422491}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 6536925624537011510}
   variables:
   - {fileID: 7243899397889234771}
   - {fileID: 5101799735894101073}
@@ -86,6 +92,7 @@ MonoBehaviour:
   - {fileID: 3819775623871776609}
   - {fileID: 3389710645934609079}
   - {fileID: 8353202623440145335}
+  - {fileID: 6816582833338886657}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -126,7 +133,11 @@ MonoBehaviour:
   - {fileID: 7076483678882550721}
   - {fileID: 2168072745048689572}
   - {fileID: 6145092465599844912}
+  - {fileID: 6307601023984593783}
   - {fileID: 4533921918834593252}
+  - {fileID: 3331513833856938142}
+  - {fileID: 6536925624537011510}
+  - {fileID: 1783847797030522456}
   - {fileID: 2390724363338135493}
   - {fileID: 6952221303837832693}
   - {fileID: 380913475644329699}
@@ -726,7 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 4
-  indentLevel: 2
+  indentLevel: 3
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "chara19 im_4 middle:\u5973\u5B69\u751F\u6765\u5C31\u662F\u76F2\u4EBA\u3002\u5C3D\u7BA1\u751F\u6D3B\u8270\u96BE\uFF0C\u5973\u5B69\u5374\u4E5F\u51ED\u501F\u7740\u542C\u529B\u3001\u89E6\u89C9\u7B49\u5176\u4ED6\u611F\u5B98\u611F\u53D7\u7740\u4E16\u754C\u3002\r\nchara19
@@ -2100,6 +2111,389 @@ MonoBehaviour:
   conversationText:
     stringRef: {fileID: 0}
     stringVal: ......
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &6307601023984593783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115506413558334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 2
+  anyOrAllConditions: 0
+  conditions:
+  - compareOperator: 0
+    anyVar:
+      variable: {fileID: 6816582833338886657}
+      data:
+        animatorData:
+          animatorRef: {fileID: 0}
+          animatorVal: {fileID: 0}
+        audioSourceData:
+          audioSourceRef: {fileID: 0}
+          audioSourceVal: {fileID: 0}
+        booleanData:
+          booleanRef: {fileID: 0}
+          booleanVal: 0
+        collectionData:
+          collectionRef: {fileID: 0}
+          collectionVal: {fileID: 0}
+        collider2DData:
+          collider2DRef: {fileID: 0}
+          collider2DVal: {fileID: 0}
+        colliderData:
+          colliderRef: {fileID: 0}
+          colliderVal: {fileID: 0}
+        colorData:
+          colorRef: {fileID: 0}
+          colorVal: {r: 0, g: 0, b: 0, a: 0}
+        floatData:
+          floatRef: {fileID: 0}
+          floatVal: 0
+        gameObjectData:
+          gameObjectRef: {fileID: 0}
+          gameObjectVal: {fileID: 0}
+        integerData:
+          integerRef: {fileID: 0}
+          integerVal: 0
+        materialData:
+          materialRef: {fileID: 0}
+          materialVal: {fileID: 0}
+        matrix4x4Data:
+          matrix4x4Ref: {fileID: 0}
+          matrix4x4Val:
+            e00: 0
+            e01: 0
+            e02: 0
+            e03: 0
+            e10: 0
+            e11: 0
+            e12: 0
+            e13: 0
+            e20: 0
+            e21: 0
+            e22: 0
+            e23: 0
+            e30: 0
+            e31: 0
+            e32: 0
+            e33: 0
+        objectData:
+          objectRef: {fileID: 0}
+          objectVal: {fileID: 0}
+        quaternionData:
+          quaternionRef: {fileID: 0}
+          quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+        rigidbody2DData:
+          rigidbody2DRef: {fileID: 0}
+          rigidbody2DVal: {fileID: 0}
+        rigidbodyData:
+          rigidbodyRef: {fileID: 0}
+          rigidbodyVal: {fileID: 0}
+        spriteData:
+          spriteRef: {fileID: 0}
+          spriteVal: {fileID: 0}
+        stringData:
+          stringRef: {fileID: 0}
+          stringVal: CN
+        textureData:
+          textureRef: {fileID: 0}
+          textureVal: {fileID: 0}
+        transformData:
+          transformRef: {fileID: 0}
+          transformVal: {fileID: 0}
+        vector2Data:
+          vector2Ref: {fileID: 0}
+          vector2Val: {x: 0, y: 0}
+        vector3Data:
+          vector3Ref: {fileID: 0}
+          vector3Val: {x: 0, y: 0, z: 0}
+        vector4Data:
+          vector4Ref: {fileID: 0}
+          vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  compareOperator: 0
+  anyVar:
+    variable: {fileID: 0}
+    data:
+      animatorData:
+        animatorRef: {fileID: 0}
+        animatorVal: {fileID: 0}
+      audioSourceData:
+        audioSourceRef: {fileID: 0}
+        audioSourceVal: {fileID: 0}
+      booleanData:
+        booleanRef: {fileID: 0}
+        booleanVal: 0
+      collectionData:
+        collectionRef: {fileID: 0}
+        collectionVal: {fileID: 0}
+      collider2DData:
+        collider2DRef: {fileID: 0}
+        collider2DVal: {fileID: 0}
+      colliderData:
+        colliderRef: {fileID: 0}
+        colliderVal: {fileID: 0}
+      colorData:
+        colorRef: {fileID: 0}
+        colorVal: {r: 0, g: 0, b: 0, a: 0}
+      floatData:
+        floatRef: {fileID: 0}
+        floatVal: 0
+      gameObjectData:
+        gameObjectRef: {fileID: 0}
+        gameObjectVal: {fileID: 0}
+      integerData:
+        integerRef: {fileID: 0}
+        integerVal: 0
+      materialData:
+        materialRef: {fileID: 0}
+        materialVal: {fileID: 0}
+      matrix4x4Data:
+        matrix4x4Ref: {fileID: 0}
+        matrix4x4Val:
+          e00: 0
+          e01: 0
+          e02: 0
+          e03: 0
+          e10: 0
+          e11: 0
+          e12: 0
+          e13: 0
+          e20: 0
+          e21: 0
+          e22: 0
+          e23: 0
+          e30: 0
+          e31: 0
+          e32: 0
+          e33: 0
+      objectData:
+        objectRef: {fileID: 0}
+        objectVal: {fileID: 0}
+      quaternionData:
+        quaternionRef: {fileID: 0}
+        quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+      rigidbody2DData:
+        rigidbody2DRef: {fileID: 0}
+        rigidbody2DVal: {fileID: 0}
+      rigidbodyData:
+        rigidbodyRef: {fileID: 0}
+        rigidbodyVal: {fileID: 0}
+      spriteData:
+        spriteRef: {fileID: 0}
+        spriteVal: {fileID: 0}
+      stringData:
+        stringRef: {fileID: 0}
+        stringVal: 
+      textureData:
+        textureRef: {fileID: 0}
+        textureVal: {fileID: 0}
+      transformData:
+        transformRef: {fileID: 0}
+        transformVal: {fileID: 0}
+      vector2Data:
+        vector2Ref: {fileID: 0}
+        vector2Val: {x: 0, y: 0}
+      vector3Data:
+        vector3Ref: {fileID: 0}
+        vector3Val: {x: 0, y: 0, z: 0}
+      vector4Data:
+        vector4Ref: {fileID: 0}
+        vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  variable: {fileID: 0}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &3331513833856938142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115506413558334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  indentLevel: 2
+--- !u!114 &1783847797030522456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115506413558334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  indentLevel: 2
+--- !u!114 &6816582833338886657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115506413558334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: language
+  value: EN
+--- !u!114 &6536925624537011510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115506413558334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  indentLevel: 3
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'chara19 im_4 middle:The girl was born blind. Despite the hardships
+      of life, the girl uses her other senses, such as hearing and touching, to experience
+      the world.
+
+      chara19 im_4 middle:It was late autumn again. When the girl
+      groped her way across the mountain road, she heard a faint cry of alarm by
+      accident.
+
+      chara19 im_4 middle:She stepped forward and learned that
+      a hunter had caught a litter of young foxes and brought them home for his son
+      to play.
+
+      chara19 im_3 middle:The girl could not bear to see, took out
+      not much money, bought the hunter in the hands of the fox.
+
+      chara19
+      im_3 middle:Night falls, the girl touched the little life in her arms, and
+      then let go of her hand. Cried the little fox, racing into the jungle.
+
+      chara19
+      im_3 middle:"You save them, I''ll grant you a wish." Behind the girl there
+      was a voice, "I am the fox fairy nearby, just the nest of small foxes is my
+      clansman."
+
+      chara19 im_3 middle:"I wonder what the moon looks like."
+      The girl was a little surprised. She walked very carefully, afraid that her
+      demands would offend the fox spirit.
+
+      chara19 im_3 middle:"I can feel
+      the warmth of the sun and the shapes of things around me, but not the moon."
+
+      chara19
+      im_2 middle:The fox nodded, aiming at the girl''s forehead pop out a silver
+      light. "The moon is sweet." The girl wrinkled her nose.
+
+      chara19 im_2
+      middle:"The moon is round." In the girl''s mind, she imagined the moon, "bright,
+      or warm."
+
+      chara19 im_2 middle:"There is a tree on the moon." The girl
+      looks forward to, "there is the fragrance of osmanthus.... The moon is filled
+      with honey."
+
+      chara19 im_4 middle:"The moon is cold, full of dust and
+      gravel, and has no smell to speak of. It''s not round, it''s full of craters
+      and bumps."
+
+      chara19 im_4 middle:The fox smiled, "there is no laurel
+      tree, you said those, are your fantasy of the month."
+
+      chara19 im_4
+      middle:"Sweet is you, warm is you, honey filling is you." Fox fingertip overflow
+      a silver light, flying into the girl''s eyes.
+
+      chara19 im_4 middle:"But
+      you''re right about one thing. The moon has light. You see..."
+
+      chara19
+      im_1 middle:The girl subconsciously looked up and saw the bright moon in the
+      sky.
+
+      chara19 im_1 middle:"I can see..." She was stunned, for a long
+      time to recover god, pleasantly surprised to look around, but there was no
+      trace of fox fairy.
+
+      chara19 im_1 middle:"A little freebie." There was
+      a sly voice in the wind.
+
+      hide chara19:'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1

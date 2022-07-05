@@ -17,6 +17,7 @@ public class GroundBehavior : MonoBehaviour
     {
         // 获得目前的解锁数量，触发不同的结局
         flowchart.SetIntegerVariable("collection", Collection.GetUnlockNum());
+        flowchart.SetStringVariable("language", PlayerPrefs.GetString("language", "EN"));
         
         // 重置所有角色的 meetTime
         for (int i = 1; i <= characterNum; i++)

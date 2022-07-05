@@ -131,7 +131,7 @@ public class JimmyBehaviour : MonoBehaviour
             jimmyRenderer.enabled = false;
             for (int i = 0; i < balloons.Count; i++)
             {
-                GameObject balloon = (GameObject) balloons[i];
+                GameObject balloon = (GameObject)balloons[i];
                 balloon.GetComponent<SpriteRenderer>().enabled = false;
             }
         }
@@ -140,7 +140,7 @@ public class JimmyBehaviour : MonoBehaviour
             jimmyRenderer.enabled = true;
             for (int i = 0; i < balloons.Count; i++)
             {
-                GameObject balloon = (GameObject) balloons[i];
+                GameObject balloon = (GameObject)balloons[i];
                 balloon.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
@@ -365,7 +365,7 @@ public class JimmyBehaviour : MonoBehaviour
         {
             audioSource.Play();
             print("气球破了");
-            GameObject balloon = (GameObject) balloons[0];
+            GameObject balloon = (GameObject)balloons[0];
             balloons.RemoveAt(0);
             string balloonName = balloon.name;
             balloonName = balloonName.Substring(0, balloonName.Length - 7);

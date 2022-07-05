@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowchart: {fileID: 9095181936198121635}
+  enterHint: {fileID: 0}
 --- !u!1 &7652342305778889575
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +192,6 @@ GameObject:
   - component: {fileID: 8539545280886985109}
   - component: {fileID: 9124236099832905219}
   - component: {fileID: 2002999122124952195}
-  - component: {fileID: 6327945333496228318}
   - component: {fileID: 8844480644650730711}
   - component: {fileID: 1959685522419783160}
   - component: {fileID: 2208131026116471623}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -34.199997, y: 97.29999}
+  scrollPos: {x: 285.9617, y: 35.600006}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -327,10 +327,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 464872114196439306}
-  selectedCommands:
-  - {fileID: 3641700181499503540}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 2914779943448758008}
   - {fileID: 5799275375789310533}
@@ -360,8 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 33
-    y: 38
+    x: -37
+    y: 98
     width: 112.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4916,32 +4914,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &6327945333496228318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7652342305778889575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -5.961708
-    y: 157.9
-    width: 118.8
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 39
-  blockName: New Block1
-  description: 
-  eventHandler: {fileID: 0}
-  commandList: []
-  suppressAllAutoSelections: 0
 --- !u!114 &8844480644650730711
 MonoBehaviour:
   m_ObjectHideFlags: 0

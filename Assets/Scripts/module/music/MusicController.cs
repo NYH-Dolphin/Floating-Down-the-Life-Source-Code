@@ -38,7 +38,7 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transfer();
+        // transfer();
     }
 
     private void transfer()

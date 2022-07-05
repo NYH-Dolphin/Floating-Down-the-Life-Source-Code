@@ -16,7 +16,10 @@ public class CharacterBehaviour : MonoBehaviour
     {
         Jimmy = transform.parent.parent.Find("Jimmy(Clone)").gameObject;
         flowchart.SetStringVariable("language", PlayerPrefs.GetString("language", "EN"));
-        enterHint = transform.Find("EnterImg").gameObject;
+        if (transform.Find("EnterImg").gameObject != null)
+        {
+            enterHint = transform.Find("EnterImg").gameObject;
+        }
     }
 
     // Update is called once per frame

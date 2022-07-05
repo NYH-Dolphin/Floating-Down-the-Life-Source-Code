@@ -29,6 +29,16 @@ public class BeginPanel : BasePanel
         rules.onClick.AddListener(OnRulesClick);
         collection.onClick.AddListener(OnCollectionClick);
         settings.onClick.AddListener(OnSettingClick);
+        
+        // 初始化声音
+        if (PlayerPrefs.GetInt("VolumeInitial", 0) == 0)
+        {
+            GameObject.Find("Audio Source").GetComponent<AudioSource>().volume = 1;
+            PlayerPrefs.SetInt("VolumeInitial", 1);
+            PlayerPrefs.SetFloat("Volume", 1);
+        }
+
+        GameObject.Find("Audio Source").GetComponent<AudioSource>().volume =  PlayerPrefs.GetFloat("Volume");
     }
 
     private void OnSettingClick()
