@@ -35,7 +35,7 @@ public class StartPanel : BasePanel
         skip = skin.transform.Find("skip").GetComponent<Button>();
         skip.onClick.AddListener(OnSkipClick);
         Jimmy_small = skin.transform.Find("Jimmy_small").gameObject;
-        animator = Jimmy_small.GetComponent<Animator>();
+        animator = Jimmy_small.transform.GetChild(0).GetComponent<Animator>();
         black = skin.transform.Find("black").gameObject;
         black.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         flowchart = skin.transform.Find("Flowchart").GetComponent<Flowchart>();
@@ -77,7 +77,7 @@ public class StartPanel : BasePanel
                 Jimmy_small.transform.position += new Vector3(1, 0, 0) * (speed * Time.smoothDeltaTime);
             else if (Jimmy_small.transform.position.x < 300)
             {
-                Jimmy_small.GetComponent<Rigidbody2D>().gravityScale = 30;
+                Jimmy_small.transform.GetComponent<Rigidbody2D>().gravityScale = 30;
                 Jimmy_small.transform.position += new Vector3(1, 1, 0) * (speed * Time.smoothDeltaTime);
             }
 

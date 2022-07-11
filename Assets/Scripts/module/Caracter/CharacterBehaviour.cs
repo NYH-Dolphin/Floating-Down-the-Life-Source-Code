@@ -16,7 +16,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         Jimmy = transform.parent.parent.Find("Jimmy(Clone)").gameObject;
         flowchart.SetStringVariable("language", PlayerPrefs.GetString("language", "EN"));
-        if (transform.Find("EnterImg").gameObject != null)
+        if (transform.Find("EnterImg"))
         {
             enterHint = transform.Find("EnterImg").gameObject;
         }

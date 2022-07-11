@@ -32,7 +32,8 @@ public class JimmyBehaviour : MonoBehaviour
     };
 
     // 记录气球和对应的气球的 localPosition
-    private static HashMap<string, Vector3> balloonsPosition = new HashMap<string, Vector3>();
+    private static HashMap<string, Vector3> balloonsPositionLeft = new HashMap<string, Vector3>();
+    private static HashMap<string, Vector3> balloonsPositionRight = new HashMap<string, Vector3>();
 
     // 气球池，池子里的气球可以被随意调用
     private HashSet<string> balloonPool = new HashSet<string>();
@@ -55,19 +56,23 @@ public class JimmyBehaviour : MonoBehaviour
     void Start()
     {
         jimmyRenderer = gameObject.GetComponent<Renderer>();
-
-
         // 初始化 balloonName 和 balloonPosition
         InitialBalloonsAttribute();
         // 初始拿着 3 个气球
         AddBalloon(3);
-
         BalloonBehaviour.setJimmyBehaviour(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        foreach (GameObject balloon in balloons)
+        {
+            Vector3 pos = balloon.transform.position;
+            pos.z = 0;
+            balloon.transform.position = pos;
+        }
+
         if (!stop)
         {
             Float();
@@ -190,43 +195,52 @@ public class JimmyBehaviour : MonoBehaviour
     private const float MINFLOATSPEED = 100f;
     private float floatSpeed = 100f;
 
+    private bool notify = true;
+
     void Float()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
+
+        animator.SetBool("floatLeft", false);
         Vector2 p = transform.position;
         // 向左移动
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            // Debug.Log("LEF
-            //  T");
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+
             floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
             floatSpeed += Time.deltaTime * 700;
             floatSpeed = floatSpeed >= MAXFLOATSPEED ? MAXFLOATSPEED : floatSpeed;
             // 位置移动
             p.x += moveX * floatSpeed * Time.deltaTime;
             // Animation Controller 的参数状态更新
-            animator.SetBool("floatLeft", true);
+            // animator.SetBool("floatLeft", true);
+
 
             if (status != floatingStatus.LEFT)
             {
+                Debug.Log("CHANGE");
                 status = floatingStatus.LEFT;
-                NotifyBalloons();
+                NotifyBalloons(status);
             }
         }
         // 向右移动
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+
             // Debug.Log("RIGHT");
             floatSpeed = floatSpeed <= MINFLOATSPEED ? MINFLOATSPEED : floatSpeed;
             floatSpeed += Time.deltaTime * 700;
             floatSpeed = floatSpeed >= MAXFLOATSPEED ? MAXFLOATSPEED : floatSpeed;
             p.x += moveX * floatSpeed * Time.deltaTime;
-            animator.SetBool("floatLeft", false);
+
 
             if (status != floatingStatus.RIGHT)
             {
+                Debug.Log("CHANGE");
                 status = floatingStatus.RIGHT;
-                NotifyBalloons();
+                NotifyBalloons(status);
             }
         }
         // 缓慢停止
@@ -279,17 +293,38 @@ public class JimmyBehaviour : MonoBehaviour
             balloonPool.Add(balloonName);
         }
 
-        balloonsPosition.Add("gray_balloon", new Vector3(0.8f, -1.03f, 0f));
-        balloonsPosition.Add("red_balloon", new Vector3(1.25f, 2.58f, 0f));
-        balloonsPosition.Add("orange_balloon", new Vector3(0.67f, 1.13f, 0f));
-        balloonsPosition.Add("pink_balloon", new Vector3(1.17f, 2.36f, 0f));
-        balloonsPosition.Add("cyan_balloon", new Vector3(1f, 3f, 0f)); // ?????
-        balloonsPosition.Add("yellow_balloon", new Vector3(1.17f, 2.97f, 0f));
-        balloonsPosition.Add("blue_balloon", new Vector3(1.33f, 3f, 0f));
-        balloonsPosition.Add("purple_balloon", new Vector3(1.29f, 2.96f, 0f));
-        balloonsPosition.Add("grassgreen_balloon", new Vector3(0.8f, 1f, 0f));
-        balloonsPosition.Add("green_balloon", new Vector3(2f, 3.2f, 0f));
-        balloonsPosition.Add("skyblue_balloon", new Vector3(1.27f, 2.57f, 0f));
+        balloonsPositionLeft.Add("orange_balloon", new Vector3(0.883999944f, 1.43000007f, 0));
+        balloonsPositionRight.Add("orange_balloon", new Vector3(0.670000017f, 1.13999999f, 0));
+        
+        balloonsPositionLeft.Add("blue_balloon", new Vector3(1.14f, 2f, 0f));
+        balloonsPositionRight.Add("blue_balloon", new Vector3(1.13999927f,2,0));
+
+        balloonsPositionLeft.Add("cyan_balloon", new Vector3(1.5f, 1.19000006f, 0f));
+        balloonsPositionRight.Add("cyan_balloon", new Vector3(1.40999997f,1.10000002f,0));
+        
+        balloonsPositionLeft.Add("grassgreen_balloon", new Vector3(0.8f, 1f, 0f));
+        balloonsPositionRight.Add("grassgreen_balloon", new Vector3(1.02999997f,0.50999999f,0));
+        
+        balloonsPositionLeft.Add("gray_balloon", new Vector3(0.910000026f, -0.910000026f, 0f));
+        balloonsPositionRight.Add("gray_balloon", new Vector3(1.11000001f,-1.46000004f,0));
+        
+        balloonsPositionLeft.Add("red_balloon", new Vector3(1.25f, 2.58f, 0f));
+        balloonsPositionRight.Add("red_balloon", new Vector3(1.22000003f,2.27999997f,0));
+
+        balloonsPositionLeft.Add("pink_balloon", new Vector3(1.17f, 2.36f, 0f));
+        balloonsPositionRight.Add("pink_balloon", new Vector3(0.860000014f,1.88f,0));
+        
+        balloonsPositionLeft.Add("yellow_balloon", new Vector3(1.17f, 2.97f, 0f));
+        balloonsPositionRight.Add("yellow_balloon", new Vector3(1.17f, 2.97f, 0f));
+        
+        balloonsPositionLeft.Add("purple_balloon", new Vector3(1.29f, 2.96f, 0f));
+        balloonsPositionRight.Add("purple_balloon", new Vector3(1.29f, 2.96f, 0f));
+
+        balloonsPositionLeft.Add("green_balloon", new Vector3(1.37f, 2.16000009f, 0f));
+        balloonsPositionRight.Add("green_balloon", new Vector3(1.37f, 2.16000009f, 0f));
+        
+        balloonsPositionLeft.Add("skyblue_balloon", new Vector3(1.24000001f,2.50999999f,0));
+        balloonsPositionRight.Add("skyblue_balloon", new Vector3(1.24000001f,2.50999999f,0));
     }
 
 
@@ -299,16 +334,24 @@ public class JimmyBehaviour : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
             _balloonName = GenerateBlueName();
-            _balloonPath = "balloons/" + _balloonName;
+            _balloonPath = "Balloon/" + _balloonName;
             GameObject balloon =
                 Instantiate(Resources.Load<GameObject>(_balloonPath), gameObject.transform, true);
-            balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
+            balloon.transform.parent = transform.Find("Jimmy").transform;
+            balloon.transform.localPosition = balloonsPositionRight.Get(_balloonName);
             if (status == floatingStatus.RIGHT)
             {
                 balloon.transform.RotateAround(transform.position, transform.up, 180f);
             }
 
             balloons.Add(balloon);
+
+            Vector3 pos = balloon.transform.position;
+            pos.z = 0;
+            balloon.transform.position = pos;
+            Quaternion rot = balloon.transform.rotation;
+            rot.y = 180;
+            balloon.transform.rotation = rot;
         }
     }
 
@@ -321,7 +364,7 @@ public class JimmyBehaviour : MonoBehaviour
         _balloonPath = "balloons/" + _balloonName;
         GameObject balloon =
             Instantiate(Resources.Load<GameObject>(_balloonPath), gameObject.transform, true);
-        balloon.transform.localPosition = balloonsPosition.Get(_balloonName);
+        balloon.transform.position = balloonsPositionLeft.Get(_balloonName);
         balloons.Add(balloon);
     }
 
@@ -350,11 +393,23 @@ public class JimmyBehaviour : MonoBehaviour
 
 
     // 气球跟随左右移动
-    private void NotifyBalloons()
+    private void NotifyBalloons(floatingStatus status)
     {
         foreach (GameObject balloon in balloons)
         {
-            balloon.transform.RotateAround(transform.position, transform.up, 180f);
+            Quaternion rot = balloon.transform.rotation;
+            if (status == floatingStatus.LEFT)
+            {
+                balloon.transform.localPosition = balloonsPositionLeft.Get(balloon.name.Replace("(Clone)", ""));
+                rot.y = 0;
+                balloon.transform.rotation = rot;
+            }
+            else
+            {
+                balloon.transform.localPosition = balloonsPositionRight.Get(balloon.name.Replace("(Clone)", ""));
+                rot.y = 180;
+                balloon.transform.rotation = rot;
+            }
         }
     }
 

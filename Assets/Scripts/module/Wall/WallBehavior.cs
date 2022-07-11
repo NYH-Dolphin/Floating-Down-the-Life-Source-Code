@@ -11,9 +11,10 @@ public class WallBehavior : MonoBehaviour
     private static float speed = 200f;
 
     private readonly string[] _smallObstacles =
-        {"obstacle_2", "obstacle_6", "obstacle_10", "obstacle_12", "obstacle_19", "obstacle_20"};
+        { "obstacle_2", "obstacle_6", "obstacle_10", "obstacle_12", "obstacle_19", "obstacle_20" };
 
-    private readonly string[] _midObstacles = {"obstacle_1", "obstacle_3", "obstacle_15", "obstacle_17", "obstacle_21"};
+    private readonly string[] _midObstacles =
+        { "obstacle_1", "obstacle_3", "obstacle_15", "obstacle_17", "obstacle_21" };
 
     private readonly string[] _largeObstacles =
     {
@@ -21,8 +22,8 @@ public class WallBehavior : MonoBehaviour
         "obstacle_14", "obstacle_16", "obstacle_18"
     };
 
-    private readonly string[] _windowStillsName = {"window1", "window2", "window3"};
-    
+    private readonly string[] _windowStillsName = { "window1", "window2", "window3" };
+
     private readonly string[] _leftCharacterName =
     {
         "character1", "character4", "character5", "character6",
@@ -34,12 +35,13 @@ public class WallBehavior : MonoBehaviour
     // };
 
     private readonly string[] _rightCharacterName =
-        {"character2", "character3", "character8", "character12", "character13", "character14", "character15"};
+        { "character2", "character3", "character8", "character12", "character13", "character14", "character15" };
     // private readonly string[] _rightCharacterName = {"character13"};
-    
-    private static readonly int[] _left = {5, 5, 5, 5, 5, 5, 5, 5};
+
+    private static readonly int[] _left = { 5, 5, 5, 5, 5, 5, 5, 5 };
+
     // private static readonly int[] _left = {5};
-    private static readonly int[] _right = {5, 5, 5, 5, 5, 5, 5};
+    private static readonly int[] _right = { 5, 5, 5, 5, 5, 5, 5 };
     // private static readonly int[] _right = {5};
 
 
@@ -56,7 +58,6 @@ public class WallBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public Boolean GenerateObstacle()
@@ -265,6 +266,7 @@ public class WallBehavior : MonoBehaviour
                 }
             }
         }
+
         return 0;
     }
 }

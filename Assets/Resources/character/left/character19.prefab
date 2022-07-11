@@ -83,8 +83,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1643690332445422491}
-  selectedCommands:
-  - {fileID: 6536925624537011510}
+  selectedCommands: []
   variables:
   - {fileID: 7243899397889234771}
   - {fileID: 5101799735894101073}
@@ -2433,16 +2432,16 @@ MonoBehaviour:
       groped her way across the mountain road, she heard a faint cry of alarm by
       accident.
 
-      chara19 im_4 middle:She stepped forward and learned that
-      a hunter had caught a litter of young foxes and brought them home for his son
+      chara19 im_4 middle:She stepped forward and learned that a
+      hunter had caught a litter of young foxes and brought them home for his son
       to play.
 
       chara19 im_3 middle:The girl could not bear to see, took out
       not much money, bought the hunter in the hands of the fox.
 
-      chara19
-      im_3 middle:Night falls, the girl touched the little life in her arms, and
-      then let go of her hand. Cried the little fox, racing into the jungle.
+      chara19 im_3
+      middle:Night falls, the girl touched the little life in her arms, and then
+      let go of her hand. Cried the little fox, racing into the jungle.
 
       chara19
       im_3 middle:"You save them, I''ll grant you a wish." Behind the girl there
@@ -2475,25 +2474,25 @@ MonoBehaviour:
       chara19 im_4 middle:The fox smiled, "there is no laurel
       tree, you said those, are your fantasy of the month."
 
-      chara19 im_4
-      middle:"Sweet is you, warm is you, honey filling is you." Fox fingertip overflow
-      a silver light, flying into the girl''s eyes.
+      chara19 im_4 middle:"Sweet
+      is you, warm is you, honey filling is you." Fox fingertip overflow a silver
+      light, flying into the girl''s eyes.
 
-      chara19 im_4 middle:"But
-      you''re right about one thing. The moon has light. You see..."
+      chara19 im_4 middle:"But you''re
+      right about one thing. The moon has light. You see..."
+
+      chara19 im_1
+      middle:The girl subconsciously looked up and saw the bright moon in the sky.
 
       chara19
-      im_1 middle:The girl subconsciously looked up and saw the bright moon in the
-      sky.
+      im_1 middle:"I can see..." She was stunned, for a long time to recover god,
+      pleasantly surprised to look around, but there was no trace of fox fairy.
 
-      chara19 im_1 middle:"I can see..." She was stunned, for a long
-      time to recover god, pleasantly surprised to look around, but there was no
-      trace of fox fairy.
+      chara19
+      im_1 middle:"A little freebie." There was a sly voice in the wind.
 
-      chara19 im_1 middle:"A little freebie." There was
-      a sly voice in the wind.
-
-      hide chara19:'
+      hide
+      chara19:'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1

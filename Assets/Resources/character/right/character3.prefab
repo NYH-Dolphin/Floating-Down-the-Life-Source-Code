@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 8090200667377245137}
   - component: {fileID: 640283390664353505}
   - component: {fileID: 4175857526255340599}
+  - component: {fileID: 5374148387588355660}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 8076157342146265049}
   selectedCommands:
-  - {fileID: 1816291938481655422}
+  - {fileID: 5374148387588355660}
   variables:
   - {fileID: 415730237155341601}
   - {fileID: 6500794994417573487}
@@ -271,6 +272,7 @@ MonoBehaviour:
   - {fileID: 4175857526255340599}
   - {fileID: 1785708954297114308}
   - {fileID: 8401005265359574200}
+  - {fileID: 5374148387588355660}
   suppressAllAutoSelections: 0
 --- !u!114 &415730237155341601
 MonoBehaviour:
@@ -7084,49 +7086,48 @@ MonoBehaviour:
       curious about stories about witches, and handsome young men always wanted to
       see her
 
-      chara3 talk2 middle:The lock in the witch''s house hung on
-      the doorknob in its sheath, but no one ever dared to remove it
+      chara3 talk2 middle:The lock in the witch''s house hung on the
+      doorknob in its sheath, but no one ever dared to remove it
+
+      chara3 talk2
+      middle:The reason is simple, the witch is said to be the most powerful witch
+      on the continent
+
+      chara3 talk2 middle:A hundred years ago, the great
+      Witch Trials were in full swing, and countless witches were crucified and burned
 
       chara3
-      talk2 middle:The reason is simple, the witch is said to be the most powerful
-      witch on the continent
-
-      chara3 talk2 middle:A hundred years ago, the
-      great Witch Trials were in full swing, and countless witches were crucified
-      and burned
-
-      chara3 talk2 middle:In the midst of swords and swords of
-      cavalry, she held the vine in her hands, her wide robe danced wildly, and she
-      cursed the whole continent
-
-      chara3 talk1 middle:Then the king himself
-      came to her door and knelt at the foot of the steps and begged the witch to
-      forgive him and take back the evil that had come from Heaven
+      talk2 middle:In the midst of swords and swords of cavalry, she held the vine
+      in her hands, her wide robe danced wildly, and she cursed the whole continent
 
       chara3
-      talk1 middle:The children followed her gaze
+      talk1 middle:Then the king himself came to her door and knelt at the foot of
+      the steps and begged the witch to forgive him and take back the evil that had
+      come from Heaven
 
-      chara3 talk2 middle:The
-      terrible witch, who was "very strong," "cold," and "able to control the plague,"
-      was scamper home carrying a bamboo basket
-
-      chara3 talk2 middle:She waved
-      the short vine, humming a song. The witch''s basket gave a jolt as she jumped
-      over a stone slab
-
-      chara3 original middle:Something shiny flew out and
-      rolled to the ground
-
-      chara3 original middle:"It''s a strawberry hard
-      candy!"
-
-      chara3 original middle:He announced, holding it up
+      chara3 talk1 middle:The children followed her gaze
 
       chara3
-      original middle:The rest of the story will be told next time~
+      talk2 middle:The terrible witch, who was "very strong," "cold," and "able to
+      control the plague," was scamper home carrying a bamboo basket
 
-      hide
-      chara3:'
+      chara3
+      talk2 middle:She waved the short vine, humming a song. The witch''s basket
+      gave a jolt as she jumped over a stone slab
+
+      chara3 original middle:Something
+      shiny flew out and rolled to the ground
+
+      chara3 original middle:"It''s
+      a strawberry hard candy!"
+
+      chara3 original middle:He announced, holding
+      it up
+
+      chara3 original middle:The rest of the story will be told next
+      time~
+
+      hide chara3:'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -8806,22 +8807,22 @@ MonoBehaviour:
       a twinkling, the little girl of four or five had grown to twelve or thirteen,
       and the witch could hardly hold her
 
-      chara3 original middle:She had
-      been born with strange powers, and this was even worse. Now she could kill
-      a cow with her bare hands
+      chara3 original middle:She had been
+      born with strange powers, and this was even worse. Now she could kill a cow
+      with her bare hands
 
-      chara3 original middle:Under the witch''s
-      careful care, the little monster changed her former weak and untidy
+      chara3 original middle:Under the witch''s careful
+      care, the little monster changed her former weak and untidy
 
-      chara3
-      original middle:Not only was she new, but she was wearing a flowery dress that
-      the witch had cut herself
+      chara3 original
+      middle:Not only was she new, but she was wearing a flowery dress that the witch
+      had cut herself
 
-      chara3 original middle:She was so focused,
-      of course, that the witch made it happened
+      chara3 original middle:She was so focused, of course,
+      that the witch made it happened
 
-      chara3 original middle:Especially
-      when the witch is tinkering with pots and pans
+      chara3 original middle:Especially when
+      the witch is tinkering with pots and pans
 
       chara3 original middle:She
       loves to see things she''s doing
@@ -8909,28 +8910,28 @@ MonoBehaviour:
 
       Jim poker middle:Now I remember
 
-      Jim
-      poker middle:From the time Jimmy was 10 years old, he also started to keep
-      a diary
-
-      Jim original middle:He has two diaries
-
-      Jim original
-      middle:One is in a visible place, recording a lot of happy things
+      Jim poker
+      middle:From the time Jimmy was 10 years old, he also started to keep a diary
 
       Jim
-      original middle:Another one was the one Jimmy had hidden from anyone
+      original middle:He has two diaries
 
-      Jim
-      sad middle:"On October 23, when I shine as a light on others, why is my life
-      black with no end in sight"
+      Jim original middle:One is in a visible
+      place, recording a lot of happy things
 
-      Jim sad middle:"December 5th, who can listen
-      to me, every time I open my mouth, why are they, you are so good, must be able
-      to... I am not good, I am not good, somebody? Somebody!!"
+      Jim original middle:Another one
+      was the one Jimmy had hidden from anyone
 
-      Jim sad middle:"On
-      March 7, my father didn''t ask anything except study and didn''t look at anything
+      Jim sad middle:"On October
+      23, when I shine as a light on others, why is my life black with no end in
+      sight"
+
+      Jim sad middle:"December 5th, who can listen to me, every time
+      I open my mouth, why are they, you are so good, must be able to... I am not
+      good, I am not good, somebody? Somebody!!"
+
+      Jim sad middle:"On March
+      7, my father didn''t ask anything except study and didn''t look at anything
       except grades. Why why why why... why can''t he ask me what my mood and my
       attitude are like?"
 
@@ -8938,13 +8939,13 @@ MonoBehaviour:
       heaviest assignment. I knew I was reliable in their eyes, but I was really
       out of breath."
 
-      Jim closeEye middle:And the last thing Jimmy wrote
-      before he disappeared...
+      Jim closeEye middle:And the last thing Jimmy wrote before
+      he disappeared...
 
-      Jim closeEye middle:"I want to forget all
-      this..."
+      Jim closeEye middle:"I want to forget all this..."
 
-      hide Jim:'
+      hide
+      Jim:'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -9533,62 +9534,61 @@ MonoBehaviour:
       chara3 original middle:Unlike the beauty of a witch,
       the beauty of a little monster is sharp
 
+      chara3 original middle:The little
+      monster is like a dagger. What kind of beads and jade are inlay on the hilt
+      of the knife, which cannot hide the cold light of the body
+
+      chara3 original
+      middle:Her eyebrows were long and her eyes were long, but the coquetry with
+      which she had caught a glimpse at first made her look more fierce and moving
+
+      chara3
+      original middle:That shark tooth is full of baby teeth
+
+      chara3 original
+      middle:After the tooth replacement, the little monster grew regular white teeth
+
+      chara3
+      original middle:Her illness healed itself with age
+
+      chara3 original middle:Smooth,
+      clean skin that doesn''t look scaly in any way
+
       chara3 original middle:The
-      little monster is like a dagger. What kind of beads and jade are inlay on the
-      hilt of the knife, which cannot hide the cold light of the body
+      witch looked at her heart of joy, and gave birth to a strong reluctance
 
       chara3
-      original middle:Her eyebrows were long and her eyes were long, but the coquetry
-      with which she had caught a glimpse at first made her look more fierce and
-      moving
-
-      chara3 original middle:That shark tooth is full of baby teeth
+      original middle:She knew that the little monster would finally leave her
 
       chara3
-      original middle:After the tooth replacement, the little monster grew regular
-      white teeth
+      original middle:Even if the little monster does not want to, but also the birth
+      of ordinary people
 
-      chara3 original middle:Her illness healed itself with age
-
-      chara3
-      original middle:Smooth, clean skin that doesn''t look scaly in any way
+      chara3 original middle:And she''s an immortal witch
 
       chara3
-      original middle:The witch looked at her heart of joy, and gave birth to a strong
-      reluctance
+      original middle:A witch''s destiny is loneliness
 
-      chara3 original middle:She knew that the little monster
-      would finally leave her
+      chara3 original middle:Look
+      at the spring and autumn alternation alone
 
-      chara3 original middle:Even if the little monster
-      does not want to, but also the birth of ordinary people
+      chara3 original middle:Walk
+      to the end of time
 
-      chara3 original
-      middle:And she''s an immortal witch
+      chara3 original middle:Count the long days of her
+      life
 
-      chara3 original middle:A witch''s
-      destiny is loneliness
+      chara3 original middle:Those temporary joy, and long enough to
+      let people have numb pain
 
-      chara3 original middle:Look at the spring and
-      autumn alternation alone
+      chara3 original middle:The little monster
+      grew up, and the witch gradually lost her smile
 
-      chara3 original middle:Walk to the end of
-      time
-
-      chara3 original middle:Count the long days of her life
+      chara3 original middle:The
+      seventeen - year - old monster was slim and slim, sister to the witch
 
       chara3
-      original middle:Those temporary joy, and long enough to let people have numb
-      pain
-
-      chara3 original middle:The little monster grew up, and the witch
-      gradually lost her smile
-
-      chara3 original middle:The seventeen - year
-      - old monster was slim and slim, sister to the witch
-
-      chara3 original
-      middle:Only the witch knew she just only had the skin of a young woman
+      original middle:Only the witch knew she just only had the skin of a young woman
 
       chara3
       original middle:Under this bright skin, is an old decayed raw decayed heart
@@ -9608,26 +9608,26 @@ MonoBehaviour:
       chara3
       original middle:The sullen witch gave her a listlessly look
 
-      chara3
-      original middle:Sweety, you used to make me feel like candy
+      chara3 original
+      middle:Sweety, you used to make me feel like candy
+
+      chara3 original middle:You
+      like strawberry candy paper, wrinkled, a rub on the zizi zizi ring
 
       chara3
-      original middle:You like strawberry candy paper, wrinkled, a rub on the zizi
-      zizi ring
-
-      chara3 original middle:It''s bright in the sun, it''s bright
-
-      chara3
-      original middle:The little monster said intently, gesturing to her
-
-      chara3
-      original middle:How about now? Now -- the little monster paused
-
-      chara3
-      original middle:It''s turning into a dark chocolate
+      original middle:It''s bright in the sun, it''s bright
 
       chara3 original
-      middle:She whispered her voice to the witch''s ear and said, "Wine chocolate"
+      middle:The little monster said intently, gesturing to her
+
+      chara3 original
+      middle:How about now? Now -- the little monster paused
+
+      chara3 original
+      middle:It''s turning into a dark chocolate
+
+      chara3 original middle:She
+      whispered her voice to the witch''s ear and said, "Wine chocolate"
 
       chara3
       original middle:"What do you mean?" Whitch suspected
@@ -10087,11 +10087,11 @@ MonoBehaviour:
       chara3 original middle:When she was a little girl,
       she picked up a vine that made light
 
-      chara3 original middle:Meeted
-      the talking robin and the blue rose
+      chara3 original middle:Meeted the
+      talking robin and the blue rose
 
-      chara3 original middle:She caught
-      the lizard''s tail and smashed the bat''s wings
+      chara3 original middle:She caught the
+      lizard''s tail and smashed the bat''s wings
 
       chara3 original middle:She
       plucked the feathers of an owl and mixed the powder of the stars
@@ -10113,8 +10113,8 @@ MonoBehaviour:
       original middle:Happiness is temporary, but loneliness after the death of a
       loved one is eternal
 
-      chara3 original middle:There was an old witch
-      who had outlived her, and all she spoke of that man was a sad sigh.
+      chara3 original middle:There was an old witch who
+      had outlived her, and all she spoke of that man was a sad sigh.
 
       chara3
       original middle:Missing is torture, if you get eternal life, you can never
@@ -10143,30 +10143,30 @@ MonoBehaviour:
       original middle:They die horribly, and this time, it''s their lover''s turn
       to be mad
 
-      chara3 original middle:The witch saw with her own eyes a
-      man who resolutely threw himself into the fire
+      chara3 original middle:The witch saw with her own eyes a man
+      who resolutely threw himself into the fire
 
       chara3 original middle:Two
       unhappy men intertwine in the flames without uttering a cry
 
-      chara3
-      original middle:They were so unhurried, embracing each other, facing death
-      together in silence
+      chara3 original
+      middle:They were so unhurried, embracing each other, facing death together
+      in silence
 
-      chara3 original middle:Witches are not fit for
-      love
-
-      chara3 original middle:Because you never know which will come
-      first, the great witch trials or the death of your loved one
+      chara3 original middle:Witches are not fit for love
 
       chara3
-      original middle:"Some say you brought the great trial to an end."
+      original middle:Because you never know which will come first, the great witch
+      trials or the death of your loved one
 
-      chara3
-      original middle:Said the little monster softly
+      chara3 original middle:"Some say
+      you brought the great trial to an end."
 
-      chara3 original middle:"You
-      brought the worst suffering to the land, when plagues and diseases were everywhere."
+      chara3 original middle:Said
+      the little monster softly
+
+      chara3 original middle:"You brought the worst
+      suffering to the land, when plagues and diseases were everywhere."
 
       chara3
       original middle:There''s been a lot of talk about me, but this one, it''s true
@@ -10174,12 +10174,12 @@ MonoBehaviour:
       chara3
       original middle:The witch smiled. She smiled like a sly cat
 
-      chara3
-      original middle:No one understands witches, and when the chips are down, I
-      have to fight violence with violence
+      chara3 original
+      middle:No one understands witches, and when the chips are down, I have to fight
+      violence with violence
 
-      chara3 original middle:The little
-      monster wanted to kiss her
+      chara3 original middle:The little monster wanted
+      to kiss her
 
       chara3 original middle:Hope to see you again~
 
@@ -10775,21 +10775,21 @@ MonoBehaviour:
       chara3
       original middle:She spat out two sharp shark teeth
 
-      chara3 original
-      middle:She lay on the stone platform of the cave, waiting for midnight, when
-      the cold drained her last faint breath
+      chara3 original middle:She
+      lay on the stone platform of the cave, waiting for midnight, when the cold
+      drained her last faint breath
 
-      chara3 original middle:She saw
-      the witch in the pointed hat
+      chara3 original middle:She saw the witch
+      in the pointed hat
 
-      chara3 original middle:The witch picked
-      her up and her head fell limp on her shoulder
+      chara3 original middle:The witch picked her up and
+      her head fell limp on her shoulder
 
-      chara3 original middle:It
-      smells good
+      chara3 original middle:It smells
+      good
 
-      chara3 original middle:Is the morning light, is the moon,
-      is the dew over rose, is all the world can not use words to describe the beautiful
+      chara3 original middle:Is the morning light, is the moon, is the
+      dew over rose, is all the world can not use words to describe the beautiful
 
       chara3
       original middle:There were flowers blooming in the little monster''s chest,
@@ -10834,18 +10834,18 @@ MonoBehaviour:
       middle:The night before she had pretended to be asleep and the witch had kissed
       her quietly
 
-      chara3 original middle:But what did she know about the
-      consequences of speaking your mind to a witch
+      chara3 original middle:But what did she know about the consequences
+      of speaking your mind to a witch
 
-      chara3 original middle:She
-      smiled mostly lonesome and told her that witches couldn''t fall in love
+      chara3 original middle:She smiled mostly
+      lonesome and told her that witches couldn''t fall in love
 
-      chara3
-      original middle:"Because you never know which will come first, the great witch
-      trials or the death of your loved one."
+      chara3 original
+      middle:"Because you never know which will come first, the great witch trials
+      or the death of your loved one."
 
-      chara3 original middle:The
-      story is almost over
+      chara3 original middle:The story is
+      almost over
 
       hide chara3:'
   clearPrevious:
@@ -11662,6 +11662,158 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 130
   indentLevel: 2
+--- !u!114 &5374148387588355660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594307574382576118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 131
+  indentLevel: 1
+  anyVar:
+    variable: {fileID: 2947818154601173361}
+    data:
+      animatorData:
+        animatorRef: {fileID: 0}
+        animatorVal: {fileID: 0}
+      audioSourceData:
+        audioSourceRef: {fileID: 0}
+        audioSourceVal: {fileID: 0}
+      booleanData:
+        booleanRef: {fileID: 0}
+        booleanVal: 1
+      collectionData:
+        collectionRef: {fileID: 0}
+        collectionVal: {fileID: 0}
+      collider2DData:
+        collider2DRef: {fileID: 0}
+        collider2DVal: {fileID: 0}
+      colliderData:
+        colliderRef: {fileID: 0}
+        colliderVal: {fileID: 0}
+      colorData:
+        colorRef: {fileID: 0}
+        colorVal: {r: 0, g: 0, b: 0, a: 0}
+      floatData:
+        floatRef: {fileID: 0}
+        floatVal: 0
+      gameObjectData:
+        gameObjectRef: {fileID: 0}
+        gameObjectVal: {fileID: 0}
+      integerData:
+        integerRef: {fileID: 0}
+        integerVal: 0
+      materialData:
+        materialRef: {fileID: 0}
+        materialVal: {fileID: 0}
+      matrix4x4Data:
+        matrix4x4Ref: {fileID: 0}
+        matrix4x4Val:
+          e00: 0
+          e01: 0
+          e02: 0
+          e03: 0
+          e10: 0
+          e11: 0
+          e12: 0
+          e13: 0
+          e20: 0
+          e21: 0
+          e22: 0
+          e23: 0
+          e30: 0
+          e31: 0
+          e32: 0
+          e33: 0
+      objectData:
+        objectRef: {fileID: 0}
+        objectVal: {fileID: 0}
+      quaternionData:
+        quaternionRef: {fileID: 0}
+        quaternionVal: {x: 0, y: 0, z: 0, w: 0}
+      rigidbody2DData:
+        rigidbody2DRef: {fileID: 0}
+        rigidbody2DVal: {fileID: 0}
+      rigidbodyData:
+        rigidbodyRef: {fileID: 0}
+        rigidbodyVal: {fileID: 0}
+      spriteData:
+        spriteRef: {fileID: 0}
+        spriteVal: {fileID: 0}
+      stringData:
+        stringRef: {fileID: 0}
+        stringVal: 
+      textureData:
+        textureRef: {fileID: 0}
+        textureVal: {fileID: 0}
+      transformData:
+        transformRef: {fileID: 0}
+        transformVal: {fileID: 0}
+      vector2Data:
+        vector2Ref: {fileID: 0}
+        vector2Val: {x: 0, y: 0}
+      vector3Data:
+        vector3Ref: {fileID: 0}
+        vector3Val: {x: 0, y: 0, z: 0}
+      vector4Data:
+        vector4Ref: {fileID: 0}
+        vector4Val: {x: 0, y: 0, z: 0, w: 0}
+  setOperator: 0
+  variable: {fileID: 0}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
 --- !u!1 &4018960052863825127
 GameObject:
   m_ObjectHideFlags: 0

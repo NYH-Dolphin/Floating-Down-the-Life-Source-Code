@@ -291,8 +291,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 5567292779302246975}
-  selectedCommands:
-  - {fileID: 7957973602032656122}
+  selectedCommands: []
   variables:
   - {fileID: 6417618318906241220}
   - {fileID: 2947555125199896917}
@@ -5070,72 +5069,71 @@ MonoBehaviour:
     stringVal: 'chara8 sad middle:Long long time ago, there was a boy who was born
       without heart
 
-      
 
-      chara8 sad middle:Just as the blind cannot see
-      the world in all its colors, the deaf cannot hear the sounds
 
-      
+      chara8 sad middle:Just as the blind cannot see the world
+      in all its colors, the deaf cannot hear the sounds
 
-      chara8
-      think middle:A person without a heart, also can not feel any emotion
 
-      
 
-      chara8
-      original middle:The people were disgusted by the child''s eccentricitym.
+      chara8 think middle:A
+      person without a heart, also can not feel any emotion
 
-      
+
+
+      chara8 original
+      middle:The people were disgusted by the child''s eccentricitym.
+
+
 
       chara8
       yiii middle:Some children would throw stones at him and sing songs of derision.
 
-      
+
 
       chara8
       sad middle:An empty chest can''t grow a heart, just like a deserted cemetery
       can''t blossom.
 
-      
 
-      chara8 original middle:Fortunately, his family
-      loved him and took good care of him.
 
-      
+      chara8 original middle:Fortunately, his family loved
+      him and took good care of him.
 
-      chara8 original middle:But
-      it makes no difference whether a boy is bullied or cared for, right...
 
-      
+
+      chara8 original middle:But it makes
+      no difference whether a boy is bullied or cared for, right...
+
+
 
       chara8
       think middle:He grew up so ignorant that he did not shed a tear even when standing
       at the tombstone of the last member of his family.
 
-      
+
+
+      chara8 think middle:Such
+      numbness frightens those around them and unites to drive away the pathetic
+      boy.
+
+
+
+      chara8 sad middle:They destroyed his home and stole his belongings,
+      making it impossible for him to establish himself there.
+
+
+
+      chara8 original
+      middle:Then the boy set foot on the journey of wandering. There is neither
+      nostalgia for hometown nor expectation for the future in his simple packing.
+
+
 
       chara8
-      think middle:Such numbness frightens those around them and unites to drive
-      away the pathetic boy.
+      original middle:Because he has no heart...
 
-      
 
-      chara8 sad middle:They destroyed his
-      home and stole his belongings, making it impossible for him to establish himself
-      there.
-
-      
-
-      chara8 original middle:Then the boy set foot on the
-      journey of wandering. There is neither nostalgia for hometown nor expectation
-      for the future in his simple packing.
-
-      
-
-      chara8 original middle:Because
-      he has no heart...
-
-      
 
       hide chara8:'
   clearPrevious:
@@ -5564,85 +5562,84 @@ MonoBehaviour:
     stringVal: 'chara8 original middle:Over the years, the boy had traveled many
       places, suffered many hardships, and seen many strange things and people
 
-      
+
 
       chara8
       think middle:Some of them were like him, the heart in their chest was born
       broken, like a broken jar
 
-      
 
-      chara8 think middle:No matter how
-      full of emotion, can not be filled, only from the bottom of the hole in a hurry
-      to leak.
 
-      
+      chara8 think middle:No matter how full of
+      emotion, can not be filled, only from the bottom of the hole in a hurry to
+      leak.
 
-      chara8 think middle:But it is such a few nature cool
-      thin people, but can mix in the ordinary people, not be excluded, not be seen
-      through.
 
-      
 
-      chara8 original middle:The boy asked them, and then
-      they told the boy, "the secret is to use the heart fragments, retain a little
-      bit of emotion".
+      chara8 think middle:But it is such a few nature cool thin people,
+      but can mix in the ordinary people, not be excluded, not be seen through.
 
-      
 
-      chara8 original middle:"Only in front of
-      the people who matter most".
-
-      
-
-      chara8 original middle:To pretend
-      you have lots of emotions, even if they''re not genuine.
-
-      
 
       chara8
-      original middle:But this method does not work for the boy, who is completely
-      devoid of heart, unable to pretend that he has never had something.
+      original middle:The boy asked them, and then they told the boy, "the secret
+      is to use the heart fragments, retain a little bit of emotion".
 
-      
 
-      chara8
-      original middle:The others looked sympathetic, and the boy couldn''t tell whether
-      they were really sorry for them or just pretending
-
-      
 
       chara8
-      think middle:But it didn''t matter, he wouldn''t have cared. Rested enough,
-      he turned and started on his way again.
+      original middle:"Only in front of the people who matter most".
 
-      
 
-      chara8 original middle:Then
-      an old man stopped him and told the no-heart boy that there was a way to solve
-      the problem.
 
-      
+      chara8
+      original middle:To pretend you have lots of emotions, even if they''re not
+      genuine.
 
-      chara8 surprise middle:To find a heart, a perfect
-      heart...
 
-      
 
-      chara8 surprise middle:And then, ask the owner of
-      this heart to share it with you.
+      chara8 original middle:But this method does not work for
+      the boy, who is completely devoid of heart, unable to pretend that he has never
+      had something.
 
-      
+
+
+      chara8 original middle:The others looked sympathetic,
+      and the boy couldn''t tell whether they were really sorry for them or just
+      pretending
+
+
+
+      chara8 think middle:But it didn''t matter, he wouldn''t
+      have cared. Rested enough, he turned and started on his way again.
+
+
+
+      chara8
+      original middle:Then an old man stopped him and told the no-heart boy that
+      there was a way to solve the problem.
+
+
+
+      chara8 surprise middle:To find
+      a heart, a perfect heart...
+
+
+
+      chara8 surprise middle:And then, ask the
+      owner of this heart to share it with you.
+
+
 
       chara8 think middle:It was
       the first time that boy had set goals for their wanderings.
 
-      
+
 
       chara8
       think middle:He wanted to find a perfect heart.
 
-      
+
 
       hide chara8:'
   clearPrevious:
@@ -6071,89 +6068,88 @@ MonoBehaviour:
     stringVal: 'chara8 original middle:But a perfect heart was not easy to find,
       and the no-heart man wandered for several years
 
-      
 
-      chara8 original
-      middle:Touched countless people and their hearts
 
-      
+      chara8 original middle:Touched
+      countless people and their hearts
 
-      chara8 sad
-      middle:He found that many so-called ordinary people were no different from
-      those I had met before who were born with a broken heart
 
-      
 
-      chara8
-      sad middle:It''s just that the hole in the heart is big and small, and the
-      use of feelings is good and bad
+      chara8 sad middle:He found that
+      many so-called ordinary people were no different from those I had met before
+      who were born with a broken heart
 
-      
 
-      chara8 sad middle:The no-heart
-      man don''t know whether he should continue to wander and search, he decided
-      to stop first and rest his feet in a small village along the way
 
-      
+      chara8 sad middle:It''s just that
+      the hole in the heart is big and small, and the use of feelings is good and
+      bad
 
-      chara8
-      original middle:There was an old tree at the entrance of the village. It was
-      so big and tall that a little cat was stuck at the top of the tree and could
-      not get down
 
-      
 
-      chara8 original middle:The no-heart man climbed
-      up the tree and saved the kitten
+      chara8 sad middle:The no-heart man don''t know whether he should
+      continue to wander and search, he decided to stop first and rest his feet in
+      a small village along the way
 
-      
 
-      chara8 original middle:Not
-      that he felt any pity for the little fellow
 
-      
+      chara8 original middle:There was an
+      old tree at the entrance of the village. It was so big and tall that a little
+      cat was stuck at the top of the tree and could not get down
 
-      chara8 original
-      middle:It was because he was not afraid of heights like other villagers watching
 
-      
 
       chara8
-      surprise middle:A young girl under the tree took the kitten and expressed her
-      gratitude as a cat owner to the no-heart man
+      original middle:The no-heart man climbed up the tree and saved the kitten
 
-      
 
-      chara8 original
-      middle:He not pay attention to what she was saying, and just stare at the young
-      girl, absorbed
 
-      
+      chara8
+      original middle:Not that he felt any pity for the little fellow
 
-      chara8 original middle:Not to see her fresh
-      years, nor to see her moving beauty
 
-      
+
+      chara8
+      original middle:It was because he was not afraid of heights like other villagers
+      watching
+
+
+
+      chara8 surprise middle:A young girl under the tree took the
+      kitten and expressed her gratitude as a cat owner to the no-heart man
+
+
+
+      chara8
+      original middle:He not pay attention to what she was saying, and just stare
+      at the young girl, absorbed
+
+
+
+      chara8 original middle:Not to see her
+      fresh years, nor to see her moving beauty
+
+
 
       chara8 original middle:But
       look at the heart beating in her breast
 
-      
+
 
       chara8 original middle:Tender,
       ruddy, smooth surface without a trace of damage
 
-      
 
-      chara8 original
-      middle:Happens to be a perfect heart
 
-      
+      chara8 original middle:Happens
+      to be a perfect heart
 
-      chara8 original middle:That''s
-      why no-heart man stay in this village
 
-      
+
+      chara8 original middle:That''s why no-heart
+      man stay in this village
+
+
 
       hide chara8:'
   clearPrevious:
@@ -6207,26 +6203,26 @@ MonoBehaviour:
 
       hide Jim:
 
-      Jimmy
-      sad middle:He would also hold on to the test paper and not tell his parents
-      when the exam was not good
-
-      Jimmy sad middle:He also broke out in a
-      cold sweat when he made little mistakes in his performance
-
       Jimmy sad
-      middle:He was more likely to cry in his own room, covering his face
+      middle:He would also hold on to the test paper and not tell his parents when
+      the exam was not good
 
-      hide
-      Jimmy:
+      Jimmy sad middle:He also broke out in a cold sweat
+      when he made little mistakes in his performance
 
-      Jim closeEye middle:But who shall comfort him
+      Jimmy sad middle:He
+      was more likely to cry in his own room, covering his face
 
-      Jim closeEye
-      middle:Someone who was raised with great expectations
+      hide Jimmy:
 
-      Jim poker middle:Who
-      can he rely on?
+      Jim
+      closeEye middle:But who shall comfort him
+
+      Jim closeEye middle:Someone
+      who was raised with great expectations
+
+      Jim poker middle:Who can he rely
+      on?
 
       hide Jim:'
   clearPrevious:
@@ -7552,83 +7548,81 @@ MonoBehaviour:
       man with the ability to learn from the magician, in the square conjured a group
       of white doves
 
-      
 
-      chara8 original middle:Let them fly towards
-      the girl, around her, around the perfect heart
 
-      
+      chara8 original middle:Let them fly towards the girl,
+      around her, around the perfect heart
 
-      chara8 surprise
-      middle:And the girl with the cat smiles as she walks through the doves to the
-      no-heart man
 
-      
 
-      chara8 surprise middle:The kitten jumped from
-      her arms and meowed against the legs of the inadvertent man. The girl stood
-      on tiptoe and kissed his cheek
+      chara8 surprise middle:And the
+      girl with the cat smiles as she walks through the doves to the no-heart man
 
-      
 
-      chara8 surprise middle:Thank
-      you for all you''ve done for me, the girl said, blushing
 
-      
+      chara8
+      surprise middle:The kitten jumped from her arms and meowed against the legs
+      of the inadvertent man. The girl stood on tiptoe and kissed his cheek
+
+
+
+      chara8
+      surprise middle:Thank you for all you''ve done for me, the girl said, blushing
+
+
 
       chara8
       original middle:"I have something for you, too"
 
-      
 
-      chara8 original
-      middle:Do not need her to do more explanation, he has been aware of the other
-      party to send him how a great gift
 
-      
+      chara8 original middle:Do
+      not need her to do more explanation, he has been aware of the other party to
+      send him how a great gift
 
-      chara8 original middle:In
-      fact, he could not be called unintentional at this moment
 
-      
+
+      chara8 original middle:In fact, he could
+      not be called unintentional at this moment
+
+
+
+      chara8 think middle:Half
+      a heart, half a heart from a perfect heart, was beating in his breast
+
+
 
       chara8
-      think middle:Half a heart, half a heart from a perfect heart, was beating in
-      his breast
+      think middle:At that moment, he felt the love and warmth he had never felt
+      before, intense and turbulent emotions like a flood
 
-      
 
-      chara8 think middle:At that moment, he felt the
-      love and warmth he had never felt before, intense and turbulent emotions like
-      a flood
 
-      
+      chara8 think middle:Pounced
+      on the new young man and drowned him
 
-      chara8 think middle:Pounced on the new young man and
-      drowned him
 
-      
 
-      chara8 surprise middle:Let him at the same time
-      at a loss, but also ecstasy
+      chara8 surprise middle:Let him
+      at the same time at a loss, but also ecstasy
 
-      
 
-      chara8 surprise middle:The young
-      man smiled for the first time in his life, picked up the girl in his arms and
-      made countless happy circles in the middle of the square
 
-      
+      chara8 surprise middle:The
+      young man smiled for the first time in his life, picked up the girl in his
+      arms and made countless happy circles in the middle of the square
+
+
 
       chara8
       surprise middle:At the beginning of this spring, he and she live happily together
 
-      
+
 
       chara8
       original middle:Share a perfect heart
 
-      
+
 
       hide chara8:'
   clearPrevious:

@@ -101,11 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 613.5752, y: 139.50366}
+  scrollPos: {x: 437.90427, y: 43.083267}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 369.8
-  zoom: 0.52
+  zoom: 0.6999998
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -113,7 +113,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 3984793941702966529}
+  - {fileID: 2525346100063473032}
   selectedCommands: []
   variables:
   - {fileID: 5838489083155867639}
@@ -148,7 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -102.49973
     y: 68.00001
-    width: 114.61539
+    width: 111.7143
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1642,7 +1642,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -242.99086
     y: 170.08421
-    width: 88.46154
+    width: 84.28572
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 83.36733
     y: 162.74854
-    width: 86.92308
+    width: 80.85715
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1786,7 +1786,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -79.99341
     y: 284.9145
-    width: 73.07692
+    width: 70.571434
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2865,8 +2865,8 @@ MonoBehaviour:
       chara2 think middle:Dreams
       are your beacons, your direction
 
-      chara2 orignal middle:A goal is a
-      flag you can see, and you follow it step by step'
+      chara2 orignal middle:A goal is a flag
+      you can see, and you follow it step by step'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -4209,17 +4209,17 @@ MonoBehaviour:
 
       Jim think middle:......
 
-      hide
-      Jim:
-
-      Jimmy buling middle:He has good grades, good sports and many hobbies.
-      Jimmy is always the one who stands out in the crowd
-
-      Jimmy confidence
-      middle:I saw Jimmy playing basketball on the playground. He was agile and fast
+      hide Jim:
 
       Jimmy
-      closeEye middle:I saw Jimmy playing in the auditorium. He was elegant and decent
+      buling middle:He has good grades, good sports and many hobbies. Jimmy is always
+      the one who stands out in the crowd
+
+      Jimmy confidence middle:I saw Jimmy
+      playing basketball on the playground. He was agile and fast
+
+      Jimmy closeEye
+      middle:I saw Jimmy playing in the auditorium. He was elegant and decent
 
       Jimmy
       bigSmile middle:I saw Jimmy, who got along well with his classmates at school.
