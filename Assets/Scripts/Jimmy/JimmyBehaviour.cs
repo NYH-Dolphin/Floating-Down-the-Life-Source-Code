@@ -338,10 +338,13 @@ public class JimmyBehaviour : MonoBehaviour
             GameObject balloon =
                 Instantiate(Resources.Load<GameObject>(_balloonPath), gameObject.transform, true);
             balloon.transform.parent = transform.Find("Jimmy").transform;
-            balloon.transform.localPosition = balloonsPositionRight.Get(_balloonName);
             if (status == floatingStatus.RIGHT)
             {
-                balloon.transform.RotateAround(transform.position, transform.up, 180f);
+                balloon.transform.localPosition = balloonsPositionRight.Get(_balloonName);
+            }
+            else
+            {
+                balloon.transform.localPosition = balloonsPositionLeft.Get(_balloonName);
             }
 
             balloons.Add(balloon);

@@ -91,6 +91,10 @@ public class CollectionPanel : BasePanel
 
     private void OnCloseClick()
     {
+        if (GameObject.Find("Jimmy(Clone)"))
+        {
+            GameObject.Find("Jimmy(Clone)").transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        }
         Close();
     }
 }

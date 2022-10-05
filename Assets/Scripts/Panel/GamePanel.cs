@@ -151,7 +151,7 @@ public class GamePanel : BasePanel
     {
         // 随机生成
         GameObject lastLeft = leftWall.Last();
-        if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -815)
+        if (lastLeft.transform.localPosition.y - lastLeft.GetComponent<RectTransform>().rect.height / 2 >= -845)
         {
             string path = "";
             float random = Random.Range(0f, 1f);

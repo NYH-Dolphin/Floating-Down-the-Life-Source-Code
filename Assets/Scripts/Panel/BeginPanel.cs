@@ -29,7 +29,22 @@ public class BeginPanel : BasePanel
         rules.onClick.AddListener(OnRulesClick);
         collection.onClick.AddListener(OnCollectionClick);
         settings.onClick.AddListener(OnSettingClick);
-        
+
+
+        // 初始化PlayerPref
+        if (PlayerPrefs.GetInt("PlayerPrefsInitial") == 0)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("PlayerPrefsInitial", 1);
+        }
+
+        // 初始化语言
+        if (PlayerPrefs.GetInt("LanguageInitial") == 0)
+        {
+            PlayerPrefs.SetString("language", "EN");
+            PlayerPrefs.SetInt("LanguageInitial", 1);
+        }
+
         // 初始化声音
         if (PlayerPrefs.GetInt("VolumeInitial", 0) == 0)
         {

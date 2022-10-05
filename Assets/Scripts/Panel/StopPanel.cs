@@ -40,6 +40,10 @@ public class StopPanel : BasePanel
     {
         GamePanel gamePanel = (GamePanel) PanelManager.panels["GamePanel"];
         gamePanel.OnStopClick();
+        if (GameObject.Find("Jimmy(Clone)"))
+        {
+            GameObject.Find("Jimmy(Clone)").transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        }
         Close();
     }
     
@@ -58,12 +62,20 @@ public class StopPanel : BasePanel
         gamePanel.OnStopClick();
         gamePanel.Close();
         PanelManager.Open<StartPanel>();
+        if (GameObject.Find("Jimmy(Clone)"))
+        {
+            GameObject.Find("Jimmy(Clone)").transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        }
         Close();
     }
     
     private void OnCollectionClick()
     {
         PanelManager.Open<CollectionPanel>();
+        if (GameObject.Find("Jimmy(Clone)"))
+        {
+            GameObject.Find("Jimmy(Clone)").transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
     
 }
